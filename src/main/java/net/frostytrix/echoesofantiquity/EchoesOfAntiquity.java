@@ -1,7 +1,9 @@
 package net.frostytrix.echoesofantiquity;
 
 import net.fabricmc.api.ModInitializer;
-
+import net.frostytrix.echoesofantiquity.block.ModBlocks;
+import net.frostytrix.echoesofantiquity.item.ModItemGroups;
+import net.frostytrix.echoesofantiquity.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,6 +13,8 @@ public class EchoesOfAntiquity implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
+		ModItems.registerModItems();
+		ModItemGroups.registerItemGroups();
+		ModBlocks.registerModBlocks();
 	}
 }

@@ -3,7 +3,8 @@
 	"package": "net.frostytrix.echoesofantiquity.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"EntityMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
