@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
+import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.effect.ModEffects;
 import net.frostytrix.echoesofantiquity.item.ModItemGroups;
 import net.frostytrix.echoesofantiquity.item.ModItems;
@@ -23,6 +24,7 @@ public class EchoesOfAntiquity implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModEffects.registerEffects();
 		ModPotions.registerPotions();
+		ModBlockEntities.registerBlockEntities();
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.POPPED_CHORUS_FRUIT, ModPotions.PHASING_POTION);

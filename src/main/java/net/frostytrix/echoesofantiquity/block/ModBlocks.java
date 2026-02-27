@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.block.custom.VoidAnchorBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -15,6 +16,10 @@ public class ModBlocks {
 
     public static final Block PLACEHOLDER = registerBlock("placeholder",
             new Block(AbstractBlock.Settings.create().strength(1f)));
+
+    public static final Block VOID_ANCHOR = registerBlock("void_anchor",
+            new VoidAnchorBlock(AbstractBlock.Settings.create().nonOpaque().strength(3f)));
+
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

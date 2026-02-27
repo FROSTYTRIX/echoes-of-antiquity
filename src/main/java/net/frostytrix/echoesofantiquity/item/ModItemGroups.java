@@ -21,6 +21,7 @@ public class ModItemGroups {
                         entries.add(new ItemStack(ModItems.VOID_TREATED_LEATHER));
                         entries.add(new ItemStack(ModItems.ENDER_BOOTS));
                         entries.add(new ItemStack(ModBlocks.PLACEHOLDER));
+                        entries.add(new ItemStack(ModBlocks.VOID_ANCHOR));
                     }).build());
 
 

@@ -4,7 +4,10 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ExampleMixin",
-		"EntityMixin"
+		"EntityMixin",
+		"EndermanTPMixin",
+		"ShulkerTeleportMixin",
+		"EnderPearlMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
