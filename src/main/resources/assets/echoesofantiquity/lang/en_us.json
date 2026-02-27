@@ -5,5 +5,15 @@
 
   "block.echoesofantiquity.placeholder": "Placeholder Block",
 
-  "itemgroup.echoesofantiquity.the_fallen_humans": "The Fallen Humans"
+  "itemgroup.echoesofantiquity.the_fallen_humans": "The Fallen Humans",
+
+  "item.minecraft.potion.effect.phasing_potion": "Phasing Potion",
+  "item.minecraft.splash_potion.effect.phasing_potion": "Phasing Splash Potion",
+  "item.minecraft.lingering_potion.effect.phasing_potion": "Phasing Lingering Potion",
+  "effect.echoesofantiquity.phasing": "Phasing",
+
+  "item.minecraft.potion.effect.reach_potion": "Reach Potion",
+  "item.minecraft.splash_potion.effect.reach_potion": "Reach Splash Potion",
+  "item.minecraft.lingering_potion.effect.reach_potion": "Reach Lingering Potion",
+  "effect.echoesofantiquity.reach": "Reach"
 }
