@@ -31,7 +31,7 @@ public class EchoesOfAntiquity implements ModInitializer {
 		});
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(Potions.WEAKNESS, Items.POPPED_CHORUS_FRUIT, ModPotions.REACH_POTION);
+			builder.registerPotionRecipe(ModPotions.PHASING_POTION, Items.POPPED_CHORUS_FRUIT, ModPotions.REACH_POTION);
 		});
 	}
 }
