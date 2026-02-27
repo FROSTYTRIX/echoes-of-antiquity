@@ -1,0 +1,20 @@
+{
+  "item.echoesofantiquity.ancient_scrip": "Écrit ancien",
+  "item.echoesofantiquity.void_treated_leather": "Cuir traité par le Néant",
+  "item.echoesofantiquity.ender_boots": "Bottes de l'Ender",
+
+  "block.echoesofantiquity.placeholder": "Bloc de substitution",
+  "block.echoesofantiquity.void_anchor": "Ancre du Néant",
+
+  "itemgroup.echoesofantiquity.the_fallen_humans": "Les humains déchus",
+
+  "item.minecraft.potion.effect.phasing_potion": "Potion de déphasage",
+  "item.minecraft.splash_potion.effect.phasing_potion": "Potion de déphasage jetable",
+  "item.minecraft.lingering_potion.effect.phasing_potion": "Potion de déphasage persistante",
+  "effect.echoesofantiquity.phasing": "Déphasage",
+
+  "item.minecraft.potion.effect.reach_potion": "Potion d'allonge",
+  "item.minecraft.splash_potion.effect.reach_potion": "Potion d'allonge jetable",
+  "item.minecraft.lingering_potion.effect.reach_potion": "Potion d'allonge persistante",
+  "effect.echoesofantiquity.reach": "Allonge"
+}
