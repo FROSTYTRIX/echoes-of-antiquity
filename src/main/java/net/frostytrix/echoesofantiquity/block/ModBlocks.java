@@ -18,7 +18,7 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(1f)));
 
     public static final Block VOID_ANCHOR = registerBlock("void_anchor",
-            new VoidAnchorBlock(AbstractBlock.Settings.create().nonOpaque().strength(3f)));
+            new VoidAnchorBlock(AbstractBlock.Settings.create().nonOpaque().strength(50.0F, 1200.0F).requiresTool()));
 
 
     private static Block registerBlock(String name, Block block) {

@@ -22,7 +22,9 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.ANCIENT_SCRIP, Models.GENERATED);
+        itemModelGenerator.register(ModItems.END_STEEL_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.VOID_TREATED_LEATHER, Models.GENERATED);
+        itemModelGenerator.register(ModItems.RELIC_BlADE, Models.GENERATED);
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ENDER_BOOTS));
     }
 }

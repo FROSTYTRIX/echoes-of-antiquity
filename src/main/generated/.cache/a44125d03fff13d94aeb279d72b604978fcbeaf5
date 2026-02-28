@@ -1,6 +1,6 @@
-// 1.21	2026-02-27T16:54:36.562165605	Echoes of Antiquity/Tags for minecraft:block
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/mineable/pickaxe.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/needs_diamond_tool.json
+// 1.21	2026-02-28T16:15:02.409740723	Echoes of Antiquity/Tags for minecraft:block
+11a4f8859909678682fac28a3942f4bc51a19e52 data/minecraft/tags/block/mineable/pickaxe.json
+11a4f8859909678682fac28a3942f4bc51a19e52 data/minecraft/tags/block/needs_diamond_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/fence_gates.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/fences.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/needs_iron_tool.json

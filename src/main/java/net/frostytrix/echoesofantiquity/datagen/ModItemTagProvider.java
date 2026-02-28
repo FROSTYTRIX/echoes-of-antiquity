@@ -17,6 +17,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
+                .add(ModItems.RELIC_GREATSWORD)
                 ;
 
         getOrCreateTagBuilder(ItemTags.PICKAXES)

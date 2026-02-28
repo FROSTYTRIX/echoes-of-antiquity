@@ -1,7 +1,10 @@
 {
   "item.echoesofantiquity.ancient_scrip": "Ancient Scrip",
+  "item.echoesofantiquity.end_steel_ingot": "End Steel Ingot",
   "item.echoesofantiquity.void_treated_leather": "Void Treated Leather",
   "item.echoesofantiquity.ender_boots": "Ender Boots",
+  "item.echoesofantiquity.relic_blade": "Relic Blade",
+  "item.echoesofantiquity.relic_greatsword": "Relic Greatsword",
 
   "block.echoesofantiquity.placeholder": "Placeholder Block",
   "block.echoesofantiquity.void_anchor": "Void Anchor",
@@ -16,5 +19,5 @@
   "item.minecraft.potion.effect.reach_potion": "Reach Potion",
   "item.minecraft.splash_potion.effect.reach_potion": "Reach Splash Potion",
   "item.minecraft.lingering_potion.effect.reach_potion": "Reach Lingering Potion",
-  "effect.echoesofantiquity.reach": "Reach"
+  "effect.echoesofantiquity.reach": "Long Arms"
 }

@@ -26,8 +26,7 @@ public class PhasingEffect extends StatusEffect {
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
         Direction dir = entity.getHorizontalFacing();
-        // 1. Manually check for a wall by expanding the player's "reach" slightly
-        // This checks 0.2 blocks in the direction they are facing
+        // 1. Manually check for a wall by expanding the player's collision check area slightly where they are looking
         Box collisionCheckArea = entity.getBoundingBox().stretch(
                 dir.getOffsetX() * 0.2,
                 0,
@@ -43,16 +42,14 @@ public class PhasingEffect extends StatusEffect {
                 BlockPos anchorPos = this.findNearestActiveAnchor(entity);
                 if (anchorPos != null) {
                     ServerWorld serverWorld = (ServerWorld) entity.getWorld();
-                    // Spawn "Portal" or "Witch" particles at the block
                     serverWorld.spawnParticles(ParticleTypes.PORTAL,
                             anchorPos.getX() + 0.5, anchorPos.getY() + 1.2, anchorPos.getZ() + 0.5,
                             20, 0.2, 0.2, 0.2, 0.1);
-                    entity.removeCommandTag("void_anchor_suppressed");
                 }
             } else {
                 BlockPos targetPos = entity.getBlockPos().offset(dir, 2);
 
-                // 3. Check for safe landing (Air at feet and head)
+                // Check for safe landing (Air at feet and head)
                 if (world.getBlockState(targetPos).isAir() && world.getBlockState(targetPos.up()).isAir() && !entity.getWorld().isClient) {
                     ServerWorld worldServer = (ServerWorld) world;
                     // Visuals
@@ -61,16 +58,18 @@ public class PhasingEffect extends StatusEffect {
                     entity.teleport(targetPos.getX() + 0.5, targetPos.getY(), targetPos.getZ() + 0.5, ParticleTypes.PORTAL.shouldAlwaysSpawn());
                     // Sound
                     world.playSound(null, targetPos, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
+                    // Visuals n.2
                     worldServer.spawnParticles(ParticleTypes.PORTAL, entity.getX(), entity.getY() + 1, entity.getZ(), 20, 0.5, 0.5, 0.5, 0.1);
                 }
             }
         }
+        entity.removeCommandTag("void_anchor_suppressed");
         return super.applyUpdateEffect(entity, amplifier);
     }
 
     private BlockPos findNearestActiveAnchor(Entity entity) {
         BlockPos pos = entity.getBlockPos();
-        int r = VoidAnchorBlockEntity.noTPRadius; // Use the same radius as your BlockEntity
+        int r = VoidAnchorBlockEntity.noTPRadius;
         for (BlockPos target : BlockPos.iterate(pos.add(-r, -r, -r), pos.add(r, r, r))) {
             BlockState state = entity.getWorld().getBlockState(target);
             if (state.isOf(ModBlocks.VOID_ANCHOR) && state.get(VoidAnchorBlock.ACTIVE)) {

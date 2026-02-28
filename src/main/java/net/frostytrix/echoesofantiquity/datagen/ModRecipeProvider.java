@@ -3,9 +3,12 @@ package net.frostytrix.echoesofantiquity.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.item.ModItems;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
@@ -35,6 +38,41 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("CLC")
                 .pattern(" C ")
                 .criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.END_STEEL_INGOT)
+                .input(Ingredient.ofItems(Items.IRON_INGOT))
+                .input(Ingredient.ofItems(Items.POPPED_CHORUS_FRUIT))
+                .input(Ingredient.ofItems(Items.ENDER_PEARL))
+                .criterion(hasItem(Items.POPPED_CHORUS_FRUIT), conditionsFromItem(Items.POPPED_CHORUS_FRUIT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.VOID_ANCHOR)
+                .input('O', Blocks.OBSIDIAN)
+                .input('S', ModItems.END_STEEL_INGOT)
+                .input('D', Items.DIAMOND)
+                .pattern("SOS")
+                .pattern("ODO")
+                .pattern("SOS")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RELIC_BlADE)
+                .input('S', ModItems.END_STEEL_INGOT)
+                .pattern(" S ")
+                .pattern(" S ")
+                .pattern(" S ")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.RELIC_GREATSWORD)
+                .input('B', ModItems.RELIC_BlADE)
+                .input('S', Items.STICK)
+                .input('L', ModItems.VOID_TREATED_LEATHER)
+                .pattern(" B ")
+                .pattern(" S ")
+                .pattern(" L " )
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
                 .offerTo(recipeExporter);
     }
 
