@@ -3,6 +3,9 @@ package net.frostytrix.echoesofantiquity.datagen;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.frostytrix.echoesofantiquity.item.ModItems;
+import net.frostytrix.echoesofantiquity.util.ModTags;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -59,5 +62,25 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.DAMPENS_VIBRATIONS)
                 .add(ModItems.ENDER_BOOTS)
             ;
+
+        getOrCreateTagBuilder(ModTags.Items.GLASS_PANES)
+                .add(Item.fromBlock(Blocks.GLASS_PANE))
+                .add(Item.fromBlock(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.GRAY_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.BLACK_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.GREEN_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.LIME_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.BLUE_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.LIGHT_BLUE_STAINED_GLASS))
+                .add(Item.fromBlock(Blocks.CYAN_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.BROWN_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.MAGENTA_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.ORANGE_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.PINK_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.PURPLE_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.YELLOW_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.RED_STAINED_GLASS_PANE))
+                .add(Item.fromBlock(Blocks.WHITE_STAINED_GLASS_PANE))
+        ;
     }
 }

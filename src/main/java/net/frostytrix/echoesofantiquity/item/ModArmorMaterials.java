@@ -18,7 +18,8 @@ public class ModArmorMaterials {
     public static final RegistryEntry<ArmorMaterial> ENDER_ARMOR_MATERIAL = registerArmorMaterial("ender_armor_material",
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.BOOTS, 2);
-            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, null,
+                map.put(ArmorItem.Type.HELMET, 2);
+            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, null,
                     List.of(new ArmorMaterial.Layer(Identifier.of(EchoesOfAntiquity.MOD_ID, "ender"))), 0,0));
 
     public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {

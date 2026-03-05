@@ -1,11 +1,13 @@
-// 1.21	2026-02-28T16:15:02.41084323	Echoes of Antiquity/Recipes
+// 1.21	2026-03-04T22:51:03.812183036	Echoes of Antiquity/Recipes
 9b20c977225554a8fd8c6fd959777bb5e768da05 data/echoesofantiquity/advancement/recipes/misc/relic_greatsword.json
 2613b6a74617c2e6400a46a9d9fb99dfbe375cdd data/echoesofantiquity/advancement/recipes/combat/ender_boots_smithing.json
+724502644b9edeef6a4ca7d7500bba5ccebf5769 data/echoesofantiquity/recipe/obsidian_goggles.json
 5a506bb734b4c56d3b935516c6250daa03328c07 data/echoesofantiquity/recipe/relic_blade.json
 7ebf93c6ee475bf90ecc83a064db4f37575accfd data/echoesofantiquity/recipe/void_anchor.json
 c8e6d57e2ef4265f3576ea645429ebad29d1b9c4 data/echoesofantiquity/advancement/recipes/misc/end_steel_ingot.json
 0c97367d754bf76dd8002efad2832be17aec6eef data/echoesofantiquity/recipe/relic_greatsword.json
 f9d7fec7a8b043df7c67a32bc860a68e0b145e3e data/echoesofantiquity/recipe/ender_boots_smithing.json
+a0903756c71a9195391fb1ed088d4fce0cbf9ddf data/echoesofantiquity/advancement/recipes/misc/obsidian_goggles.json
 e9d223e95d6106b82be45ba4bc5e932b2f05eff1 data/echoesofantiquity/recipe/void_treated_leather.json
 6a8b689b724242227c07bd2db9b9323293971521 data/echoesofantiquity/advancement/recipes/misc/relic_blade.json
 75f63868c1eeb439fbe676d67bbd2cbdc5e07021 data/echoesofantiquity/recipe/end_steel_ingot.json

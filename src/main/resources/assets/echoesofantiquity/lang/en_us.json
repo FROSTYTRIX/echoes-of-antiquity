@@ -3,8 +3,10 @@
   "item.echoesofantiquity.end_steel_ingot": "End Steel Ingot",
   "item.echoesofantiquity.void_treated_leather": "Void Treated Leather",
   "item.echoesofantiquity.ender_boots": "Ender Boots",
+  "item.echoesofantiquity.obsidian_goggles": "Obsidian Goggles",
   "item.echoesofantiquity.relic_blade": "Relic Blade",
   "item.echoesofantiquity.relic_greatsword": "Relic Greatsword",
+  "item.echoesofantiquity.dragon_bow": "Dragon Bow",
 
   "block.echoesofantiquity.placeholder": "Placeholder Block",
   "block.echoesofantiquity.void_anchor": "Void Anchor",
@@ -14,12 +16,18 @@
   "item.minecraft.potion.effect.phasing_potion": "Phasing Potion",
   "item.minecraft.splash_potion.effect.phasing_potion": "Phasing Splash Potion",
   "item.minecraft.lingering_potion.effect.phasing_potion": "Phasing Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.phasing_potion": "Arrow of Phasing",
   "effect.echoesofantiquity.phasing": "Phasing",
 
-  "item.minecraft.potion.effect.reach_potion": "Reach Potion",
-  "item.minecraft.splash_potion.effect.reach_potion": "Reach Splash Potion",
-  "item.minecraft.lingering_potion.effect.reach_potion": "Reach Lingering Potion",
+  "item.minecraft.potion.effect.reach_potion": "Long Arms Potion",
+  "item.minecraft.splash_potion.effect.reach_potion": "Long Arms Splash Potion",
+  "item.minecraft.lingering_potion.effect.reach_potion": "Long Arms Lingering Potion",
+  "item.minecraft.tipped_arrow.effect.reach_potion": "Arrow of Long Arms",
   "effect.echoesofantiquity.reach": "Long Arms",
 
-  "item.echoesofantiquity.dragon_bow": "Dragon Bow"
+  "itemgroup.echoesofantiquity.the_failed_clones": "The Failed Clones",
+
+  "item.echoesofantiquity.soul_siphon": "Soul Siphon",
+  "item.echoesofantiquity.soul_fragment": "Soul Fragment"
+
 }

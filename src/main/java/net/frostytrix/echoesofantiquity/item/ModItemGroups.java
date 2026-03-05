@@ -12,20 +12,30 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
+    public static final ItemGroup THE_FAILED_CLONES = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(EchoesOfAntiquity.MOD_ID, "the_failed_clones"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(Items.LAPIS_LAZULI))
+                    .displayName(Text.translatable("itemgroup.echoesofantiquity.the_failed_clones"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(new ItemStack(ModItems.SOUL_SIPHON));
+                        entries.add(new ItemStack(ModItems.SOUL_FRAGMENT));
+                    }).build());
+
     public static final ItemGroup THE_FALLEN_HUMANS = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(EchoesOfAntiquity.MOD_ID, "the_fallen_humans"),
             FabricItemGroup.builder().icon(() -> new ItemStack(Items.ENDER_EYE))
                     .displayName(Text.translatable("itemgroup.echoesofantiquity.the_fallen_humans"))
                     .entries((displayContext, entries) -> {
-                        entries.add(new ItemStack(ModItems.ANCIENT_SCRIP));
                         entries.add(new ItemStack(ModItems.VOID_TREATED_LEATHER));
+                        entries.add(new ItemStack(ModItems.OBSIDIAN_GOGGLES));
                         entries.add(new ItemStack(ModItems.ENDER_BOOTS));
-                        entries.add(new ItemStack(ModBlocks.PLACEHOLDER));
                         entries.add(new ItemStack(ModItems.END_STEEL_INGOT));
                         entries.add(new ItemStack(ModBlocks.VOID_ANCHOR));
-                        entries.add(new ItemStack(ModItems.RELIC_BlADE));
                         entries.add(new ItemStack(ModItems.RELIC_GREATSWORD));
+                        entries.add(new ItemStack(ModItems.DRAGON_BOW));
                     }).build());
+
+
 
 
     public static void registerItemGroups() {

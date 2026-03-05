@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.item.ModItems;
+import net.frostytrix.echoesofantiquity.util.ModTags;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
@@ -30,6 +31,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         SmithingTransformRecipeJsonBuilder.create(Ingredient.EMPTY, Ingredient.ofItems(Items.LEATHER_BOOTS), Ingredient.ofItems(ModItems.VOID_TREATED_LEATHER), RecipeCategory.COMBAT, ModItems.ENDER_BOOTS)
                 .criterion(hasItem(ModItems.VOID_TREATED_LEATHER), conditionsFromItem(ModItems.VOID_TREATED_LEATHER))
                 .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "ender_boots_smithing"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.OBSIDIAN_GOGGLES)
+                .input('L', ModItems.VOID_TREATED_LEATHER)
+                .input('O', Blocks.OBSIDIAN)
+                .input('G', Ingredient.fromTag(ModTags.Items.GLASS_PANES))
+                .pattern("O O")
+                .pattern("GLG")
+                .pattern("O O")
+                .criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
+                .offerTo(recipeExporter);
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.VOID_TREATED_LEATHER)
                 .input('L', Items.LEATHER)
