@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.item.custom.DragonBowItem;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -22,6 +23,9 @@ public class ModItems{
     public static final Item RELIC_BlADE = registerItem("relic_blade", new Item(new Item.Settings()));
     public static final Item RELIC_GREATSWORD = registerItem("relic_greatsword", new SwordItem(ModToolMaterials.END_STEEL,new Item.Settings().attributeModifiers(
             SwordItem.createAttributeModifiers(ModToolMaterials.END_STEEL, 3, -2.4f))));
+
+    public static final Item DRAGON_BOW = registerItem("dragon_bow",
+            new DragonBowItem(new Item.Settings().maxDamage(2500)));
 
 
     private static Item registerItem(String name, Item item){

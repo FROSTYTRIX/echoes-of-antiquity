@@ -19,5 +19,7 @@
   "item.minecraft.potion.effect.reach_potion": "Reach Potion",
   "item.minecraft.splash_potion.effect.reach_potion": "Reach Splash Potion",
   "item.minecraft.lingering_potion.effect.reach_potion": "Reach Lingering Potion",
-  "effect.echoesofantiquity.reach": "Long Arms"
+  "effect.echoesofantiquity.reach": "Long Arms",
+
+  "item.echoesofantiquity.dragon_bow": "Dragon Bow"
 }

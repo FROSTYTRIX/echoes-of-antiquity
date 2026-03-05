@@ -8,7 +8,10 @@
 		"EndermanTPMixin",
 		"ShulkerTeleportMixin",
 		"EnderPearlMixin",
-		"BipedEntityModelMixin"
+		"BipedEntityModelMixin",
+
+
+		"FovDragonBowMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
