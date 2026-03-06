@@ -1,0 +1,6 @@
+{
+  "variants": {
+    "purple=false": { "model": "echoesofantiquity:block/void_anchor" },
+    "purple=true": { "model": "echoesofantiquity:block/void_anchor_purple" }
+  }
+}

@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.item.custom;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
 import net.minecraft.block.Block;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -38,7 +39,9 @@ public class StaticPearlItem extends Item {
 
                     context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
                     return ActionResult.SUCCESS;
-                } if (player.isSneaking()) {
+                }
+                assert player != null;
+                if (player.isSneaking()) {
                     world.playSound(null, context.getBlockPos(), SoundEvents.ITEM_LODESTONE_COMPASS_LOCK, SoundCategory.BLOCKS);
 
                     context.getStack().set(ModDataComponentTypes.COORDINATES, context.getBlockPos());
@@ -51,8 +54,9 @@ public class StaticPearlItem extends Item {
 
             if (hasCoords != null){
 
-                if (world.getBlockState(hasCoords.up()).isAir() && world.getBlockState(hasCoords.up(2)).isAir()) {
+                if (world.getBlockState(hasCoords).getBlock() == ModBlocks.VOID_ANCHOR && world.getBlockState(hasCoords.up()).isAir() && world.getBlockState(hasCoords.up(2)).isAir()) {
 
+                    assert player != null;
                     player.teleport(hasCoords.getX() + 0.5, hasCoords.up().getY(), hasCoords.getZ() + 0.5, ParticleTypes.PORTAL.shouldAlwaysSpawn());
 
                     world.playSound(null, hasCoords.up(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
@@ -80,7 +84,7 @@ public class StaticPearlItem extends Item {
 
             if (hasCoords != null){
 
-                if (world.getBlockState(hasCoords.up()).isAir() && world.getBlockState(hasCoords.up(2)).isAir()) {
+                if (world.getBlockState(hasCoords).getBlock() == ModBlocks.VOID_ANCHOR && world.getBlockState(hasCoords.up()).isAir() && world.getBlockState(hasCoords.up(2)).isAir()) {
 
                 player.teleport(hasCoords.getX() + 0.5, hasCoords.up().getY(), hasCoords.getZ() + 0.5, ParticleTypes.PORTAL.shouldAlwaysSpawn());
 
@@ -90,9 +94,23 @@ public class StaticPearlItem extends Item {
                 stack.damage(1, (ServerWorld) world, (ServerPlayerEntity) player,
                         item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
                     player.getItemCooldownManager().set(this, 20);
+                    return TypedActionResult.success(stack);
                 }
             }
         }
-        return super.use(world, player, hand);
+        return TypedActionResult.fail(stack);
+    }
+
+    @Override
+    public boolean hasGlint(ItemStack stack) {return stack.get(ModDataComponentTypes.COORDINATES) != null;}
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        BlockPos hasCoords = stack.get(ModDataComponentTypes.COORDINATES);
+        if (!world.isClient() && hasCoords != null) {
+            if (world.getBlockState(hasCoords).getBlock() != ModBlocks.VOID_ANCHOR) {
+                stack.set(ModDataComponentTypes.COORDINATES, null);
+            }
+        }
     }
 }
