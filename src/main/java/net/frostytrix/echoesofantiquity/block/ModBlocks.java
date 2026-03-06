@@ -2,7 +2,7 @@ package net.frostytrix.echoesofantiquity.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
-import net.frostytrix.echoesofantiquity.block.custom.VoidAnchorBlock;
+import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -17,8 +17,12 @@ public class ModBlocks {
     public static final Block PLACEHOLDER = registerBlock("placeholder",
             new Block(AbstractBlock.Settings.create().strength(1f)));
 
+    public static final Block VOID_PEDESTAL = registerBlock("void_pedestal",
+            new VoidPedestalBlock(AbstractBlock.Settings.create().nonOpaque().strength(50.0F, 1200.0F).requiresTool()));
+
     public static final Block VOID_ANCHOR = registerBlock("void_anchor",
-            new VoidAnchorBlock(AbstractBlock.Settings.create().nonOpaque().strength(50.0F, 1200.0F).requiresTool()));
+            new Block(AbstractBlock.Settings.create().requiresTool().strength(3.0F, 9.0F)));
+
 
 
     private static Block registerBlock(String name, Block block) {

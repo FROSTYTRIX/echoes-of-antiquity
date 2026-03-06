@@ -1,7 +1,7 @@
 package net.frostytrix.echoesofantiquity.effect;
 
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
-import net.frostytrix.echoesofantiquity.block.custom.VoidAnchorBlock;
+import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.frostytrix.echoesofantiquity.block.entity.custom.VoidAnchorBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -39,11 +39,11 @@ public class PhasingEffect extends StatusEffect {
 
         if (Velocity > 0 && isTouchingWall) {
             if (entity.getCommandTags().contains("void_anchor_suppressed")) {
-                BlockPos anchorPos = this.findNearestActiveAnchor(entity);
-                if (anchorPos != null) {
+                BlockPos pedestalPos = this.findNearestActivePedestal(entity);
+                if (pedestalPos != null) {
                     ServerWorld serverWorld = (ServerWorld) entity.getWorld();
                     serverWorld.spawnParticles(ParticleTypes.PORTAL,
-                            anchorPos.getX() + 0.5, anchorPos.getY() + 1.2, anchorPos.getZ() + 0.5,
+                            pedestalPos.getX() + 0.5, pedestalPos.getY() + 1.2, pedestalPos.getZ() + 0.5,
                             20, 0.2, 0.2, 0.2, 0.1);
                 }
             } else {
@@ -67,12 +67,12 @@ public class PhasingEffect extends StatusEffect {
         return super.applyUpdateEffect(entity, amplifier);
     }
 
-    private BlockPos findNearestActiveAnchor(Entity entity) {
+    private BlockPos findNearestActivePedestal(Entity entity) {
         BlockPos pos = entity.getBlockPos();
         int r = VoidAnchorBlockEntity.noTPRadius;
         for (BlockPos target : BlockPos.iterate(pos.add(-r, -r, -r), pos.add(r, r, r))) {
             BlockState state = entity.getWorld().getBlockState(target);
-            if (state.isOf(ModBlocks.VOID_ANCHOR) && state.get(VoidAnchorBlock.ACTIVE)) {
+            if (state.isOf(ModBlocks.VOID_PEDESTAL) && state.get(VoidPedestalBlock.ACTIVE)) {
                 return target.toImmutable();
             }
         }

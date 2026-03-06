@@ -1,6 +1,6 @@
 package net.frostytrix.echoesofantiquity.block.entity.custom;
 
-import net.frostytrix.echoesofantiquity.block.custom.VoidAnchorBlock;
+import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.frostytrix.echoesofantiquity.block.entity.ImplementedInventory;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.minecraft.block.BlockState;
@@ -92,8 +92,8 @@ public class VoidAnchorBlockEntity extends BlockEntity implements ImplementedInv
         boolean hasItem = be.getStack(0).isOf(Items.ENDER_EYE);
 
         // 2. Update BlockState if it changed (optimization: only update on change)
-        if (state.get(VoidAnchorBlock.ACTIVE) != hasItem) {
-            world.setBlockState(pos, state.with(VoidAnchorBlock.ACTIVE, hasItem), 3);
+        if (state.get(VoidPedestalBlock.ACTIVE) != hasItem) {
+            world.setBlockState(pos, state.with(VoidPedestalBlock.ACTIVE, hasItem), 3);
         }
 
         // 3. If active, suppress entities

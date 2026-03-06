@@ -58,7 +58,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.POPPED_CHORUS_FRUIT), conditionsFromItem(Items.POPPED_CHORUS_FRUIT))
                 .offerTo(recipeExporter);
 
-        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.VOID_ANCHOR)
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.VOID_PEDESTAL)
                 .input('O', Blocks.OBSIDIAN)
                 .input('S', ModItems.END_STEEL_INGOT)
                 .input('D', Items.DIAMOND)

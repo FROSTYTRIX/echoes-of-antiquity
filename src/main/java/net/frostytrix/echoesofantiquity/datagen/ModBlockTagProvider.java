@@ -17,14 +17,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.VOID_ANCHOR)
+                .add(ModBlocks.VOID_PEDESTAL)
                 ;
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 ;
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.VOID_ANCHOR)
+                .add(ModBlocks.VOID_PEDESTAL)
                 ;
 
         getOrCreateTagBuilder(BlockTags.FENCES)

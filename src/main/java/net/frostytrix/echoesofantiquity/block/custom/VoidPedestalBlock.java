@@ -24,7 +24,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class VoidAnchorBlock extends BlockWithEntity implements BlockEntityProvider {
+public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
 
     private static  final VoxelShape SHAPE =
@@ -42,9 +42,9 @@ public class VoidAnchorBlock extends BlockWithEntity implements BlockEntityProvi
                     VoxelShapes.cuboid(0.25, 0.9187500000000001, 0.653125, 0.75, 1.0437499999999997, 0.7781249999999997)
             );
 
-    public static final MapCodec<VoidAnchorBlock> CODEC = VoidAnchorBlock.createCodec(VoidAnchorBlock::new);
+    public static final MapCodec<VoidPedestalBlock> CODEC = VoidPedestalBlock.createCodec(VoidPedestalBlock::new);
 
-    public VoidAnchorBlock(Settings settings) {
+    public VoidPedestalBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(ACTIVE, false));;
     }

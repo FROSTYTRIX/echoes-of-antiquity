@@ -7,6 +7,7 @@ import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.data.client.TexturedModel;
 import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
@@ -17,6 +18,8 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PLACEHOLDER);
+
+        blockStateModelGenerator.registerSingleton(ModBlocks.VOID_ANCHOR, TexturedModel.CUBE_COLUMN);
     }
 
     @Override
@@ -27,6 +30,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.VOID_TREATED_LEATHER, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.RELIC_BlADE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.STATIC_PEARL, Models.GENERATED);
 
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ENDER_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.OBSIDIAN_GOGGLES));

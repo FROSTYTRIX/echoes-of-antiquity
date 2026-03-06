@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.item.custom.DragonBowItem;
 import net.frostytrix.echoesofantiquity.item.custom.SoulSiphonItem;
+import net.frostytrix.echoesofantiquity.item.custom.StaticPearlItem;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -31,6 +32,10 @@ public class ModItems{
 
     public static final Item DRAGON_BOW = registerItem("dragon_bow",
             new DragonBowItem(new Item.Settings().maxDamage(2500)));
+
+    public static final Item STATIC_PEARL = registerItem("static_pearl",
+            new StaticPearlItem(new Item.Settings().maxDamage(20)));
+
 
     // Failed Clones
 

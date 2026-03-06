@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "echoesofantiquity:void_anchor"
+        "recipe": "echoesofantiquity:void_pedestal"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "echoesofantiquity:void_anchor"
+      "echoesofantiquity:void_pedestal"
     ]
   }
 }

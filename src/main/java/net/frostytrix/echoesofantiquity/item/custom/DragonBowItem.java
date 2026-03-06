@@ -1,6 +1,5 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
-import net.minecraft.entity.FlyingItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.BowItem;

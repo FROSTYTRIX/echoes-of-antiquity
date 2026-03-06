@@ -11,7 +11,7 @@ import net.minecraft.util.Identifier;
 public class ModBlockEntities {
     public static final BlockEntityType<VoidAnchorBlockEntity> VOID_ANCHOR_BE =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, "void_anchor_be"),
-                    BlockEntityType.Builder.create(VoidAnchorBlockEntity::new, ModBlocks.VOID_ANCHOR).build(null));
+                    BlockEntityType.Builder.create(VoidAnchorBlockEntity::new, ModBlocks.VOID_PEDESTAL).build(null));
 
     public static void registerBlockEntities() {
         EchoesOfAntiquity.LOGGER.info("Registering block entities");

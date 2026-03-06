@@ -1,6 +1,5 @@
 package net.frostytrix.echoesofantiquity.util;
 
-import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.item.Item;

@@ -1,7 +1,7 @@
 package net.frostytrix.echoesofantiquity.mixin;
 
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
-import net.frostytrix.echoesofantiquity.block.custom.VoidAnchorBlock;
+import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.frostytrix.echoesofantiquity.block.entity.custom.VoidAnchorBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -39,7 +39,7 @@ public class ShulkerTeleportMixin {
         int r = VoidAnchorBlockEntity.noTPRadius; // Use the same radius as your BlockEntity
         for (BlockPos target : BlockPos.iterate(pos.add(-r, -r, -r), pos.add(r, r, r))) {
             BlockState state = entity.getWorld().getBlockState(target);
-            if (state.isOf(ModBlocks.VOID_ANCHOR) && state.get(VoidAnchorBlock.ACTIVE)) {
+            if (state.isOf(ModBlocks.VOID_PEDESTAL) && state.get(VoidPedestalBlock.ACTIVE)) {
                 return target.toImmutable();
             }
         }
