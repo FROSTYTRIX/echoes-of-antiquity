@@ -19,7 +19,7 @@ public class ShulkerTeleportMixin {
     @Inject(method = "tryTeleport", at = @At("HEAD"), cancellable = true)
     private void stopShulkerTP(CallbackInfoReturnable<Boolean> cir) {
         ShulkerEntity shulker = (ShulkerEntity) (Object) this;
-        if (shulker.getCommandTags().contains("void_anchor_suppressed")) {
+        if (shulker.getCommandTags().contains("void_pedestal_suppressed")) {
             BlockPos anchorPos = this.findNearestActiveAnchor(shulker);
             if (anchorPos != null) {
                 ServerWorld serverWorld = (ServerWorld) shulker.getWorld();
@@ -30,7 +30,7 @@ public class ShulkerTeleportMixin {
             }
 
             cir.setReturnValue(false); // Cancel the teleport
-            shulker.removeCommandTag("void_anchor_suppressed");
+            shulker.removeCommandTag("void_pedestal_suppressed");
         }
     }
 

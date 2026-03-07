@@ -24,8 +24,8 @@ public abstract class EnderPearlMixin {
         // Check if the pearl itself is in the anchor radius (has the tag)
         // OR if the player throwing it is currently anchored
         Entity owner = pearl.getOwner();
-        boolean ownerAnchored = (owner != null && owner.getCommandTags().contains("void_anchor_suppressed"));
-        boolean pearlAnchored = pearl.getCommandTags().contains("void_anchor_suppressed");
+        boolean ownerAnchored = (owner != null && owner.getCommandTags().contains("void_pedestal_suppressed"));
+        boolean pearlAnchored = pearl.getCommandTags().contains("void_pedestal_suppressed");
 
         if (pearlAnchored || ownerAnchored) {
             // We "kill" the pearl so it disappears without teleporting the player
@@ -47,8 +47,8 @@ public abstract class EnderPearlMixin {
                         anchorPos2.getX() + 0.5, anchorPos2.getY() + 1.2, anchorPos2.getZ() + 0.5,
                         20, 0.2, 0.2, 0.2, 0.1);
             }
-            pearl.removeCommandTag("void_anchor_suppressed");
-            if (owner != null) { owner.removeCommandTag("void_anchor_suppressed");
+            pearl.removeCommandTag("void_pedestal_suppressed");
+            if (owner != null) { owner.removeCommandTag("void_pedestal_suppressed");
             }
         }
     }

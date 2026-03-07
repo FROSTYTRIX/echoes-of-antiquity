@@ -1,20 +1,32 @@
 {
-  "item.echoesofantiquity.ancient_scrip": "Écrit ancien",
-  "item.echoesofantiquity.void_treated_leather": "Cuir traité par le Néant",
+  "item.echoesofantiquity.ancient_scrip": "Écrit Ancien",
+  "item.echoesofantiquity.end_steel_ingot": "Lingot d'Acier de l'End",
+  "item.echoesofantiquity.void_treated_leather": "Cuir Traité par le Néant",
   "item.echoesofantiquity.ender_boots": "Bottes de l'Ender",
+  "item.echoesofantiquity.obsidian_goggles": "Lunettes d'Obsidienne",
+  "item.echoesofantiquity.relic_blade": "Lame de Relique",
+  "item.echoesofantiquity.relic_greatsword": "Espadon de Relique",
+  "item.echoesofantiquity.soul_siphon": "Siphon d'Âmes",
+  "item.echoesofantiquity.soul_fragment": "Fragment d'Âme",
+  "item.echoesofantiquity.static_pearl": "Perle Statique",
+  "item.echoesofantiquity.dragon_bow": "Arc de Dragon",
 
-  "block.echoesofantiquity.placeholder": "Bloc de substitution",
-  "block.echoesofantiquity.void_anchor": "Ancre du Néant",
+  "block.echoesofantiquity.placeholder": "Bloc de Substitution",
+  "block.echoesofantiquity.void_pedestal": "Piédestal du Néant",
 
-  "itemgroup.echoesofantiquity.the_fallen_humans": "Les humains déchus",
+  "itemgroup.echoesofantiquity.the_fallen_humans": "Les Humains Déchus",
 
-  "item.minecraft.potion.effect.phasing_potion": "Potion de déphasage",
-  "item.minecraft.splash_potion.effect.phasing_potion": "Potion de déphasage jetable",
-  "item.minecraft.lingering_potion.effect.phasing_potion": "Potion de déphasage persistante",
+  "item.minecraft.potion.effect.phasing_potion": "Potion de Déphasage",
+  "item.minecraft.splash_potion.effect.phasing_potion": "Potion de Déphasage Jetable",
+  "item.minecraft.lingering_potion.effect.phasing_potion": "Potion de Déphasage Persistante",
+  "item.minecraft.tipped_arrow.effect.phasing_potion": "Flèche de Déphasage",
   "effect.echoesofantiquity.phasing": "Déphasage",
 
-  "item.minecraft.potion.effect.reach_potion": "Potion d'allonge",
-  "item.minecraft.splash_potion.effect.reach_potion": "Potion d'allonge jetable",
-  "item.minecraft.lingering_potion.effect.reach_potion": "Potion d'allonge persistante",
-  "effect.echoesofantiquity.reach": "Allonge"
+  "item.minecraft.potion.effect.reach_potion": "Potion de Bras Longs",
+  "item.minecraft.splash_potion.effect.reach_potion": "Potion de Bras Longs Jetable",
+  "item.minecraft.lingering_potion.effect.reach_potion": "Potion de Bras Longs Persistante",
+  "item.minecraft.tipped_arrow.effect.reach_potion": "Flèche de Bras Longs",
+  "effect.echoesofantiquity.reach": "Bras Longs",
+  "block.echoesofantiquity.void_anchor": "Void Anchor",
+  "itemgroup.echoesofantiquity.the_failed_clones": "The Failed Clones"
 }

@@ -24,7 +24,7 @@ public class EndermanTPMixin {
         EndermanEntity enderman = (EndermanEntity) (Object) this;
 
         // Check for your custom tag
-        if (enderman.getCommandTags().contains("void_anchor_suppressed")) {
+        if (enderman.getCommandTags().contains("void_pedestal_suppressed")) {
             BlockPos anchorPos = this.findNearestActiveAnchor(enderman);
             if (anchorPos != null) {
                 ServerWorld serverWorld = (ServerWorld) enderman.getWorld();
@@ -33,7 +33,7 @@ public class EndermanTPMixin {
                         anchorPos.getX() + 0.5, anchorPos.getY() + 1.2, anchorPos.getZ() + 0.5,
                         20, 0.2, 0.2, 0.2, 0.1);
             }
-            enderman.removeCommandTag("void_anchor_suppressed");
+            enderman.removeCommandTag("void_pedestal_suppressed");
             cir.setReturnValue(false);
         }
     }

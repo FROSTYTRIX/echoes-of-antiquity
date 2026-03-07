@@ -103,7 +103,7 @@ public class VoidAnchorBlockEntity extends BlockEntity implements ImplementedInv
             List<LivingEntity> entities = world.getNonSpectatingEntities(LivingEntity.class, area);
 
             for (Entity entity : entities) {
-                entity.addCommandTag("void_anchor_suppressed");
+                entity.addCommandTag("void_pedestal_suppressed");
             }
         }
     }
