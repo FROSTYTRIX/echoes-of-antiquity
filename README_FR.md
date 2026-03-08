@@ -37,7 +37,7 @@
 * Possède **8,5** de Dégâts d'attaque, mais avec une Vitesse d'attaque de **0,6** (plus bas = plus lent).
 
 ### 🗡️ Siphon d'Âmes 🔵
-* A les **mêmes** Dégâts d'attaque qu'une **Épée en pierre** mais avec une Vitesse d'attaque de **2,6**.
+* A les **mêmes** Dégâts d'attaque qu'une **Épée en pierre**, mais avec une Vitesse d'attaque de **2,6**.
 * Les entités tuées par le **Siphon d'Âmes** lâcheront un **Fragment d'Âme**.
 
 ---
@@ -87,7 +87,7 @@ Faites **Shift + Clic droit** en l'air pour changer la méthode de calcul de la 
 
 ### 🥽 Lunettes d'Obsidienne 🟣
 * Fabriquées avec de l'Obsidienne, des Vitres et une Perle Statique.
-* Permet au joueur **de regarder les Endermen** sans les énerver. Contrairement à la **Citrouille sculptée**, cela **ne couvrira pas** partiellement votre vue.
+* Permet au joueur **de regarder les Enderman** sans les énerver. Contrairement à la **Citrouille sculptée**, cela **ne couvrira pas** partiellement votre vue.
 
 ---
 

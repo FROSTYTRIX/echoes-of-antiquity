@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.block.custom.UncrafterBlock;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -72,6 +73,9 @@ public class ModBlocks {
                     return ItemActionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
                 }
             });
+
+    public static final Block UNCRAFTER = registerBlock("uncrafter",
+            new UncrafterBlock(AbstractBlock.Settings.create()));
 
 
 

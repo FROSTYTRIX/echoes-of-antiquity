@@ -1,8 +1,10 @@
-// 1.21	2026-03-08T15:19:19.089061441	Echoes of Antiquity/Recipes
+// 1.21	2026-03-08T19:21:50.563162689	Echoes of Antiquity/Recipes
 9b20c977225554a8fd8c6fd959777bb5e768da05 data/echoesofantiquity/advancement/recipes/misc/relic_greatsword.json
 2613b6a74617c2e6400a46a9d9fb99dfbe375cdd data/echoesofantiquity/advancement/recipes/combat/ender_boots_smithing.json
 724502644b9edeef6a4ca7d7500bba5ccebf5769 data/echoesofantiquity/recipe/obsidian_goggles.json
+4e2b2e90e537ae2a668f6f2ff80ba710472014dd data/echoesofantiquity/advancement/recipes/misc/measuring_tape.json
 5a506bb734b4c56d3b935516c6250daa03328c07 data/echoesofantiquity/recipe/relic_blade.json
+b112317ff2534e0541d34312fa79292d452b5ef7 data/echoesofantiquity/recipe/measuring_tape.json
 c8e6d57e2ef4265f3576ea645429ebad29d1b9c4 data/echoesofantiquity/advancement/recipes/misc/end_steel_ingot.json
 0c97367d754bf76dd8002efad2832be17aec6eef data/echoesofantiquity/recipe/relic_greatsword.json
 6fa71e1b25a401d43ee67de45f24bee5c554e088 data/echoesofantiquity/advancement/recipes/misc/void_pedestal.json

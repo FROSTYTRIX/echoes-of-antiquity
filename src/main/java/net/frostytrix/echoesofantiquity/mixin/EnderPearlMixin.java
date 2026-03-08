@@ -2,7 +2,7 @@ package net.frostytrix.echoesofantiquity.mixin;
 
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
-import net.frostytrix.echoesofantiquity.block.entity.custom.VoidAnchorBlockEntity;
+import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.thrown.EnderPearlEntity;
@@ -55,7 +55,7 @@ public abstract class EnderPearlMixin {
 
     private BlockPos findNearestActiveAnchor(Entity entity) {
         BlockPos pos = entity.getBlockPos();
-        int r = VoidAnchorBlockEntity.noTPRadius; // Use the same radius as your BlockEntity
+        int r = VoidPedestalBlockEntity.noTPRadius; // Use the same radius as your BlockEntity
         for (BlockPos target : BlockPos.iterate(pos.add(-r, -r, -r), pos.add(r, r, r))) {
             BlockState state = entity.getWorld().getBlockState(target);
             if (state.isOf(ModBlocks.VOID_PEDESTAL) && state.get(VoidPedestalBlock.ACTIVE)) {

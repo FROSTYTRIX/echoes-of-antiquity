@@ -48,8 +48,13 @@ public class MeasuringTapeItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if  (!world.isClient() && user.isSneaking()) {
-            usedDistance = DISTANCE_STYLE_MAP.get(usedDistance);
+        if  (!world.isClient()) {
+            if (user.isSneaking()) {
+                usedDistance = DISTANCE_STYLE_MAP.get(usedDistance);
+            } else {
+                firstPos = null;
+                secondPos = null;
+            }
         }
         return TypedActionResult.success(user.getStackInHand(hand));
     }

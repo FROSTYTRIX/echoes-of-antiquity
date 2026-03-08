@@ -1,6 +1,6 @@
 package net.frostytrix.echoesofantiquity.block.entity.renderer;
 
-import net.frostytrix.echoesofantiquity.block.entity.custom.VoidAnchorBlockEntity;
+import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.LightmapTextureManager;
 import net.minecraft.client.render.OverlayTexture;
@@ -16,13 +16,13 @@ import net.minecraft.util.math.RotationAxis;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
-public class VoidAnchorBERenderer implements BlockEntityRenderer<VoidAnchorBlockEntity> {
-    public VoidAnchorBERenderer(BlockEntityRendererFactory.Context context) {
+public class VoidPedestalBERenderer implements BlockEntityRenderer<VoidPedestalBlockEntity> {
+    public VoidPedestalBERenderer(BlockEntityRendererFactory.Context context) {
 
     }
 
     @Override
-    public void render(VoidAnchorBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+    public void render(VoidPedestalBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
         ItemStack stack = entity.getStack(0);
 

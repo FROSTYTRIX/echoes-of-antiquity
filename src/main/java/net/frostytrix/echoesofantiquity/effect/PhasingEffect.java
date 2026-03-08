@@ -2,7 +2,7 @@ package net.frostytrix.echoesofantiquity.effect;
 
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
-import net.frostytrix.echoesofantiquity.block.entity.custom.VoidAnchorBlockEntity;
+import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -69,7 +69,7 @@ public class PhasingEffect extends StatusEffect {
 
     private BlockPos findNearestActivePedestal(Entity entity) {
         BlockPos pos = entity.getBlockPos();
-        int r = VoidAnchorBlockEntity.noTPRadius;
+        int r = VoidPedestalBlockEntity.noTPRadius;
         for (BlockPos target : BlockPos.iterate(pos.add(-r, -r, -r), pos.add(r, r, r))) {
             BlockState state = entity.getWorld().getBlockState(target);
             if (state.isOf(ModBlocks.VOID_PEDESTAL) && state.get(VoidPedestalBlock.ACTIVE)) {

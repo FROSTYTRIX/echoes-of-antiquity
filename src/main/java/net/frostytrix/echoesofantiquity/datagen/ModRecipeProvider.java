@@ -28,6 +28,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     public void generate(RecipeExporter recipeExporter) {
 
+        // Fallen Humans
+
         SmithingTransformRecipeJsonBuilder.create(Ingredient.EMPTY, Ingredient.ofItems(Items.LEATHER_BOOTS), Ingredient.ofItems(ModItems.VOID_TREATED_LEATHER), RecipeCategory.COMBAT, ModItems.ENDER_BOOTS)
                 .criterion(hasItem(ModItems.VOID_TREATED_LEATHER), conditionsFromItem(ModItems.VOID_TREATED_LEATHER))
                 .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "ender_boots_smithing"));
@@ -84,6 +86,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern(" S ")
                 .pattern(" L " )
                 .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        // Failed Clones
+
+        // Architect's Tools
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.MEASURING_TAPE)
+                .input('I', Items.IRON_INGOT)
+                .input('S', Items.STRING)
+                .input('C', Items.COPPER_INGOT)
+                .input('Y', Items.YELLOW_DYE)
+                .pattern("ICI")
+                .pattern("SYS")
+                .pattern("ICI" )
+                .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
                 .offerTo(recipeExporter);
     }
 

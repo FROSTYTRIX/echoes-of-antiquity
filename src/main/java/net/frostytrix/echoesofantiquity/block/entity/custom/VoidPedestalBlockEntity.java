@@ -25,13 +25,13 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class VoidAnchorBlockEntity extends BlockEntity implements ImplementedInventory {
+public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
     private float rotation = 0;
     public static final int noTPRadius = 20;
 
-    public VoidAnchorBlockEntity(BlockPos pos, BlockState state) {
-        super(ModBlockEntities.VOID_ANCHOR_BE, pos, state);
+    public VoidPedestalBlockEntity(BlockPos pos, BlockState state) {
+        super(ModBlockEntities.VOID_PEDESTAL_BE, pos, state);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class VoidAnchorBlockEntity extends BlockEntity implements ImplementedInv
         return createNbt(registryLookup);
     }
 
-    public static void tick(World world, BlockPos pos, BlockState state, VoidAnchorBlockEntity be) {
+    public static void tick(World world, BlockPos pos, BlockState state, VoidPedestalBlockEntity be) {
         if (world.isClient) return;
 
         // 1. Check for the specific item (e.g., an Ender Eye)

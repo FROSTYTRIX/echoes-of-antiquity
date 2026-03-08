@@ -2,7 +2,7 @@ package net.frostytrix.echoesofantiquity.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
-import net.frostytrix.echoesofantiquity.block.entity.custom.VoidAnchorBlockEntity;
+import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -61,7 +61,7 @@ public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new VoidAnchorBlockEntity(pos, state);
+        return new VoidPedestalBlockEntity(pos, state);
     }
 
     @Override
@@ -73,8 +73,8 @@ public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityPro
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof VoidAnchorBlockEntity){
-                ItemScatterer.spawn(world, pos, ((VoidAnchorBlockEntity) blockEntity));
+            if (blockEntity instanceof VoidPedestalBlockEntity){
+                ItemScatterer.spawn(world, pos, ((VoidPedestalBlockEntity) blockEntity));
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -83,21 +83,21 @@ public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.getBlockEntity(pos) instanceof VoidAnchorBlockEntity voidAnchorBlockEntity) {
-            if(voidAnchorBlockEntity.isEmpty() && !stack.isEmpty()) {
-                voidAnchorBlockEntity.setStack(0, stack.copyWithCount(1));
+        if(world.getBlockEntity(pos) instanceof VoidPedestalBlockEntity voidPedestalBlockEntity) {
+            if(voidPedestalBlockEntity.isEmpty() && !stack.isEmpty()) {
+                voidPedestalBlockEntity.setStack(0, stack.copyWithCount(1));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
 
-                voidAnchorBlockEntity.markDirty();
+                voidPedestalBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if(stack.isEmpty() && !player.isSneaking() && !voidAnchorBlockEntity.isEmpty()) {
-                ItemStack stackOnPedestal = voidAnchorBlockEntity.getStack(0);
+            } else if(stack.isEmpty() && !player.isSneaking() && !voidPedestalBlockEntity.isEmpty()) {
+                ItemStack stackOnPedestal = voidPedestalBlockEntity.getStack(0);
                 player.setStackInHand(Hand.MAIN_HAND, stackOnPedestal);
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 1f);
-                voidAnchorBlockEntity.clear();
+                voidPedestalBlockEntity.clear();
 
-                voidAnchorBlockEntity.markDirty();
+                voidPedestalBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
             }
         }
@@ -107,7 +107,7 @@ public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, ModBlockEntities.VOID_ANCHOR_BE, VoidAnchorBlockEntity::tick);
+        return validateTicker(type, ModBlockEntities.VOID_PEDESTAL_BE, VoidPedestalBlockEntity::tick);
     }
 
     @Override
