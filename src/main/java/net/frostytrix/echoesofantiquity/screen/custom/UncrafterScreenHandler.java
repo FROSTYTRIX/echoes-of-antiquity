@@ -1,11 +1,14 @@
 package net.frostytrix.echoesofantiquity.screen.custom;
 
+import net.frostytrix.echoesofantiquity.block.entity.custom.UncrafterBlockEntity;
 import net.frostytrix.echoesofantiquity.screen.ModScreenHandlers;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
@@ -14,24 +17,26 @@ import org.jetbrains.annotations.Nullable;
 
 public class UncrafterScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
+    private final UncrafterBlockEntity blockEntity;
 
     public UncrafterScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
-        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(pos));
+        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(2));
     }
 
-    public UncrafterScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+    public UncrafterScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate arrayPropertyDelegate) {
         super(ModScreenHandlers.UNCRAFTER_SCREEN_HANDLER, syncId);
         this.inventory = ((Inventory) blockEntity);
+        this.blockEntity = (UncrafterBlockEntity) blockEntity;
+        this.propertyDelegate = arrayPropertyDelegate;
 
-        this.addSlot(new Slot(inventory, 0, 80, 35) {
-            @Override
-            public int getMaxItemCount() {
-                return 1;
-            }
-        });
+        this.addSlot(new Slot(inventory, 0, 54, 34));
+        this.addSlot(new Slot(inventory, 1, 104, 34));
 
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+
+        addProperties(arrayPropertyDelegate);
     }
 
     @Override
@@ -61,6 +66,17 @@ public class UncrafterScreenHandler extends ScreenHandler {
     @Override
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);
+    }
+
+    public boolean isUncrafting() {
+        return propertyDelegate.get(0) > 0;
+    }
+
+    public int getScaledArrowProgress(){
+        int progress = propertyDelegate.get(0);
+        int maxProgress = propertyDelegate.get(1);
+        int arrowPixelSize = 24;
+        return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
     }
 
     private void addPlayerInventory(PlayerInventory playerInventory) {
