@@ -71,6 +71,22 @@
 ### 🧿 Soul Fragments 🔵
 * No use yet.
 
+### 🕷️ Climbing Spider Leg ⚪
+* Allows any player holding this item (main hand or offhand) to climb walls just like a spider
+* Has a 0.5% drop chance from cave spiders
+
+### 📏 Measuring Tape ⚪
+* Right-Click a block to set its position has the starting point for the measure.
+
+* Shift + Right-Click a block to set its position has the ending point for the measure.
+
+
+Shift + Right-Click in the air to change the distance calculation method
+
+* Has 2 distance calculations method :
+* * Vector distance : Calculates the norm of the vector linking both blocks.
+* * Manhattan distance : Calculates the distance between both blocks while staying on the block grid.
+
 
 ### 🥽 Obsidian Goggles 🟣
 * Crafted with Obsidian, Glass Panes, and a Static Pearl.
@@ -93,6 +109,7 @@
 
 ## 📦 Creative Tab
 
-* Find all items annotated with "🟣" in **"The Fallen Humans"** tab.
-* Find all items annotated with "🔵" in **"The Failed Clones"** tab.
+* Find all items and blocks annotated with "🟣" in **"The Fallen Humans"** tab.
+* Find all items and blocks annotated with "🔵" in **"The Failed Clones"** tab.
+* Find all items and blocks annotated with "⚪" in **"The Architect's Tools"** tab.
 * Find all items annotated with "🥛" in the vanilla **"Food & Drinks"** tab.

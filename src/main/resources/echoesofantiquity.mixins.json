@@ -3,14 +3,15 @@
 	"package": "net.frostytrix.echoesofantiquity.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-      "BipedEntityModelMixin",
-      "EndermanSeeingMixin",
-      "EndermanTPMixin",
-      "EnderPearlMixin",
-      "EntityMixin",
-      "ExampleMixin",
-      "FovDragonBowMixin",
-      "ShulkerTeleportMixin"
+        "BipedEntityModelMixin",
+        "EndermanSeeingMixin",
+        "EndermanTPMixin",
+        "EnderPearlMixin",
+        "EntityMixin",
+        "ExampleMixin",
+        "FovDragonBowMixin",
+        "ShulkerTeleportMixin",
+		"PlayerClimbingMixin"
     ],
 	"injectors": {
 		"defaultRequire": 1

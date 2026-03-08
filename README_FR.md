@@ -1,6 +1,6 @@
-# Echoes of Antiquity
+# Échos de l'Antiquité
 
-[🇺🇸 View README in English](./README.md)
+[🇬🇧 Read the README in English](./README.md)
 
 ---
 
@@ -11,87 +11,102 @@
 
 ## 🛠 Matériaux & Ingrédients
 
-### 🌑 Lingot d'Acier de l'End (End Steel Ingot) 🟣
+### 🌑 Lingot d'Acier de l'End 🟣
 * Un matériau de base pour l'artisanat avancé.
-* **Recette :** Fabrication informe avec 1 Lingot de Fer, 1 Fruit du Chorus Éclaté et 1 Perle de l'Ender.
+* **Recette :** Fabrication sans forme avec 1 Lingot de fer, 1 Fruit de chorus éclaté et 1 Perle de l'Ender.
 
-### 🖤 Cuir Traité par le Néant (Void Treated Leather) 🟣
-* Cuir imprégné des énergies de l'End.
-* **Recette :** 1 Cuir et 4 Fruits du Chorus disposés en croix.
+### 🖤 Cuir Traité par le Néant 🟣
+* Du cuir imprégné des énergies de l'End.
+* **Recette :** 1 Cuir et 4 Fruits de chorus disposés en forme de croix.
 
 ---
 
-## ⚔️ Armurerie
+## ⚔️ Armement
 
-### 🏹 Arc de Dragon (Dragon Bow) 🟣
-* Une arme à distance surpuissante.
-* Tire avec **deux fois la vélocité** d'un arc classique et s'avère **plus précis**.
+### 🏹 Arc de Dragon 🟣
+* Une arme puissante à longue portée.
+* Tire avec **deux fois la vélocité** de l'arc classique et est **plus précis**.
 
-### 🗡 Lame de Relique (Relic Blade) 🟣
-* Une lame tranchante forgée en pur Acier de l'End.
+### 🗡 Lame de Relique 🟣
+* Une lame tranchante forgée à partir d'Acier de l'End pur.
 * **Recette :** 3 Lingots d'Acier de l'End disposés en colonne verticale.
 
-### 🗡️ Espadon de Relique (Relic Greatsword) 🟣
-* Une épée massive dotée d'animations personnalisées pour le maintien et l'attaque.
-* **Recette :** Placez une **Lame de Relique** (haut), un **Bâton** (milieu) et du **Cuir Traité par le Néant** (bas) en colonne verticale.
-* Possède **8.5** points de dégâts d'attaque, avec une vitesse d'attaque de **0.6** (plus la valeur est basse, plus l'arme est lente).
+### 🗡️ Espadon de Relique 🟣
+* Une épée massive avec des animations personnalisées pour la tenue et l'attaque.
+* **Recette :** Placez une **Lame de Relique** (en haut), un **Bâton** (au milieu) et du **Cuir Traité par le Néant** (en bas) dans une colonne verticale.
+* Possède **8,5** de Dégâts d'attaque, mais avec une Vitesse d'attaque de **0,6** (plus bas = plus lent).
 
-### 🗡️ Siphon d'Âmes (Soul Siphon) 🔵
-* Possède les **mêmes** dégâts d'attaque qu'une **Épée en Pierre** mais avec une vitesse d'attaque de **2.6**.
-* Les entités tuées par le **Siphon d'Âmes** lâchent un **Fragment d'Âme**.
+### 🗡️ Siphon d'Âmes 🔵
+* A les **mêmes** Dégâts d'attaque qu'une **Épée en pierre** mais avec une Vitesse d'attaque de **2,6**.
+* Les entités tuées par le **Siphon d'Âmes** lâcheront un **Fragment d'Âme**.
 
 ---
 
 ## ⬛ Blocs
 
-### 👣 Bottes de l'Ender (Ender Boots) 🟣
-* Octroient la furtivité en bloquant les signaux de vibration (les capteurs Sculk ne vous détecteront pas).
-* **Recette :** Combinez des Bottes en Cuir avec du Cuir Traité par le Néant sur une Table de Forgeron.
+### 👣 Bottes de l'Ender 🟣
+* Confère de la furtivité en arrêtant les signaux de vibration (les Capteurs sculk ne vous détecteront pas).
+* **Recette :** Combinez des Bottes en cuir avec du Cuir Traité par le Néant dans une Table de forgeron.
 
-### Piédestal du Néant (Void Pedestal) 🟣
+### Piédestal du Néant 🟣
 * Permet au joueur d'exposer un objet.
 * Empêche la téléportation dans un **rayon de 20 blocs** lorsqu'il est actif.
 * **Activation :** Placez un **Œil de l'Ender** à l'intérieur.
-* **Visuel :** L'Œil pivote et suit les joueurs à proximité.
+* **Visuels :** L'Œil tourne et suit les joueurs à proximité.
 * **Effet :** Applique le tag `void_pedestal_suppressed` aux entités à portée.
 
-### ⚓ Ancre du Néant (Void Anchor) 🟣
-* Utilisée comme "ancre" pour la **Perle Statique**.
-* Faites un clic-droit sur l'Ancre du Néant avec une **teinture magenta** pour changer sa texture. Vous pouvez **nettoyer** la teinture avec un seau d'eau.
+### ⚓ Ancre du Vide 🟣
+* Utilisée comme une "ancre" pour la **Perle Statique**.
+* Faites un clic droit sur l'Ancre du Vide avec une **teinture magenta** pour changer sa texture. Vous pouvez **laver** la teinture avec un seau d'eau.
 
 ---
 
 ## Objets
 
-### 🔘 Perle Statique (Static Pearl) 🟣
-* **Mécanique :** Utilisez-la une fois sur une Ancre du Néant pour la lier à **cette** Perle Statique, utilisez-la à nouveau pour vous y téléporter instantanément.
-* **Shift + Clic-Droit** sur une nouvelle Ancre du Néant pour changer l'ancre liée à la Perle.
+### 🔘 Perle Statique 🟣
+* **Mécaniques :** Utilisez-la une fois sur une Ancre du Vide pour la lier à **cette** Perle Statique, utilisez-la à nouveau pour vous y téléporter instantanément.
+* **Shift + Clic droit** sur une nouvelle Ancre du Vide pour modifier celle à laquelle la Perle est liée.
 * Peut être utilisée **20 fois**.
 
-### 🧿 Fragments d'Âme (Soul Fragments) 🔵
+### 🧿 Fragments d'Âme 🔵
 * Aucune utilité pour le moment.
 
-### 🥽 Lunettes d'Obsidienne (Obsidian Goggles) 🟣
+### 🕷️ Patte d'Araignée Grimpante ⚪
+* Permet à tout joueur tenant cet objet (main principale ou secondaire) de grimper aux murs comme une araignée.
+* A 0,5 % de chances d'être lâchée par les araignées venimeuses.
+
+### 📏 Mètre Ruban ⚪
+* Faites un clic droit sur un bloc pour définir sa position comme point de départ de la mesure.
+* Faites **Shift + Clic droit** sur un bloc pour définir sa position comme point d'arrivée de la mesure.
+
+Faites **Shift + Clic droit** en l'air pour changer la méthode de calcul de la distance.
+
+* Possède 2 méthodes de calcul de distance :
+    * Distance vectorielle : Calcule la norme du vecteur reliant les deux blocs.
+    * Distance de Manhattan : Calcule la distance entre les deux blocs tout en restant sur la grille des blocs.
+
+### 🥽 Lunettes d'Obsidienne 🟣
 * Fabriquées avec de l'Obsidienne, des Vitres et une Perle Statique.
-* Permettent au joueur de **regarder les Endermen** sans les mettre en colère. Contrairement à la **Citrouille sculptée**, elles n'obstruent pas votre vision.
+* Permet au joueur **de regarder les Endermen** sans les énerver. Contrairement à la **Citrouille sculptée**, cela **ne couvrira pas** partiellement votre vue.
 
 ---
 
 ## ✨ Potions & Effets 🥛
 
-### 👻 Déphasage (Phasing) 🥛
-* **Effet :** Permet de traverser les murs d'une épaisseur **maximale de 1 bloc**.
-* **Alchimie :** Infuser un Fruit du Chorus Éclaté dans une Potion Étrange.
-* **Note :** Cet effet est désactivé à proximité d'une Ancre du Néant active.
+### 👻 Déphasage 🥛
+* **Effet :** Permet de traverser des murs d'une **épaisseur maximale de 1 bloc**.
+* **Alambic :** Fruit de chorus éclaté dans une Potion étrange.
+* **Note :** Cet effet est désactivé près d'une Ancre du Vide active.
 
-### 📏 Bras Longs (Long Arms / Reach) 🥛
-* **Effet :** Augmente la distance d'interaction de **+2.0 blocs**.
-* **Alchimie :** Infuser un Fruit du Chorus Éclaté dans une Potion de Déphasage.
+### 📏 Bras Longs 🥛
+* **Effet :** Augmente la portée d'interaction de **+2,0 blocs**.
+* **Alambic :** Fruit de chorus éclaté dans une Potion de Déphasage.
 
 ---
 
-## 📦 Onglets Créatifs
+## 📦 Onglet Créatif
 
-* Tous les objets annotés avec "🟣" se trouvent dans l'onglet **"Les Humains Déchus"**.
-* Tous les objets annotés avec "🔵" se trouvent dans l'onglet **"Les Clones Ratés"**.
-* Tous les objets annotés avec "🥛" se trouvent dans l'onglet vanilla **"Nourriture et boissons"**.
+* Retrouvez tous les objets et blocs annotés avec "🟣" dans l'onglet **"Les Humains Déchus"**.
+* Retrouvez tous les objets et blocs annotés avec "🔵" dans l'onglet **"Les Clones Ratés"**.
+* Retrouvez tous les objets et blocs annotés avec "⚪" dans l'onglet **"Les Outils de l'Architecte"**.
+* Retrouvez tous les objets annotés avec "🥛" dans l'onglet classique **"Food & Drinks"** (Nourriture et Boissons).

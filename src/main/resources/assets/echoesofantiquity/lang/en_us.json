@@ -27,8 +27,24 @@
   "item.minecraft.tipped_arrow.effect.reach_potion": "Arrow of Long Arms",
   "effect.echoesofantiquity.reach": "Long Arms",
 
+
+
+
   "itemgroup.echoesofantiquity.the_failed_clones": "The Failed Clones",
 
   "item.echoesofantiquity.soul_siphon": "Soul Siphon",
-  "item.echoesofantiquity.soul_fragment": "Soul Fragment"
+  "item.echoesofantiquity.soul_fragment": "Soul Fragment",
+
+
+
+
+  "itemgroup.echoesofantiquity.the_architects_tools": "The Architect's Tools",
+
+  "item.echoesofantiquity.climbing_spider_leg": "Climbing Spider Leg",
+
+  "item.echoesofantiquity.measuring_tape": "Measuring Tape",
+  "tooltip.echoesofantiquity.measuring_tape.first_pos": "§7The first block position is : §f",
+  "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7The second block position is : §f",
+  "tooltip.echoesofantiquity.measuring_tape.distance": "§7The distance between both blocks is : §f",
+  "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7The Manhattan distance between both blocks is : §f"
 }

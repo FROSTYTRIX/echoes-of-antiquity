@@ -21,6 +21,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.SWORDS)
                 .add(ModItems.RELIC_GREATSWORD)
+                .add(ModItems.SOUL_SIPHON)
                 ;
 
         getOrCreateTagBuilder(ItemTags.PICKAXES)
@@ -58,6 +59,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 ;
 
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItems.DRAGON_BOW)
                 ;
         getOrCreateTagBuilder(ItemTags.DAMPENS_VIBRATIONS)
                 .add(ModItems.ENDER_BOOTS)

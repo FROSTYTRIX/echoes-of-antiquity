@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.item;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -35,6 +36,15 @@ public class ModItemGroups {
                         entries.add(new ItemStack(ModItems.DRAGON_BOW));
                         entries.add(new ItemStack(ModItems.STATIC_PEARL));
                         entries.add(new ItemStack(ModBlocks.VOID_ANCHOR));
+                    }).build());
+
+    public static final ItemGroup THE_ARCHITECTS_TOOLS = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(EchoesOfAntiquity.MOD_ID, "the_architects_tools"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.MEASURING_TAPE))
+                    .displayName(Text.translatable("itemgroup.echoesofantiquity.the_architects_tools"))
+                    .entries((displayContext, entries) -> {
+                        entries.add(new ItemStack(ModItems.CLIMBING_SPIDER_LEG));
+                        entries.add(new ItemStack(ModItems.MEASURING_TAPE));
                     }).build());
 
 

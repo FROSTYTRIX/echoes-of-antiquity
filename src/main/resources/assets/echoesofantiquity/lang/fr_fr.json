@@ -6,13 +6,12 @@
   "item.echoesofantiquity.obsidian_goggles": "Lunettes d'Obsidienne",
   "item.echoesofantiquity.relic_blade": "Lame de Relique",
   "item.echoesofantiquity.relic_greatsword": "Espadon de Relique",
-  "item.echoesofantiquity.soul_siphon": "Siphon d'Âmes",
-  "item.echoesofantiquity.soul_fragment": "Fragment d'Âme",
-  "item.echoesofantiquity.static_pearl": "Perle Statique",
   "item.echoesofantiquity.dragon_bow": "Arc de Dragon",
 
   "block.echoesofantiquity.placeholder": "Bloc de Substitution",
   "block.echoesofantiquity.void_pedestal": "Piédestal du Néant",
+  "block.echoesofantiquity.void_anchor": "Ancre du Vide",
+  "item.echoesofantiquity.static_pearl": "Perle Statique",
 
   "itemgroup.echoesofantiquity.the_fallen_humans": "Les Humains Déchus",
 
@@ -27,6 +26,25 @@
   "item.minecraft.lingering_potion.effect.reach_potion": "Potion de Bras Longs Persistante",
   "item.minecraft.tipped_arrow.effect.reach_potion": "Flèche de Bras Longs",
   "effect.echoesofantiquity.reach": "Bras Longs",
-  "block.echoesofantiquity.void_anchor": "Void Anchor",
-  "itemgroup.echoesofantiquity.the_failed_clones": "The Failed Clones"
+
+
+
+
+  "itemgroup.echoesofantiquity.the_failed_clones": "Les Clones Ratés",
+
+  "item.echoesofantiquity.soul_siphon": "Siphon d'Âmes",
+  "item.echoesofantiquity.soul_fragment": "Fragment d'Âme",
+
+
+
+
+  "itemgroup.echoesofantiquity.the_architects_tools": "Les Outils de l'Architecte",
+
+  "item.echoesofantiquity.climbing_spider_leg": "Patte d'Araignée Grimpante",
+
+  "item.echoesofantiquity.measuring_tape": "Mètre Ruban",
+  "tooltip.echoesofantiquity.measuring_tape.first_pos": "§7La position du premier bloc est : §f",
+  "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7La position du second bloc est : §f",
+  "tooltip.echoesofantiquity.measuring_tape.distance": "§7La distance entre les deux blocs est : §f",
+  "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7La distance de Manhattan entre les deux blocs est : §f"
 }

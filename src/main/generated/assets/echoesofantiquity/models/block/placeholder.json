@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "echoesofantiquity:block/placeholder"
+    "end": "echoesofantiquity:block/placeholder_top",
+    "side": "echoesofantiquity:block/placeholder_side"
   }
 }

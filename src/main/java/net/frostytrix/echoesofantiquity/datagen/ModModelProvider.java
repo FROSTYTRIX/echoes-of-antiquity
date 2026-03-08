@@ -22,6 +22,9 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+
+        // Fallen Human
+
         itemModelGenerator.register(ModItems.ANCIENT_SCRIP, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.END_STEEL_INGOT, Models.GENERATED);
@@ -33,7 +36,14 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ENDER_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.OBSIDIAN_GOGGLES));
 
+        // Failed clones
+
         itemModelGenerator.register(ModItems.SOUL_SIPHON, Models.HANDHELD);
         itemModelGenerator.register(ModItems.SOUL_FRAGMENT, Models.GENERATED);
+
+        // Architect's Tools
+
+        itemModelGenerator.register(ModItems.CLIMBING_SPIDER_LEG, Models.HANDHELD_MACE);
+        itemModelGenerator.register(ModItems.MEASURING_TAPE, Models.GENERATED);
     }
 }
