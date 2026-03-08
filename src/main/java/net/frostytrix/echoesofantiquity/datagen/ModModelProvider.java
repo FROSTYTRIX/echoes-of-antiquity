@@ -20,7 +20,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSingleton(ModBlocks.PLACEHOLDER, TexturedModel.CUBE_COLUMN); // Comme ca je me rappelle les blocks column
 
         // Architect's tools
-        blockStateModelGenerator.registerSingleton(ModBlocks.UNCRAFTER, TexturedModel.CUBE_ALL);
+        blockStateModelGenerator.registerSingleton(ModBlocks.UNCRAFTER, TexturedModel.CUBE_BOTTOM_TOP);
     }
 
     @Override

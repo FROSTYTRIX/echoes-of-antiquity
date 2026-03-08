@@ -1,7 +1,5 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
-import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

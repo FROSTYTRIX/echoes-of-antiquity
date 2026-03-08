@@ -59,6 +59,11 @@
 * Used as an "anchor" for the **Static Pearl**
 * Right-click the Void Anchor with a **magenta dye** to change it's texture. You can **wash** the dye with a water bucket.
 
+### 🪚 Uncrafter ⚪
+* Takes items and blocks as inputs, outputs a **random** ingredient from its crafting **and** smelting recipes.
+* Will **not** output blocks/items that would allow for too big of a **duplication** (ex iron block from iron ingot)
+* Has no craft yet **[WIP]**
+
 ---
 
 ## Items

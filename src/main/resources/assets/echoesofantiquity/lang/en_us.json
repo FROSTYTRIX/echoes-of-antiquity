@@ -43,9 +43,11 @@
   "item.echoesofantiquity.climbing_spider_leg": "Climbing Spider Leg",
 
   "item.echoesofantiquity.measuring_tape": "Measuring Tape",
+
   "tooltip.echoesofantiquity.measuring_tape.first_pos": "§7The first block position is : §f",
   "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7The second block position is : §f",
   "tooltip.echoesofantiquity.measuring_tape.distance": "§7The §avector distance §7between both blocks is : §f",
   "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7The §aManhattan distance §7between both blocks is : §f",
+
   "block.echoesofantiquity.uncrafter": "Uncrafter"
 }

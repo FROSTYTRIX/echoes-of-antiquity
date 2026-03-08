@@ -29,6 +29,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.PLACEHOLDER);
         addDrop(ModBlocks.VOID_PEDESTAL);
+        addDrop(ModBlocks.UNCRAFTER);
     }
 
     public LootTable.Builder multipleOreDrops(Block withSilkTouch, Item withoutSilkTouch, float minDrops, float maxDrops) {

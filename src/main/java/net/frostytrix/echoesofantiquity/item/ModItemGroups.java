@@ -3,7 +3,6 @@ package net.frostytrix.echoesofantiquity.item;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

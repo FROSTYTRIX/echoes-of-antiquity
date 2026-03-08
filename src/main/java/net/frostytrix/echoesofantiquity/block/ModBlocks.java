@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -75,7 +76,7 @@ public class ModBlocks {
             });
 
     public static final Block UNCRAFTER = registerBlock("uncrafter",
-            new UncrafterBlock(AbstractBlock.Settings.create()));
+            new UncrafterBlock(AbstractBlock.Settings.create().strength(2.5F).sounds(BlockSoundGroup.WOOD).burnable().requiresTool()));
 
 
 

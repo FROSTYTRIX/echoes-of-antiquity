@@ -5,7 +5,6 @@ import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.VoidPedestalBERenderer;
 import net.frostytrix.echoesofantiquity.screen.ModScreenHandlers;
 import net.frostytrix.echoesofantiquity.screen.custom.UncrafterScreen;
-import net.frostytrix.echoesofantiquity.screen.custom.UncrafterScreenHandler;
 import net.frostytrix.echoesofantiquity.util.ModModelPredicates;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.block.entity.BlockEntityRendererFactories;

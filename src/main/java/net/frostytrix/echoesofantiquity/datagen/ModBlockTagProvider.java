@@ -20,6 +20,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 .add(ModBlocks.VOID_PEDESTAL)
                 ;
 
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.UNCRAFTER)
+                ;
+
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 ;
 
