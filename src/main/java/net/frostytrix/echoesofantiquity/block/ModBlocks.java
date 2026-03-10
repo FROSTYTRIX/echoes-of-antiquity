@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.block.custom.UncrafterBlock;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
+import net.frostytrix.echoesofantiquity.block.custom.WaystoneBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -77,6 +78,9 @@ public class ModBlocks {
 
     public static final Block UNCRAFTER = registerBlock("uncrafter",
             new UncrafterBlock(AbstractBlock.Settings.create().strength(2.5F).sounds(BlockSoundGroup.WOOD).burnable().requiresTool()));
+
+    public static final Block WAYSTONE = registerBlock("waystone",
+            new WaystoneBlock(AbstractBlock.Settings.create().nonOpaque().requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> state.get(WaystoneBlock.ACTIVE) ? 9 : 0)));
 
 
 

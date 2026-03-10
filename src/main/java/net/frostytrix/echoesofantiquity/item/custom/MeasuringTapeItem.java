@@ -73,7 +73,7 @@ public class MeasuringTapeItem extends Item {
             Vec3d newVec =  new Vec3d(firstPos.getX() - secondPos.getX(), firstPos.getY() - secondPos.getY(), firstPos.getZ() - secondPos.getZ());
             if (usedDistance.equals("vector_distance")) {
                 double distance = newVec.length();
-                String rounded = String.format("%.2f", distance);
+                String rounded = String.format("%.2f", distance + 1);
 
                 tooltip.add(Text.translatable("tooltip.echoesofantiquity.measuring_tape.distance").append(rounded));
             } else if  (usedDistance.equals("manhattan_distance")) {

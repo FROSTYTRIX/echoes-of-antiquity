@@ -47,4 +47,6 @@
   "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7La position du second bloc est : §f",
   "tooltip.echoesofantiquity.measuring_tape.distance": "§7La §adistance vectorielle §7entre les deux blocs est : §f",
   "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7La §adistance de Manhattan §7entre les deux blocs est : §f"
+
+
 }

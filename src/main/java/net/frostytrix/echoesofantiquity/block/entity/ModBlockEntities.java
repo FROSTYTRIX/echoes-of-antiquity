@@ -4,6 +4,7 @@ import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.block.entity.custom.UncrafterBlockEntity;
 import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
+import net.frostytrix.echoesofantiquity.block.entity.custom.WaystoneBlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -17,6 +18,10 @@ public class ModBlockEntities {
     public static final BlockEntityType<UncrafterBlockEntity> UNCRAFTER_BE =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, "uncrafter_be"),
                     BlockEntityType.Builder.create(UncrafterBlockEntity::new, ModBlocks.UNCRAFTER).build(null));
+
+    public static final BlockEntityType<WaystoneBlockEntity> WAYSTONE_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, "waystone_be"),
+                    BlockEntityType.Builder.create(WaystoneBlockEntity::new, ModBlocks.WAYSTONE).build(null));
 
 
 
