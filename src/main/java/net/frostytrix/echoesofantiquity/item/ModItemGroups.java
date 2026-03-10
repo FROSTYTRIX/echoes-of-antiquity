@@ -44,6 +44,7 @@ public class ModItemGroups {
                     .entries((displayContext, entries) -> {
                         entries.add(new ItemStack(ModItems.CLIMBING_SPIDER_LEG));
                         entries.add(new ItemStack(ModItems.MEASURING_TAPE));
+                        entries.add(new ItemStack(ModItems.INFINITE_WATER_BUCKET));
                         entries.add(new ItemStack(ModBlocks.UNCRAFTER));
                     }).build());
 

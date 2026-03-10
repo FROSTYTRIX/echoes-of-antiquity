@@ -49,5 +49,7 @@
   "tooltip.echoesofantiquity.measuring_tape.distance": "§7The §avector distance §7between both blocks is : §f",
   "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7The §aManhattan distance §7between both blocks is : §f",
 
-  "block.echoesofantiquity.uncrafter": "Uncrafter"
+  "block.echoesofantiquity.uncrafter": "Uncrafter",
+
+  "item.echoesofantiquity.infinite_water_bucket": "Infinite Water Bucket"
 }

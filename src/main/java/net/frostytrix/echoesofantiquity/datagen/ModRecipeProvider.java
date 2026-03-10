@@ -102,6 +102,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern("ICI" )
                 .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
                 .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.INFINITE_WATER_BUCKET)
+                .input('I', ModItems.END_STEEL_INGOT)
+                .input('H', Items.HEART_OF_THE_SEA)
+                .pattern("IHI")
+                .pattern(" I ")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
     }
 
     public void offerSwordRecipe(RecipeExporter recipeExporter, RecipeCategory category, ItemConvertible output, ItemConvertible stick, ItemConvertible material){

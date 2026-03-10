@@ -2,10 +2,7 @@ package net.frostytrix.echoesofantiquity.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
-import net.frostytrix.echoesofantiquity.item.custom.DragonBowItem;
-import net.frostytrix.echoesofantiquity.item.custom.MeasuringTapeItem;
-import net.frostytrix.echoesofantiquity.item.custom.SoulSiphonItem;
-import net.frostytrix.echoesofantiquity.item.custom.StaticPearlItem;
+import net.frostytrix.echoesofantiquity.item.custom.*;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -47,7 +44,10 @@ public class ModItems{
     // Architect's Tools
 
     public static final Item CLIMBING_SPIDER_LEG = registerItem("climbing_spider_leg", new Item(new Item.Settings().maxCount(1)));
+
     public static final Item MEASURING_TAPE = registerItem("measuring_tape", new MeasuringTapeItem(new Item.Settings().maxCount(1)));
+
+    public static final Item INFINITE_WATER_BUCKET = registerItem("infinite_water_bucket", new InfiniteWaterBucketItem(new Item.Settings().maxCount(1)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(EchoesOfAntiquity.MOD_ID, name), item);

@@ -1,16 +1,16 @@
-// 1.21	2026-03-08T21:42:11.320282048	Echoes of Antiquity/Tags for minecraft:item
-5501f7a6ed62ef421119969bb73473ca44d36235 data/echoesofantiquity/tags/item/glass_panes.json
-cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/enchantable/foot_armor.json
+// 1.21	2026-03-10T13:29:50.107820874	Echoes of Antiquity/Tags for minecraft:item
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/hoes.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trimmable_armor.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/shovels.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trim_materials.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/head_armor.json
 5bab807ca72fce9a100f9bdc1a97a31c4dfad583 data/minecraft/tags/item/swords.json
-973669c8e1969d1b411776f65dfa50a4e4a9562c data/minecraft/tags/item/enchantable/bow.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/pickaxes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trim_templates.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/leg_armor.json
-cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/dampens_vibrations.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/chest_armor.json
+5501f7a6ed62ef421119969bb73473ca44d36235 data/echoesofantiquity/tags/item/glass_panes.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trimmable_armor.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/axes.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/head_armor.json
+cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/dampens_vibrations.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trim_materials.json
+cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/enchantable/foot_armor.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/chest_armor.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/shovels.json
+973669c8e1969d1b411776f65dfa50a4e4a9562c data/minecraft/tags/item/enchantable/bow.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/pickaxes.json
