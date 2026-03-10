@@ -1,12 +1,20 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.block.FluidDrainable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
 public class InfiniteWaterBucketItem extends BucketItem {
@@ -23,29 +31,33 @@ public class InfiniteWaterBucketItem extends BucketItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        // 1. Create our backup copy to prevent the item from deleting itself
-        ItemStack stackToKeep = user.getStackInHand(hand).copy();
+        ItemStack stackToKeep = user.getStackInHand(hand);
 
-        // 2. Check if the player is holding Shift (sneaking)
         if (user.isSneaking()) {
+            // 1. Shoot a raycast looking ONLY for fluids
+            BlockHitResult hitResult = raycast(world, user, RaycastContext.FluidHandling.SOURCE_ONLY);
 
-            // Delegate the action to the vanilla EMPTY bucket.
-            // This handles the raycasting, removing the water block, and playing the slurp sound!
-            TypedActionResult<ItemStack> pickupResult = Items.BUCKET.use(world, user, hand);
+            if (hitResult.getType() == HitResult.Type.BLOCK) {
+                BlockPos pos = hitResult.getBlockPos();
+                BlockState state = world.getBlockState(pos);
 
-            // If it successfully picked up water...
-            if (pickupResult.getResult().isAccepted()) {
-                // Return our infinite bucket so the game doesn't hand the player a normal water bucket
-                return TypedActionResult.success(stackToKeep, world.isClient());
+                // 2. Check if the block is a fluid that can be drained
+                if (state.getBlock() instanceof FluidDrainable drainable) {
+                    // 3. Drain it!
+                    ItemStack drained = drainable.tryDrainFluid(user, world, pos, state);
+
+                    if (!drained.isEmpty()) {
+                        // Play the slurp sound manually
+                        world.playSound(user, pos, SoundEvents.ITEM_BUCKET_FILL, SoundCategory.BLOCKS, 1.0f, 1.0f);
+                        return TypedActionResult.success(stackToKeep, world.isClient());
+                    }
+                }
             }
-
-            // If they shift-clicked the air, just pass
             return TypedActionResult.pass(stackToKeep);
         }
 
-        // 3. Normal behavior (Not sneaking) - place water
+        // Normal behavior (Not sneaking) - place water
         TypedActionResult<ItemStack> placeResult = super.use(world, user, hand);
-
         if (placeResult.getResult().isAccepted()) {
             return TypedActionResult.success(stackToKeep, world.isClient());
         }
