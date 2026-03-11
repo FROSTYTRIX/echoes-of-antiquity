@@ -49,5 +49,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CLIMBING_SPIDER_LEG, Models.HANDHELD_MACE);
         itemModelGenerator.register(ModItems.MEASURING_TAPE, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_WATER_BUCKET, Models.GENERATED);
+        itemModelGenerator.register(ModItems.LEVEL, Models.GENERATED);
     }
 }

@@ -20,6 +20,7 @@ public class EchoesOfAntiquityClient implements ClientModInitializer {
 
         BlockEntityRendererFactories.register(ModBlockEntities.WAYSTONE_BE, WaystoneBERenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WAYSTONE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GRAVITY_ANCHOR, RenderLayer.getCutout());
 
         ModModelPredicates.registerModelPredicate();
 

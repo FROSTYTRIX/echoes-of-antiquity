@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.block.custom.GravityAnchorBlock;
 import net.frostytrix.echoesofantiquity.block.custom.UncrafterBlock;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.frostytrix.echoesofantiquity.block.custom.WaystoneBlock;
@@ -81,6 +82,12 @@ public class ModBlocks {
 
     public static final Block WAYSTONE = registerBlock("waystone",
             new WaystoneBlock(AbstractBlock.Settings.create().nonOpaque().requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> state.get(WaystoneBlock.ACTIVE) ? 9 : 0)));
+
+    public static final Block GRAVITY_ANCHOR = registerBlock("gravity_anchor",
+            new GravityAnchorBlock(AbstractBlock.Settings.create().nonOpaque().sounds(BlockSoundGroup.METAL).luminance(state -> state.get(GravityAnchorBlock.ACTIVE) ? 6 : 0)));
+
+
+
 
 
 

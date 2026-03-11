@@ -12,6 +12,7 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_END_STEEL_TOOL = createTag("needs_end_steel_tool");
         public static final TagKey<Block> INCORRECT_FOR_END_STEEL_TOOL = createTag("incorrect_for_end_steel_tool");
+        public static final TagKey<Block> NATURAL_BLOCKS_LEVEL = createTag("natural_blocks_level");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(EchoesOfAntiquity.MOD_ID, name));

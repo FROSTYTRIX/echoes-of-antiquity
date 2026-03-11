@@ -10,6 +10,7 @@ import net.frostytrix.echoesofantiquity.item.ModItemGroups;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.frostytrix.echoesofantiquity.potion.ModPotions;
 import net.frostytrix.echoesofantiquity.screen.ModScreenHandlers;
+import net.frostytrix.echoesofantiquity.sound.ModSounds;
 import net.frostytrix.echoesofantiquity.util.ModLootTableModifiers;
 import net.minecraft.item.Items;
 import net.minecraft.potion.Potions;
@@ -31,6 +32,7 @@ public class EchoesOfAntiquity implements ModInitializer {
 		ModDataComponentTypes.registerDataComponents();
 		ModLootTableModifiers.modifyLootTables();
 		ModScreenHandlers.registerScreenHandlers();
+		ModSounds.registerSounds();
 
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Items.POPPED_CHORUS_FRUIT, ModPotions.PHASING_POTION);

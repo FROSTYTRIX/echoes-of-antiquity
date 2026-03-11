@@ -1,0 +1,11 @@
+{
+  "gravity_anchor_active" : {
+    "subtitle": "sounds.echoesofantiquity.gravity_anchor_active",
+    "sounds": [
+      {
+        "name": "echoesofantiquity:gravity_anchor_active",
+        "stream": true
+      }
+    ]
+  }
+}

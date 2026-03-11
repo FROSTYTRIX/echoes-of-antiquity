@@ -16,6 +16,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
@@ -59,6 +60,30 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input(Ingredient.ofItems(Items.ENDER_PEARL))
                 .criterion(hasItem(Items.POPPED_CHORUS_FRUIT), conditionsFromItem(Items.POPPED_CHORUS_FRUIT))
                 .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DRAGON_BOW)
+                .input('S', Items.STICK)
+                .input('s', Items.STRING)
+                .input('O', Blocks.OBSIDIAN)
+                .input('L', ModItems.VOID_TREATED_LEATHER)
+                .input('I', ModItems.END_STEEL_INGOT)
+                .pattern("LSs")
+                .pattern("O I")
+                .pattern("LSs")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.DRAGON_BOW)
+                .input('S', Items.STICK)
+                .input('s', Items.STRING)
+                .input('O', Blocks.OBSIDIAN)
+                .input('L', ModItems.VOID_TREATED_LEATHER)
+                .input('I', ModItems.END_STEEL_INGOT)
+                .pattern("sSL")
+                .pattern("I O")
+                .pattern("sSL")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "dragon_bow_flipped"));
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.VOID_PEDESTAL)
                 .input('O', Blocks.OBSIDIAN)
@@ -108,6 +133,46 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('H', Items.HEART_OF_THE_SEA)
                 .pattern("IHI")
                 .pattern(" I ")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.GRAVITY_ANCHOR)
+                .input('I', ModItems.END_STEEL_INGOT)
+                .input('L', Blocks.LODESTONE)
+                .input('O', Blocks.OBSIDIAN)
+                .input('E', Items.ECHO_SHARD)
+                .pattern("IEI")
+                .pattern("ILI")
+                .pattern("IOI")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.UNCRAFTER)
+                .input('I', ModItems.END_STEEL_INGOT)
+                .input('P', ItemTags.PLANKS)
+                .input('R', Items.RECOVERY_COMPASS)
+                .pattern(" II")
+                .pattern(" RP")
+                .pattern(" PP")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.UNCRAFTER)
+                .input('I', ModItems.END_STEEL_INGOT)
+                .input('P', ItemTags.PLANKS)
+                .input('R', Items.RECOVERY_COMPASS)
+                .pattern("II ")
+                .pattern("PR ")
+                .pattern("PP ")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "uncrafter_recovery_compass_on_right"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.LEVEL)
+                .input('I', ModItems.END_STEEL_INGOT)
+                .input('G', Items.GOLD_INGOT)
+                .input('C', Items.COMPASS)
+                .pattern(" C ")
+                .pattern("GIG")
                 .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
                 .offerTo(recipeExporter);
     }

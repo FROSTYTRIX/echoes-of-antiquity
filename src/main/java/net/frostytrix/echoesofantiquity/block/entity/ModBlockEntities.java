@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.block.entity;
 
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
+import net.frostytrix.echoesofantiquity.block.entity.custom.GravityAnchorBlockEntity;
 import net.frostytrix.echoesofantiquity.block.entity.custom.UncrafterBlockEntity;
 import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
 import net.frostytrix.echoesofantiquity.block.entity.custom.WaystoneBlockEntity;
@@ -22,6 +23,12 @@ public class ModBlockEntities {
     public static final BlockEntityType<WaystoneBlockEntity> WAYSTONE_BE =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, "waystone_be"),
                     BlockEntityType.Builder.create(WaystoneBlockEntity::new, ModBlocks.WAYSTONE).build(null));
+
+    public static final BlockEntityType<GravityAnchorBlockEntity> GRAVITY_ANCHOR_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, "gravity_anchor_be"),
+                    BlockEntityType.Builder.create(GravityAnchorBlockEntity::new, ModBlocks.GRAVITY_ANCHOR).build(null));
+
+
 
 
 

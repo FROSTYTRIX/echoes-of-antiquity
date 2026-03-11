@@ -45,9 +45,11 @@ public class ModItemGroups {
                         entries.add(new ItemStack(ModItems.CLIMBING_SPIDER_LEG));
                         entries.add(new ItemStack(ModItems.MEASURING_TAPE));
                         entries.add(new ItemStack(ModItems.INFINITE_WATER_BUCKET));
+                        entries.add(new ItemStack(ModItems.LEVEL));
                         entries.add(new ItemStack(ModItems.ANCIENT_SCRIP));
                         entries.add(new ItemStack(ModBlocks.UNCRAFTER));
                         entries.add(new ItemStack(ModBlocks.WAYSTONE));
+                        entries.add(new ItemStack(ModBlocks.GRAVITY_ANCHOR));
                     }).build());
 
 

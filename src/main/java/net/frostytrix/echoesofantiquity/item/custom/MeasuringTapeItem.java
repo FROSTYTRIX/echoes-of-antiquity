@@ -17,7 +17,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.List;
-import java.util.Map;
 
 public class MeasuringTapeItem extends Item {
 

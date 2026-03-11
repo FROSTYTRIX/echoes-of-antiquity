@@ -52,5 +52,8 @@
   "block.echoesofantiquity.uncrafter": "Uncrafter",
   "block.echoesofantiquity.waystone": "Waystone",
 
+  "block.echoesofantiquity.gravity_anchor": "Gravity Anchor",
+  "sounds.echoesofantiquity.gravity_anchor_active": "Gravity Anchor Hum",
+
   "item.echoesofantiquity.infinite_water_bucket": "Infinite Water Bucket"
 }

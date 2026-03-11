@@ -11,7 +11,9 @@
       "ExampleMixin",
       "FovDragonBowMixin",
       "PlayerClimbingMixin",
-      "ShulkerTeleportMixin"
+      "ShulkerTeleportMixin",
+      "FallingBlockEntityMixin",
+      "FallingBlockMixin"
     ],
 	"injectors": {
 		"defaultRequire": 1

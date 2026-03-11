@@ -49,6 +49,8 @@ public class ModItems{
 
     public static final Item INFINITE_WATER_BUCKET = registerItem("infinite_water_bucket", new InfiniteWaterBucketItem(new Item.Settings().maxCount(1)));
 
+    public static final Item LEVEL = registerItem("level", new ArchitectsLevelItem(new Item.Settings().maxCount(1).maxDamage(2000)));
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(EchoesOfAntiquity.MOD_ID, name), item);
     }

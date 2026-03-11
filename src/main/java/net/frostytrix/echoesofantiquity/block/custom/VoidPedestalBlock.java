@@ -22,6 +22,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import org.jetbrains.annotations.Nullable;
 
 public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityProvider {
@@ -114,5 +115,10 @@ public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityPro
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         // This "registers" the property to this specific block
         builder.add(ACTIVE);
+    }
+
+    @Override
+    public void onBroken(WorldAccess world, BlockPos pos, BlockState state) {
+        state.with(ACTIVE, false);
     }
 }
