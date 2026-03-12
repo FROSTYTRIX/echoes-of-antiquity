@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.util;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTables;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
@@ -23,6 +24,33 @@ public class ModLootTableModifiers {
                         .with(ItemEntry.builder(ModItems.CLIMBING_SPIDER_LEG))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 1.0F)).build());
             tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (LootTables.PILLAGER_OUTPOST_CHEST.equals(key)){
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.05F))
+                        .with(ItemEntry.builder(ModItems.SOUL_FRAGMENT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (LootTables.WOODLAND_MANSION_CHEST.equals(key)){
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.07F))
+                        .with(ItemEntry.builder(ModItems.SOUL_FRAGMENT))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)).build());
+                tableBuilder.pool(poolBuilder.build());
+            }
+
+            if (LootTables.WOODLAND_MANSION_CHEST.equals(key)){
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .rolls(ConstantLootNumberProvider.create(1))
+                        .conditionally(RandomChanceLootCondition.builder(0.03F))
+                        .with(ItemEntry.builder(ModItems.SOUL_SIPHON))
+                        .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 1.0F)).build());
+                tableBuilder.pool(poolBuilder.build());
             }
         });
     }
