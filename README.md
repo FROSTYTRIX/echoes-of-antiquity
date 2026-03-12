@@ -10,6 +10,9 @@
 ---
 
 ## 🛠 Materials & Ingredients
+<details> 
+  <summary> Spoiler </summary>
+
 
 ### 🌑 End Steel Ingot 🟣
 * A core material for advanced crafting.
@@ -21,11 +24,12 @@
 
 ### 📜 Ancient Scrip ⚪
 * An ancient material used in crafting.
-
+</details>
 ---
 
 ## ⚔️ Weaponry
-
+<details> 
+  <summary> Spoiler </summary>
 ### 🏹 Dragon Bow 🟣
 * A powerful long-range weapon.
 * Shoots with **twice the velocity** of the vanilla bow and is **more precise**
@@ -42,11 +46,13 @@
 ### 🗡️ Soul Siphon 🔵
 * Has the **same** Attack Damage as a **Stone Sword** but with an **2.6** Attack Speed
 * Entities killed by the **Soul Siphon** will drop a **Soul Fragment**
-
+  </details>
 ---
 
 ## ⬛ Blocks
-
+<details> 
+  <summary> Spoiler </summary>
+   
 ### 👣 Ender Boots 🟣
 * Grants stealth by stopping vibration signals (Sculk sensors won't detect you).
 * **Recipe:** Combine Leather Boots with Void Treated Leather at a Smithing Table.
@@ -75,11 +81,13 @@
 * **Activation:** Powered by Redstone.
 * **Effect:** When active, it projects an energy field in a **10-block radius** that freezes falling blocks (like Sand or Gravel) in mid-air.
 * **Sound Effect:** Humming sound when activated
-
+  </details>
 ---
 
 ## Items
-
+<details> 
+  <summary> Spoiler </summary>
+   
 ### 🔘 Static Pearl 🟣
 * **Mechanics:** Use once on a Void Anchor to link it to **this** Static Pearl, use again to instantly teleport back to it.
 * **Shift + Right-Click** on a new Void Anchor to change which the Pearl is linked to
@@ -112,7 +120,7 @@
 ### 🥽 Obsidian Goggles 🟣
 * Crafted with Obsidian, Glass Panes, and a Static Pearl.
 * Allows the player **to look at Endermen** without angering them. Unlike **Carved Pumpkin**, it **won't** partially cover your view.
-
+</details>
 ---
 
 ## ✨ Potions & Effects 🥛
