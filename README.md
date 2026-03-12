@@ -19,6 +19,9 @@
 * Leather infused with End energies.
 * **Recipe:** 1 Leather and 4 Chorus Fruits in a cross pattern.
 
+### 📜 Ancient Scrip ⚪
+* An ancient material used in crafting.
+
 ---
 
 ## ⚔️ Weaponry
@@ -48,7 +51,7 @@
 * Grants stealth by stopping vibration signals (Sculk sensors won't detect you).
 * **Recipe:** Combine Leather Boots with Void Treated Leather at a Smithing Table.
 
-### Void Pedestal 🟣
+### 🔮 Void Pedestal 🟣
 * Allows the player to showcase one item.
 * Prevents teleportation within a **20-block radius** when active.
 * **Activation:** Place an **Ender Eye** inside.
@@ -57,12 +60,21 @@
 
 ### ⚓ Void Anchor 🟣
 * Used as an "anchor" for the **Static Pearl**
-* Right-click the Void Anchor with a **magenta dye** to change it's texture. You can **wash** the dye with a water bucket.
+* Right-click the Void Anchor with a **magenta dye** to change its texture. You can **wash** the dye with a water bucket.
 
 ### 🪚 Uncrafter ⚪
 * Takes items and blocks as inputs, outputs a **random** ingredient from its crafting **and** smelting recipes.
 * Will **not** output blocks/items that would allow for too big of a **duplication** (ex iron block from iron ingot)
-* Has no craft yet **[WIP]**
+
+### 🪨 Waystone ⚪
+* A teleportation marker.
+* **Activation:** Right-click with **10 Soul Fragments** to activate it.
+* Remembers the player who placed/activated it and will tp them back if health gets under 2.5 hearts
+
+### 🧲 Gravity Anchor ⚪
+* **Activation:** Powered by Redstone.
+* **Effect:** When active, it projects an energy field in a **10-block radius** that freezes falling blocks (like Sand or Gravel) in mid-air.
+* **Sound Effect:** Humming sound when activated
 
 ---
 
@@ -74,7 +86,7 @@
 * Can be used **20 times**
 
 ### 🧿 Soul Fragments 🔵
-* No use yet.
+* Used to activate **Waystones** (Costs 10 fragments).
 
 ### 🕷️ Climbing Spider Leg ⚪
 * Allows any player holding this item (main hand or offhand) to climb walls just like a spider
@@ -82,16 +94,20 @@
 
 ### 📏 Measuring Tape ⚪
 * Right-Click a block to set its position has the starting point for the measure.
-
 * Shift + Right-Click a block to set its position has the ending point for the measure.
-
-
-Shift + Right-Click in the air to change the distance calculation method
-
+* Shift + Right-Click in the air to change the distance calculation method.
 * Has 2 distance calculations method :
-* * Vector distance : Calculates the norm of the vector linking both blocks.
-* * Manhattan distance : Calculates the distance between both blocks while staying on the block grid.
+    * Vector distance : Calculates the norm of the vector linking both blocks.
+    * Manhattan distance : Calculates the distance between both blocks while staying on the block grid.
 
+### 🪣 Infinite Water Bucket ⚪
+* Places water just like a normal bucket.
+* **Mechanics:** **Shift + Right-Click** directly on a fluid block to drain/absorb it.
+
+### 📐 Level (Architect's Level) ⚪
+* **Mechanics:** Right-click a block to instantly flatten a **3x3 area** around it.
+* It will automatically shave off up to 2 blocks above the target level.
+* It will automatically fill in holes using **Dirt** from your inventory.
 
 ### 🥽 Obsidian Goggles 🟣
 * Crafted with Obsidian, Glass Panes, and a Static Pearl.

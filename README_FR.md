@@ -19,6 +19,9 @@
 * Du cuir imprégné des énergies de l'End.
 * **Recette :** 1 Cuir et 4 Fruits de chorus disposés en forme de croix.
 
+### 📜 Écrit Ancien ⚪
+* Un matériau ancien utilisé dans l'artisanat.
+
 ---
 
 ## ⚔️ Armement
@@ -48,7 +51,7 @@
 * Confère de la furtivité en arrêtant les signaux de vibration (les Capteurs sculk ne vous détecteront pas).
 * **Recette :** Combinez des Bottes en cuir avec du Cuir Traité par le Néant dans une Table de forgeron.
 
-### Piédestal du Néant 🟣
+### 🔮 Piédestal du Néant 🟣
 * Permet au joueur d'exposer un objet.
 * Empêche la téléportation dans un **rayon de 20 blocs** lorsqu'il est actif.
 * **Activation :** Placez un **Œil de l'Ender** à l'intérieur.
@@ -58,6 +61,19 @@
 ### ⚓ Ancre du Vide 🟣
 * Utilisée comme une "ancre" pour la **Perle Statique**.
 * Faites un clic droit sur l'Ancre du Vide avec une **teinture magenta** pour changer sa texture. Vous pouvez **laver** la teinture avec un seau d'eau.
+
+### 🪚 Décrafteur ⚪
+* Prend des objets et blocs en entrée, et donne un ingrédient **aléatoire** issu de ses recettes de fabrication **et** de cuisson.
+* Ne produira **pas** de blocs/objets permettant une trop grande **duplication** (ex: pas de bloc de fer à partir d'un lingot).
+
+### 🪨 Pierre de Téléportation (Waystone) ⚪
+* Un point de repère pour la téléportation.
+* **Activation :** Faites un clic droit avec **10 Fragments d'Âme** pour l'activer.
+* Enregistre le joueur qui l'a placée/activée et le téléportera a la position de la Pierre si sa vie tombe sous 2,5 cœurs.
+
+### 🧲 Ancre de Gravité ⚪
+* **Activation :** Alimentée par la Redstone.
+* **Effet :** Lorsqu'elle est active, projette un champ d'énergie dans un **rayon de 10 blocs** qui fige les blocs soumis à la gravité (comme le Sable ou le Gravier) en plein vol.
 
 ---
 
@@ -69,7 +85,7 @@
 * Peut être utilisée **20 fois**.
 
 ### 🧿 Fragments d'Âme 🔵
-* Aucune utilité pour le moment.
+* Utilisés pour activer les **Pierres de Téléportation** (Coût : 10 fragments).
 
 ### 🕷️ Patte d'Araignée Grimpante ⚪
 * Permet à tout joueur tenant cet objet (main principale ou secondaire) de grimper aux murs comme une araignée.
@@ -78,12 +94,19 @@
 ### 📏 Mètre Ruban ⚪
 * Faites un clic droit sur un bloc pour définir sa position comme point de départ de la mesure.
 * Faites **Shift + Clic droit** sur un bloc pour définir sa position comme point d'arrivée de la mesure.
-
-Faites **Shift + Clic droit** en l'air pour changer la méthode de calcul de la distance.
-
+* Faites **Shift + Clic droit** en l'air pour changer la méthode de calcul de la distance.
 * Possède 2 méthodes de calcul de distance :
-    * Distance vectorielle : Calcule la norme du vecteur reliant les deux blocs.
-    * Distance de Manhattan : Calcule la distance entre les deux blocs tout en restant sur la grille des blocs.
+  * Distance vectorielle : Calcule la norme du vecteur reliant les deux blocs.
+  * Distance de Manhattan : Calcule la distance entre les deux blocs tout en restant sur la grille des blocs.
+
+### 🪣 Seau d'Eau Infini ⚪
+* Place de l'eau comme un seau normal.
+* **Mécaniques :** Faites **Shift + Clic droit** directement sur un bloc de fluide pour le drainer/absorber.
+
+### 📐 Niveau (Niveau d'Architecte) ⚪
+* **Mécaniques :** Faites un clic droit sur un bloc pour aplanir instantanément une **zone de 3x3** autour de lui.
+* Il rasera automatiquement jusqu'à 2 blocs au-dessus du niveau ciblé.
+* Il comblera automatiquement les trous en utilisant la **Terre** (Dirt) de votre inventaire.
 
 ### 🥽 Lunettes d'Obsidienne 🟣
 * Fabriquées avec de l'Obsidienne, des Vitres et une Perle Statique.
