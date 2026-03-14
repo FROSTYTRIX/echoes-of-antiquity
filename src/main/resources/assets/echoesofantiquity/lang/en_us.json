@@ -56,5 +56,10 @@
   "sounds.echoesofantiquity.gravity_anchor_active": "Gravity Anchor Hum",
 
   "item.echoesofantiquity.infinite_water_bucket": "Infinite Water Bucket",
-  "item.echoesofantiquity.level": "Level"
+  "item.echoesofantiquity.level": "Level",
+
+
+
+  "tag.item.echoesofantiquity.glass_panes" : "Glass Panes",
+  "tag.item.echoesofantiquity.all_stones" : "All Stones"
 }

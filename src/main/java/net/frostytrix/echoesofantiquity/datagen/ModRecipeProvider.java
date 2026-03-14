@@ -147,6 +147,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
                 .offerTo(recipeExporter);
 
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.WAYSTONE)
+                .input('S', ModTags.Items.ALL_STONES)
+                .input('L', Blocks.LAPIS_BLOCK)
+                .input('E', Items.ENDER_PEARL)
+                .pattern("SES")
+                .pattern("SLS")
+                .pattern("SES")
+                .criterion(hasItem(Items.LAPIS_LAZULI), conditionsFromItem(Items.LAPIS_LAZULI))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.UNCRAFTER)
                 .input('I', ModItems.END_STEEL_INGOT)
                 .input('P', ItemTags.PLANKS)

@@ -1,4 +1,4 @@
-# Echoes of Antiquity
+![Mod's name render](https://cdn.modrinth.com/data/cached_images/7d29b0b770afb8224c6639f2f6702ee69e98cb94.png)
 
 [🇫🇷 Voir le README en Français](./README_FR.md)
 
@@ -10,6 +10,9 @@
 ---
 
 ## 🛠 Materials & Ingredients
+<details> 
+  <summary> Spoiler </summary>
+
 
 ### 🌑 End Steel Ingot 🟣
 * A core material for advanced crafting.
@@ -21,11 +24,13 @@
 
 ### 📜 Ancient Scrip ⚪
 * An ancient material used in crafting.
+</details>
 
 ---
 
 ## ⚔️ Weaponry
-
+<details> 
+  <summary> Spoiler </summary>
 ### 🏹 Dragon Bow 🟣
 * A powerful long-range weapon.
 * Shoots with **twice the velocity** of the vanilla bow and is **more precise**
@@ -42,10 +47,13 @@
 ### 🗡️ Soul Siphon 🔵
 * Has the **same** Attack Damage as a **Stone Sword** but with an **2.6** Attack Speed
 * Entities killed by the **Soul Siphon** will drop a **Soul Fragment**
+  </details>
 
 ---
 
 ## ⬛ Blocks
+<details> 
+  <summary> Spoiler </summary>
 
 ### 👣 Ender Boots 🟣
 * Grants stealth by stopping vibration signals (Sculk sensors won't detect you).
@@ -75,10 +83,13 @@
 * **Activation:** Powered by Redstone.
 * **Effect:** When active, it projects an energy field in a **10-block radius** that freezes falling blocks (like Sand or Gravel) in mid-air.
 * **Sound Effect:** Humming sound when activated
+  </details>
 
 ---
 
 ## Items
+<details> 
+  <summary> Spoiler </summary>
 
 ### 🔘 Static Pearl 🟣
 * **Mechanics:** Use once on a Void Anchor to link it to **this** Static Pearl, use again to instantly teleport back to it.
@@ -97,8 +108,8 @@
 * Shift + Right-Click a block to set its position has the ending point for the measure.
 * Shift + Right-Click in the air to change the distance calculation method.
 * Has 2 distance calculations method :
-    * Vector distance : Calculates the norm of the vector linking both blocks.
-    * Manhattan distance : Calculates the distance between both blocks while staying on the block grid.
+  * Vector distance : Calculates the norm of the vector linking both blocks.
+  * Manhattan distance : Calculates the distance between both blocks while staying on the block grid.
 
 ### 🪣 Infinite Water Bucket ⚪
 * Places water just like a normal bucket.
@@ -112,6 +123,8 @@
 ### 🥽 Obsidian Goggles 🟣
 * Crafted with Obsidian, Glass Panes, and a Static Pearl.
 * Allows the player **to look at Endermen** without angering them. Unlike **Carved Pumpkin**, it **won't** partially cover your view.
+
+</details>
 
 ---
 

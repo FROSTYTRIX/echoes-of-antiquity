@@ -1,4 +1,4 @@
-// 1.21	2026-03-12T00:11:04.710361196	Echoes of Antiquity/Model Definitions
+// 1.21	2026-03-14T14:06:59.150836268	Echoes of Antiquity/Model Definitions
 2e5863f9e8f23bc9540eb5b15de1f8d443d71ba6 assets/echoesofantiquity/models/block/placeholder.json
 184c92687b12391bb83d5830fc9392ff696854b7 assets/echoesofantiquity/models/item/obsidian_goggles_diamond_trim.json
 fdc4139b49ac7d227012614579288d8c36e540b5 assets/echoesofantiquity/models/item/measuring_tape.json
@@ -11,8 +11,8 @@ a8b105f2f667fc128e50067af08ec170f939df5a assets/echoesofantiquity/models/item/en
 09dfe24de7c57382cc56b4d780646ce18ea99760 assets/echoesofantiquity/models/item/uncrafter.json
 ad4f6786ee46da7d8360e690f084c806825183fe assets/echoesofantiquity/models/item/ender_boots_emerald_trim.json
 8796baeb29999f10885aead6c5ab4d75681b4878 assets/echoesofantiquity/blockstates/uncrafter.json
-dd60607d6496d2a2256c7ce2b84d4d73fb2e63e0 assets/echoesofantiquity/models/item/void_treated_leather.json
 67e45477f8770bf45dfaef540f714a925377c759 assets/echoesofantiquity/models/item/ender_boots_quartz_trim.json
+dd60607d6496d2a2256c7ce2b84d4d73fb2e63e0 assets/echoesofantiquity/models/item/void_treated_leather.json
 346ce4c37ce626307e1f6df9c9ccf7ab25f27937 assets/echoesofantiquity/blockstates/placeholder.json
 9da4accce2500a4bcbb4e333eebfbff415d493e3 assets/echoesofantiquity/models/item/ender_boots_netherite_trim.json
 c4804f27ef4be8cd31bcd55fefac7914d72303de assets/echoesofantiquity/models/item/soul_siphon.json

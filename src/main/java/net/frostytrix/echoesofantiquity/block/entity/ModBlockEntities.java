@@ -2,10 +2,7 @@ package net.frostytrix.echoesofantiquity.block.entity;
 
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
-import net.frostytrix.echoesofantiquity.block.entity.custom.GravityAnchorBlockEntity;
-import net.frostytrix.echoesofantiquity.block.entity.custom.UncrafterBlockEntity;
-import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
-import net.frostytrix.echoesofantiquity.block.entity.custom.WaystoneBlockEntity;
+import net.frostytrix.echoesofantiquity.block.entity.custom.*;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -28,9 +25,9 @@ public class ModBlockEntities {
             Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, "gravity_anchor_be"),
                     BlockEntityType.Builder.create(GravityAnchorBlockEntity::new, ModBlocks.GRAVITY_ANCHOR).build(null));
 
-
-
-
+    public static final BlockEntityType<SieveBlockEntity> SIEVE_BE =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, "sieve_be"),
+                    BlockEntityType.Builder.create(SieveBlockEntity::new, ModBlocks.SIEVE).build(null));
 
 
     public static void registerBlockEntities() {

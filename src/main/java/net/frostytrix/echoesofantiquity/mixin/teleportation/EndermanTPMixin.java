@@ -1,4 +1,4 @@
-package net.frostytrix.echoesofantiquity.mixin;
+package net.frostytrix.echoesofantiquity.mixin.teleportation;
 
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
@@ -10,6 +10,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -38,6 +39,7 @@ public class EndermanTPMixin {
         }
     }
 
+    @Unique
     private BlockPos findNearestActiveAnchor(Entity entity) {
         BlockPos pos = entity.getBlockPos();
         int r = VoidPedestalBlockEntity.noTPRadius; // Use the same radius as your BlockEntity

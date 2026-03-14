@@ -16,7 +16,7 @@ import org.joml.Matrix4f;
 
 public class WaystoneBERenderer implements BlockEntityRenderer<WaystoneBlockEntity> {
     // Target the texture file directly
-    private static final Identifier GLOW_TEXTURE = Identifier.of(EchoesOfAntiquity.MOD_ID, "textures/block/waystone_glow.png");
+    private static final Identifier GLOW_TEXTURE = Identifier.of(EchoesOfAntiquity.MOD_ID, "textures/block/waystone_glow_e.png");
 
     public WaystoneBERenderer(BlockEntityRendererFactory.Context context) {}
 

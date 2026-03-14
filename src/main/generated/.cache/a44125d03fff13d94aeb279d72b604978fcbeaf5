@@ -1,9 +1,9 @@
-// 1.21	2026-03-12T00:11:04.709191437	Echoes of Antiquity/Tags for minecraft:block
-a3b06cbcac5a02e2055ff4762e280b7b9df73771 data/minecraft/tags/block/mineable/pickaxe.json
+// 1.21	2026-03-14T14:06:59.150153232	Echoes of Antiquity/Tags for minecraft:block
+9c30b0c2743a2ce7c98edf2cb71a58e226cb9135 data/minecraft/tags/block/mineable/pickaxe.json
 a3b06cbcac5a02e2055ff4762e280b7b9df73771 data/minecraft/tags/block/needs_diamond_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/fence_gates.json
 32f5bc1cd44dc5b98c50ead1a7ce9cd07bcdf7b6 data/echoesofantiquity/tags/block/natural_blocks_level.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/fences.json
 eac30b9f55e55181265cf99609078482f90b1e8a data/minecraft/tags/block/mineable/axe.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/needs_iron_tool.json
+8a5fda4fe6157b0fb1380985dbc68dbbfcf6b1cf data/minecraft/tags/block/needs_iron_tool.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/block/walls.json

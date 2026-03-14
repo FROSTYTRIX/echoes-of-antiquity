@@ -46,10 +46,8 @@ public class WaystoneBlock extends BlockWithEntity implements BlockEntityProvide
     }
 
     public WaystoneBlock(Settings settings) {
-        super(settings.emissiveLighting((state, world, pos) -> {
-            // This checks the 'ACTIVE' property you added to the block
-            return state.get(ACTIVE);
-        }));
+        super(settings);
+
         this.setDefaultState(this.stateManager.getDefaultState()
                 .with(FACING, Direction.NORTH)
                 .with(ACTIVE, false));

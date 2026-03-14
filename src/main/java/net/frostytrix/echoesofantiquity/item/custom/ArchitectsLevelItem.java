@@ -65,7 +65,7 @@ public class ArchitectsLevelItem extends Item {
 
                     if (world.getBlockState(targetAbove2).isIn(ModTags.Blocks.NATURAL_BLOCKS_LEVEL)
                             || world.getFluidState(targetAbove2).isIn(FluidTags.WATER) || world.getFluidState(targetAbove2).isIn(FluidTags.LAVA)) {
-                        world.breakBlock(targetAbove, true, player);
+                        world.breakBlock(targetAbove2, true, player);
                         context.getStack().damage(1,  (ServerWorld) world, (ServerPlayerEntity) player,
                                 item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
                     }

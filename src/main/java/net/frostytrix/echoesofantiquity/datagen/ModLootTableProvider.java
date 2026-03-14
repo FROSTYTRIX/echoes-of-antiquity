@@ -29,6 +29,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.PLACEHOLDER);
         addDrop(ModBlocks.VOID_PEDESTAL);
+        addDrop(ModBlocks.VOID_ANCHOR);
+        addDrop(ModBlocks.GRAVITY_ANCHOR);
+        addDrop(ModBlocks.WAYSTONE);
         addDrop(ModBlocks.UNCRAFTER);
     }
 

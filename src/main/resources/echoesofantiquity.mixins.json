@@ -5,15 +5,18 @@
 	"mixins": [
       "BipedEntityModelMixin",
       "EndermanSeeingMixin",
-      "EndermanTPMixin",
-      "EnderPearlMixin",
       "EntityMixin",
       "ExampleMixin",
+      "FallingBlockEntityMixin",
+      "FallingBlockMixin",
       "FovDragonBowMixin",
       "PlayerClimbingMixin",
-      "ShulkerTeleportMixin",
-      "FallingBlockEntityMixin",
-      "FallingBlockMixin"
+      "structures.PoolStructurePieceMixin",
+      "structures.RegistryLoaderMixin",
+      "structures.StructurePoolAccessor",
+      "teleportation.EndermanTPMixin",
+      "teleportation.EnderPearlMixin",
+      "teleportation.ShulkerTeleportMixin"
     ],
 	"injectors": {
 		"defaultRequire": 1

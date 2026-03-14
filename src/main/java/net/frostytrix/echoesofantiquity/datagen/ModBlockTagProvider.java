@@ -20,6 +20,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.VOID_PEDESTAL)
+                .add(ModBlocks.VOID_ANCHOR)
+                .add(ModBlocks.GRAVITY_ANCHOR)
+                .add(ModBlocks.WAYSTONE)
                 ;
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
@@ -27,6 +30,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider
                 ;
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.GRAVITY_ANCHOR)
                 ;
 
         getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL)

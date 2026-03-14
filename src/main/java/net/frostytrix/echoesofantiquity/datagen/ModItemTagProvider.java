@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.frostytrix.echoesofantiquity.util.ModTags;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -66,23 +65,35 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
             ;
 
         getOrCreateTagBuilder(ModTags.Items.GLASS_PANES)
-                .add(Item.fromBlock(Blocks.GLASS_PANE))
-                .add(Item.fromBlock(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.GRAY_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.BLACK_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.GREEN_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.LIME_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.BLUE_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.LIGHT_BLUE_STAINED_GLASS))
-                .add(Item.fromBlock(Blocks.CYAN_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.BROWN_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.MAGENTA_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.ORANGE_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.PINK_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.PURPLE_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.YELLOW_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.RED_STAINED_GLASS_PANE))
-                .add(Item.fromBlock(Blocks.WHITE_STAINED_GLASS_PANE))
+                .add((Blocks.GLASS_PANE.asItem()))
+                .add((Blocks.LIGHT_GRAY_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.GRAY_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.BLACK_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.GREEN_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.LIME_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.BLUE_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.LIGHT_BLUE_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.CYAN_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.BROWN_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.MAGENTA_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.ORANGE_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.PINK_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.PURPLE_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.YELLOW_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.RED_STAINED_GLASS_PANE.asItem()))
+                .add((Blocks.WHITE_STAINED_GLASS_PANE.asItem()))
+        ;
+
+        getOrCreateTagBuilder(ModTags.Items.ALL_STONES)
+                .add(Blocks.STONE.asItem())
+                .add(Blocks.COBBLESTONE.asItem())
+                .add(Blocks.MOSSY_COBBLESTONE.asItem())
+                .add(Blocks.DIORITE.asItem())
+                .add(Blocks.ANDESITE.asItem())
+                .add(Blocks.GRANITE.asItem())
+                .add(Blocks.DEEPSLATE.asItem())
+                .add(Blocks.COBBLED_DEEPSLATE.asItem())
+                .add(Blocks.BLACKSTONE.asItem())
         ;
     }
 }

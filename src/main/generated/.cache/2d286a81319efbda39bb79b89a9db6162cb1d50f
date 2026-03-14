@@ -1,4 +1,4 @@
-// 1.21	2026-03-12T00:11:04.711202252	Echoes of Antiquity/Recipes
+// 1.21	2026-03-14T14:06:59.151485583	Echoes of Antiquity/Recipes
 c68a8b1e76149f6144766eda16b020d46c7736cc data/echoesofantiquity/advancement/recipes/misc/infinite_water_bucket.json
 b43ffd91e7cd8b289c09145ea4097b09f7d4112c data/echoesofantiquity/advancement/recipes/misc/uncrafter_recovery_compass_on_right.json
 872dca29903b8589b7d528e271e07fe84bc4a210 data/echoesofantiquity/recipe/dragon_bow_flipped.json
@@ -10,7 +10,9 @@ d30a15d024fd4a817f37d87ab94940084754dfae data/echoesofantiquity/advancement/reci
 47e27fe5cf70cfdaa37b453e85452dd5a802dbbe data/echoesofantiquity/advancement/recipes/misc/gravity_anchor.json
 9eba526561200a9e3af493b6e6d6c272b774da97 data/echoesofantiquity/recipe/level.json
 4420d2b69cc62e4621d2ac831348d2a529c96a2e data/echoesofantiquity/recipe/uncrafter.json
+1ffb0ef38715d567ab343a3e6953869d9851b009 data/echoesofantiquity/advancement/recipes/misc/waystone.json
 a0903756c71a9195391fb1ed088d4fce0cbf9ddf data/echoesofantiquity/advancement/recipes/misc/obsidian_goggles.json
+edadb408eeb7ecbf2699361807c479a1516e05ae data/echoesofantiquity/recipe/waystone.json
 4fb2bc8ca2c7234ec0cc0bd209530e258a83f225 data/echoesofantiquity/advancement/recipes/misc/uncrafter.json
 6a8b689b724242227c07bd2db9b9323293971521 data/echoesofantiquity/advancement/recipes/misc/relic_blade.json
 75f63868c1eeb439fbe676d67bbd2cbdc5e07021 data/echoesofantiquity/recipe/end_steel_ingot.json
