@@ -54,7 +54,7 @@
 ## ⬛ Blocks
 <details> 
   <summary> Spoiler </summary>
-
+   
 ### 👣 Ender Boots 🟣
 * Grants stealth by stopping vibration signals (Sculk sensors won't detect you).
 * **Recipe:** Combine Leather Boots with Void Treated Leather at a Smithing Table.
@@ -90,7 +90,7 @@
 ## Items
 <details> 
   <summary> Spoiler </summary>
-
+   
 ### 🔘 Static Pearl 🟣
 * **Mechanics:** Use once on a Void Anchor to link it to **this** Static Pearl, use again to instantly teleport back to it.
 * **Shift + Right-Click** on a new Void Anchor to change which the Pearl is linked to
@@ -108,8 +108,8 @@
 * Shift + Right-Click a block to set its position has the ending point for the measure.
 * Shift + Right-Click in the air to change the distance calculation method.
 * Has 2 distance calculations method :
-  * Vector distance : Calculates the norm of the vector linking both blocks.
-  * Manhattan distance : Calculates the distance between both blocks while staying on the block grid.
+    * Vector distance : Calculates the norm of the vector linking both blocks.
+    * Manhattan distance : Calculates the distance between both blocks while staying on the block grid.
 
 ### 🪣 Infinite Water Bucket ⚪
 * Places water just like a normal bucket.
