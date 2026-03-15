@@ -17,7 +17,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
-
         getOrCreateTagBuilder(ItemTags.SWORDS)
                 .add(ModItems.RELIC_GREATSWORD)
                 .add(ModItems.SOUL_SIPHON)
@@ -95,5 +94,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Blocks.COBBLED_DEEPSLATE.asItem())
                 .add(Blocks.BLACKSTONE.asItem())
         ;
+
+        var sherdTag = getOrCreateTagBuilder(ItemTags.DECORATED_POT_SHERDS);
+        ModItems.CUSTOM_SHERDS.forEach(sherdTag::add);
     }
 }

@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 
 public class ModSounds {
     public static final SoundEvent GRAVITY_ANCHOR_ACTIVE = registerSoundEvent("gravity_anchor_active");
+    public static final SoundEvent SIFTING = registerSoundEvent("sifting");
 
 
     private static SoundEvent registerSoundEvent(String name) {

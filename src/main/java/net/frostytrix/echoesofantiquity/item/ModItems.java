@@ -3,12 +3,21 @@ package net.frostytrix.echoesofantiquity.item;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.frostytrix.echoesofantiquity.item.custom.*;
+import net.minecraft.block.DecoratedPotPattern;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class ModItems{
+    public static final List<Item> CUSTOM_SHERDS = new ArrayList<>();
+    public static final Map<Item, RegistryKey<DecoratedPotPattern>> SHERD_TO_PATTERN = new HashMap<>();
 
     // Items Registry
 
@@ -43,6 +52,8 @@ public class ModItems{
 
     // Architect's Tools
 
+    public static final Item FOUNDATION_SHERD = registerSherd("foundation");
+
     public static final Item CLIMBING_SPIDER_LEG = registerItem("climbing_spider_leg", new Item(new Item.Settings().maxCount(1)));
 
     public static final Item MEASURING_TAPE = registerItem("measuring_tape", new MeasuringTapeItem(new Item.Settings().maxCount(1)));
@@ -51,9 +62,33 @@ public class ModItems{
 
     public static final Item LEVEL = registerItem("level", new ArchitectsLevelItem(new Item.Settings().maxCount(1).maxDamage(2000)));
 
+
+    public static Item registerSherd(String baseName) {
+        // 1. L'ID de l'Item (ex: "architect_pottery_sherd")
+        Identifier itemId = Identifier.of(EchoesOfAntiquity.MOD_ID, baseName + "_pottery_sherd");
+
+        // 2. L'ID du Motif 3D (ex: "architect_pottery_pattern")
+        Identifier patternId = Identifier.of(EchoesOfAntiquity.MOD_ID, baseName + "_pottery_pattern");
+        RegistryKey<DecoratedPotPattern> patternKey = RegistryKey.of(Registries.DECORATED_POT_PATTERN.getKey(), patternId);
+
+        // 3. On enregistre les deux (Minecraft cherchera donc l'image "baseName_pottery_pattern.png")
+        DecoratedPotPattern pattern = new DecoratedPotPattern(patternId);
+        Registry.register(Registries.DECORATED_POT_PATTERN, patternKey, pattern);
+
+        Item sherdItem = Registry.register(Registries.ITEM, itemId, new Item(new Item.Settings()));
+
+        // 4. On sauvegarde pour le DataGen et notre Mixin
+        CUSTOM_SHERDS.add(sherdItem);
+        SHERD_TO_PATTERN.put(sherdItem, patternKey);
+
+        return sherdItem;
+    }
+
     private static Item registerItem(String name, Item item){
         return Registry.register(Registries.ITEM, Identifier.of(EchoesOfAntiquity.MOD_ID, name), item);
     }
+
+
 
     public static void registerModItems() {
         EchoesOfAntiquity.LOGGER.info("Registering Mod Items for " + EchoesOfAntiquity.MOD_ID);

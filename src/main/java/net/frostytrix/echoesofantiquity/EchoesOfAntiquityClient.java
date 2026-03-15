@@ -7,6 +7,7 @@ import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.VoidPedestalBERenderer;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.WaystoneBERenderer;
 import net.frostytrix.echoesofantiquity.screen.ModScreenHandlers;
+import net.frostytrix.echoesofantiquity.screen.custom.SieveScreen;
 import net.frostytrix.echoesofantiquity.screen.custom.UncrafterScreen;
 import net.frostytrix.echoesofantiquity.util.ModModelPredicates;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
@@ -25,5 +26,6 @@ public class EchoesOfAntiquityClient implements ClientModInitializer {
         ModModelPredicates.registerModelPredicate();
 
         HandledScreens.register(ModScreenHandlers.UNCRAFTER_SCREEN_HANDLER, UncrafterScreen::new);
+        HandledScreens.register(ModScreenHandlers.SIEVE_SCREEN_HANDLER, SieveScreen::new);
     }
 }

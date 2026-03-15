@@ -1,0 +1,27 @@
+{
+  "type": "echoesofantiquity:sieve",
+  "ingredient": {
+    "item": "minecraft:sand"
+  },
+  "results": [
+    {
+      "item": {
+        "id": "minecraft:flint"
+      },
+      "chance": 0.50
+    },
+    {
+      "item": {
+        "id": "minecraft:gold_nugget"
+      },
+      "chance": 0.15
+    },
+    {
+      "item": {
+        "id": "minecraft:bone_meal",
+        "count": 2
+      },
+      "chance": 0.80
+    }
+  ]
+}

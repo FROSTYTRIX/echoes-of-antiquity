@@ -42,6 +42,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.MEASURING_TAPE))
                     .displayName(Text.translatable("itemgroup.echoesofantiquity.the_architects_tools"))
                     .entries((displayContext, entries) -> {
+                        entries.add(new ItemStack(ModItems.FOUNDATION_SHERD));
                         entries.add(new ItemStack(ModItems.CLIMBING_SPIDER_LEG));
                         entries.add(new ItemStack(ModItems.MEASURING_TAPE));
                         entries.add(new ItemStack(ModItems.INFINITE_WATER_BUCKET));
@@ -50,6 +51,7 @@ public class ModItemGroups {
                         entries.add(new ItemStack(ModBlocks.UNCRAFTER));
                         entries.add(new ItemStack(ModBlocks.WAYSTONE));
                         entries.add(new ItemStack(ModBlocks.GRAVITY_ANCHOR));
+                        entries.add(new ItemStack(ModBlocks.SIEVE));
                     }).build());
 
 

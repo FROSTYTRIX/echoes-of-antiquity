@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.screen;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.screen.custom.SieveScreenHandler;
 import net.frostytrix.echoesofantiquity.screen.custom.UncrafterScreenHandler;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -13,6 +14,10 @@ public class ModScreenHandlers {
     public static final ScreenHandlerType<UncrafterScreenHandler> UNCRAFTER_SCREEN_HANDLER =
             Registry.register(Registries.SCREEN_HANDLER, Identifier.of(EchoesOfAntiquity.MOD_ID, "uncrafter_screen_handler"),
                     new ExtendedScreenHandlerType<>(UncrafterScreenHandler::new, BlockPos.PACKET_CODEC));
+
+    public static final ScreenHandlerType<SieveScreenHandler> SIEVE_SCREEN_HANDLER =
+            Registry.register(Registries.SCREEN_HANDLER, Identifier.of(EchoesOfAntiquity.MOD_ID, "sieve_screen_handler"),
+                    new ExtendedScreenHandlerType<>(SieveScreenHandler::new, BlockPos.PACKET_CODEC));
 
     public static void registerScreenHandlers() {
         EchoesOfAntiquity.LOGGER.info("Registering Screen Handlers for " + EchoesOfAntiquity.MOD_ID);

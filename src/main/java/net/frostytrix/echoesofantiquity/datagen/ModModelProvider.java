@@ -50,5 +50,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MEASURING_TAPE, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_WATER_BUCKET, Models.GENERATED);
         itemModelGenerator.register(ModItems.LEVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FOUNDATION_SHERD, Models.GENERATED);
     }
 }

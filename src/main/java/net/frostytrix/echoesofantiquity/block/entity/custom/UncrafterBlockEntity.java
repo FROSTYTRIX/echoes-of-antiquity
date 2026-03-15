@@ -37,7 +37,7 @@ public class UncrafterBlockEntity extends BlockEntity implements ImplementedInve
     // Keep track of the input type to avoid re-scanning the entire registry
     private ItemStack cachedInputType = ItemStack.EMPTY;
 
-    // NEW: Cache ALL valid recipes for the item, not just the ingredients of one
+    //Cache ALL valid recipes for the item, not just the ingredients of one
     private List<RecipeEntry<?>> cachedValidRecipes = null;
 
     // Pre-roll the random item so we can check if it fits

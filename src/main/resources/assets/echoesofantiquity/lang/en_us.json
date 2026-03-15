@@ -41,14 +41,15 @@
   "itemgroup.echoesofantiquity.the_architects_tools": "The Architect's Tools",
 
   "item.echoesofantiquity.climbing_spider_leg": "Climbing Spider Leg",
-
   "item.echoesofantiquity.measuring_tape": "Measuring Tape",
+  "item.echoesofantiquity.foundation_pottery_sherd": "Foundation Pottery Sherd",
 
   "tooltip.echoesofantiquity.measuring_tape.first_pos": "§7The first block position is : §f",
   "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7The second block position is : §f",
   "tooltip.echoesofantiquity.measuring_tape.distance": "§7The §avector distance §7between both blocks is : §f",
   "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7The §aManhattan distance §7between both blocks is : §f",
 
+  "block.echoesofantiquity.sieve": "Sieve",
   "block.echoesofantiquity.uncrafter": "Uncrafter",
   "block.echoesofantiquity.waystone": "Waystone",
 

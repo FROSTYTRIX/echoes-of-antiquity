@@ -7,5 +7,14 @@
         "stream": true
       }
     ]
+  },
+  "sifting" : {
+    "subtitle": "sounds.echoesofantiquity.sifting",
+    "sounds": [
+      {
+        "name": "echoesofantiquity:sifting",
+        "stream": false
+      }
+    ]
   }
 }

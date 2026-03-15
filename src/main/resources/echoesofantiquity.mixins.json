@@ -4,6 +4,7 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
       "BipedEntityModelMixin",
+      "DecoratedPotPatternsMixin",
       "EndermanSeeingMixin",
       "EntityMixin",
       "ExampleMixin",

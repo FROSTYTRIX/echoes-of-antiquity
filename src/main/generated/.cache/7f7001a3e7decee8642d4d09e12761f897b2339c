@@ -1,4 +1,4 @@
-// 1.21	2026-03-14T14:06:59.150528715	Echoes of Antiquity/Tags for minecraft:item
+// 1.21	2026-03-15T15:02:48.027035178	Echoes of Antiquity/Tags for minecraft:item
 96937b4142c981f5974e50dd77f4144f2b7e6ee6 data/echoesofantiquity/tags/item/glass_panes.json
 cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/enchantable/foot_armor.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/hoes.json
@@ -13,5 +13,6 @@ cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/enchantable/fo
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/leg_armor.json
 cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/dampens_vibrations.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/chest_armor.json
+79b6a0d5fef3b7f05edcb669c30ff1f2835e19c7 data/minecraft/tags/item/decorated_pot_sherds.json
 d7f40e560d6fc6839c3b435d330d79de3b296807 data/echoesofantiquity/tags/item/all_stones.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/axes.json
