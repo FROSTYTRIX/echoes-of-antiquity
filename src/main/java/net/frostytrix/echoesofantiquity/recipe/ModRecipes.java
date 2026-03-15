@@ -1,6 +1,7 @@
 package net.frostytrix.echoesofantiquity.recipe;
 
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.recipe.sieve.SieveRecipe;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;

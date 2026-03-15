@@ -1,4 +1,4 @@
-package net.frostytrix.echoesofantiquity.recipe;
+package net.frostytrix.echoesofantiquity.recipe.sieve;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.input.RecipeInput;

@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
+import net.frostytrix.echoesofantiquity.block.entity.renderer.SieveBERenderer;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.VoidPedestalBERenderer;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.WaystoneBERenderer;
 import net.frostytrix.echoesofantiquity.screen.ModScreenHandlers;
@@ -21,7 +22,10 @@ public class EchoesOfAntiquityClient implements ClientModInitializer {
 
         BlockEntityRendererFactories.register(ModBlockEntities.WAYSTONE_BE, WaystoneBERenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WAYSTONE, RenderLayer.getCutout());
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GRAVITY_ANCHOR, RenderLayer.getCutout());
+
+        BlockEntityRendererFactories.register(ModBlockEntities.SIEVE_BE, SieveBERenderer::new);
 
         ModModelPredicates.registerModelPredicate();
 

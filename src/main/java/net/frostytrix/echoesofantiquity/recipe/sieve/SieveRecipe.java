@@ -1,7 +1,8 @@
-package net.frostytrix.echoesofantiquity.recipe;
+package net.frostytrix.echoesofantiquity.recipe.sieve;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.frostytrix.echoesofantiquity.recipe.ModRecipes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
@@ -16,7 +17,7 @@ import net.minecraft.world.World;
 
 import java.util.List;
 
-public record SieveRecipe(Ingredient inputItem, List<SieveResult> results) implements Recipe<SieveRecipeInput> {
+public record SieveRecipe(Ingredient inputItem, List<SieveResult> results, List<SievePool> pools) implements Recipe<SieveRecipeInput> {
 
     @Override
     public DefaultedList<Ingredient> getIngredients() {
@@ -27,8 +28,7 @@ public record SieveRecipe(Ingredient inputItem, List<SieveResult> results) imple
 
     @Override
     public boolean matches(SieveRecipeInput input, World world) {
-        if (world.isClient) { return false; }
-        return inputItem.test(input.getStackInSlot(0));
+        return this.inputItem.test(input.getStackInSlot(0));
     }
 
     // This is called by the standard crafting system, but since we have a custom
@@ -61,13 +61,16 @@ public record SieveRecipe(Ingredient inputItem, List<SieveResult> results) imple
     public static class Serializer implements RecipeSerializer<SieveRecipe> {
         public static final MapCodec<SieveRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(SieveRecipe::inputItem),
-                SieveResult.CODEC.listOf().fieldOf("results").forGetter(SieveRecipe::results)
+                SieveResult.CODEC.listOf().fieldOf("results").forGetter(SieveRecipe::results),
+                // We make pools optional so old recipes don't break!
+                SievePool.CODEC.listOf().optionalFieldOf("pools", List.of()).forGetter(SieveRecipe::pools)
         ).apply(inst, SieveRecipe::new));
 
         public static final PacketCodec<RegistryByteBuf, SieveRecipe> STREAM_CODEC =
                 PacketCodec.tuple(
                         Ingredient.PACKET_CODEC, SieveRecipe::inputItem,
                         SieveResult.STREAM_CODEC.collect(PacketCodecs.toList()), SieveRecipe::results,
+                        SievePool.STREAM_CODEC.collect(PacketCodecs.toList()), SieveRecipe::pools,
                         SieveRecipe::new);
 
         @Override

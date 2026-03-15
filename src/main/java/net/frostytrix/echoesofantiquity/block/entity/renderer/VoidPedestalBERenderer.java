@@ -17,9 +17,7 @@ import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 
 public class VoidPedestalBERenderer implements BlockEntityRenderer<VoidPedestalBlockEntity> {
-    public VoidPedestalBERenderer(BlockEntityRendererFactory.Context context) {
-
-    }
+    public VoidPedestalBERenderer(BlockEntityRendererFactory.Context context) {}
 
     @Override
     public void render(VoidPedestalBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {

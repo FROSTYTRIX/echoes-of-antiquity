@@ -5,9 +5,10 @@ import net.frostytrix.echoesofantiquity.block.entity.ImplementedInventory;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.frostytrix.echoesofantiquity.recipe.ModRecipes;
-import net.frostytrix.echoesofantiquity.recipe.SieveRecipe;
-import net.frostytrix.echoesofantiquity.recipe.SieveRecipeInput;
-import net.frostytrix.echoesofantiquity.recipe.SieveResult;
+import net.frostytrix.echoesofantiquity.recipe.sieve.SievePool;
+import net.frostytrix.echoesofantiquity.recipe.sieve.SieveRecipe;
+import net.frostytrix.echoesofantiquity.recipe.sieve.SieveRecipeInput;
+import net.frostytrix.echoesofantiquity.recipe.sieve.SieveResult;
 import net.frostytrix.echoesofantiquity.screen.custom.SieveScreenHandler;
 import net.frostytrix.echoesofantiquity.sound.ModSounds;
 import net.minecraft.block.BlockState;
@@ -16,6 +17,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.SidedInventory;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
@@ -46,7 +48,29 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
     private int progress = 0;
     private int maxProgress = 72;
 
+    private Item cachedRenderItem = null;
+    private boolean cachedRecipeResult = false;
 
+    public boolean hasValidRecipeForRender() {
+        if (this.world == null) return false;
+        ItemStack currentStack = this.inventory.get(INPUT_SLOT);
+
+        if (currentStack.isEmpty()) {
+            this.cachedRenderItem = null;
+            return false;
+        }
+
+        // If the item in the slot is different from the last time we checked,
+        // we ask the RecipeManager. Otherwise, we just return the saved answer!
+        if (currentStack.getItem() != this.cachedRenderItem) {
+            this.cachedRenderItem = currentStack.getItem();
+            this.cachedRecipeResult = this.world.getRecipeManager()
+                    .getFirstMatch(ModRecipes.SIEVE_TYPE, new SieveRecipeInput(currentStack), this.world)
+                    .isPresent();
+        }
+
+        return this.cachedRecipeResult;
+    }
 
     public SieveBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SIEVE_BE, pos, state);
@@ -96,19 +120,25 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
-        Inventories.writeNbt(nbt, inventory, registryLookup);
-        nbt.putInt("sieve.progress", progress);
-        nbt.putInt("sieve.max_progress", maxProgress);
+    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
+        super.readNbt(nbt, registryLookup);
+
+        // Safely wipe the client memory before reading so the 3D block doesn't get stuck
+        for (int i = 0; i < this.inventory.size(); i++) {
+            this.inventory.set(i, ItemStack.EMPTY);
+        }
+        this.progress = nbt.getInt("sieve.progress");
+        this.maxProgress = nbt.getInt("sieve.maxProgress");
+        Inventories.readNbt(nbt, this.inventory, registryLookup);
     }
 
     @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        Inventories.readNbt(nbt, inventory, registryLookup);
-        progress = nbt.getInt("sieve.progress");
-        maxProgress = nbt.getInt("sieve.max_progress");
-        super.readNbt(nbt, registryLookup);
+    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
+        super.writeNbt(nbt, registryLookup);
+        Inventories.writeNbt(nbt, this.inventory, registryLookup);
+
+        nbt.putInt("sieve.progress", this.progress);
+        nbt.putInt("sieve.maxProgress", this.maxProgress);
     }
 
     @Override
@@ -138,29 +168,34 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
-        if (world.isClient) return;
+        // --- 1. CLIENT SIDE (Visuals Only) ---
+        if (world.isClient) {
+            if (this.progress > 0 && this.progress < this.maxProgress) {
+                this.progress++;
+            }
+            return;
+        }
 
-        if (hasRecipe() && hasFuel()) {
+        // --- 2. SERVER SIDE (Math and Crafting) ---
+        if (hasRecipe() && hasOutputSpace() && hasFuel()) {
             increaseSiftingProcess();
             markDirty(world, pos, state);
 
             if (this.progress == 1) {
-                world.playSound(
-                        null,
-                        pos,
-                        ModSounds.SIFTING, // Your brand new custom sound!
-                        SoundCategory.BLOCKS,
-                        1f, // Full volume
-                        0.8f  // Normal pitch (no randomization so the length stays exactly the same)
-                );
+                world.playSound(null, pos, ModSounds.SIFTING, SoundCategory.BLOCKS, 1.0f, 0.8f);
+                world.updateListeners(pos, state, state, 3);
             }
 
             if (hasSiftingFinished()) {
                 craftItem();
                 resetProgress();
+                world.updateListeners(pos, state, state, 3);
             }
         } else {
-            resetProgress();
+            if (this.progress > 0) {
+                resetProgress();
+                world.updateListeners(pos, state, state, 3);
+            }
             markDirty(world, pos, state);
         }
     }
@@ -210,14 +245,22 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
 
         SieveRecipe recipe = recipeEntry.get().value();
 
-        // 1. Consume Fuel and Input
+        // 1. Consume Fuel and Input directly
         this.inventory.get(SOUL_FRAGMENT_SLOT).decrement(1);
         this.inventory.get(INPUT_SLOT).decrement(1);
 
-        // 2. Roll probabilities for outputs
+        // 2. Roll independent probabilities
         for (SieveResult result : recipe.results()) {
             if (this.world.random.nextFloat() <= result.chance()) {
                 insertOutput(result.stack().copy());
+            }
+        }
+
+        // 3. Roll grouped pools
+        for (SievePool pool : recipe.pools()) {
+            if (!pool.items().isEmpty() && this.world.random.nextFloat() <= pool.chance()) {
+                int randomIndex = this.world.random.nextInt(pool.items().size());
+                insertOutput(pool.items().get(randomIndex).copy());
             }
         }
     }
@@ -228,13 +271,23 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
 
             if (slotStack.isEmpty()) {
                 this.inventory.set(i, stackToInsert);
-                return; // Placed successfully, stop looking
+                return;
             } else if (ItemStack.areItemsEqual(slotStack, stackToInsert) && slotStack.getCount() + stackToInsert.getCount() <= slotStack.getMaxCount()) {
                 slotStack.increment(stackToInsert.getCount());
-                return; // Stacked successfully, stop looking
+                return;
             }
         }
-        // If the code reaches this point, the inventory is full.
-        // The item simply vanishes\
+    }
+
+    public ItemStack getInputStack() {
+        return this.inventory.get(INPUT_SLOT);
+    }
+
+    public int getProgress() {
+        return this.progress;
+    }
+
+    public int getMaxProgress() {
+        return this.maxProgress;
     }
 }

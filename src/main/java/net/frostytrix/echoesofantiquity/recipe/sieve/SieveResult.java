@@ -1,4 +1,4 @@
-package net.frostytrix.echoesofantiquity.recipe;
+package net.frostytrix.echoesofantiquity.recipe.sieve;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
