@@ -1,8 +1,10 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import net.frostytrix.echoesofantiquity.item.ModArmorMaterials;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
@@ -14,8 +16,10 @@ import java.util.List;
 import java.util.Map;
 
 public class ModArmorItem extends ArmorItem {
-    private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
+    public static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
+                    .put(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL,
+                            List.of(new StatusEffectInstance(StatusEffects.SLOW_FALLING, 10, 1, false, false)))
                     .build();
 
     public ModArmorItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
@@ -35,7 +39,7 @@ public class ModArmorItem extends ArmorItem {
         super.inventoryTick(stack, world, entity, slot, selected);
     }
 
-    private void evaluateArmorEffects(PlayerEntity player) {
+    protected void evaluateArmorEffects(PlayerEntity player) {
         for (Map.Entry<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
             RegistryEntry<ArmorMaterial> mapArmorMaterial = entry.getKey();
             List<StatusEffectInstance> mapStatusEffects = entry.getValue();
@@ -46,7 +50,7 @@ public class ModArmorItem extends ArmorItem {
         }
     }
 
-    private void addStatusEffectForMaterial(PlayerEntity player, RegistryEntry<ArmorMaterial> mapArmorMaterial, List<StatusEffectInstance> mapStatusEffect) {
+    public void addStatusEffectForMaterial(PlayerEntity player, RegistryEntry<ArmorMaterial> mapArmorMaterial, List<StatusEffectInstance> mapStatusEffect) {
         boolean hasPlayerEffect = mapStatusEffect.stream().allMatch(statusEffectInstance -> player.hasStatusEffect(statusEffectInstance.getEffectType()));
 
         if(!hasPlayerEffect) {
@@ -57,7 +61,7 @@ public class ModArmorItem extends ArmorItem {
         }
     }
 
-    private boolean hasFullSuitOfArmorOn(PlayerEntity player) {
+    protected boolean hasFullSuitOfArmorOn(PlayerEntity player) {
         ItemStack boots = player.getInventory().getArmorStack(0);
         ItemStack leggings = player.getInventory().getArmorStack(1);
         ItemStack breastplate = player.getInventory().getArmorStack(2);
@@ -67,7 +71,7 @@ public class ModArmorItem extends ArmorItem {
                 && !leggings.isEmpty() && !boots.isEmpty();
     }
 
-    private boolean hasCorrectArmorOn(RegistryEntry<ArmorMaterial> material, PlayerEntity player) {
+    public boolean hasCorrectArmorOn(RegistryEntry<ArmorMaterial> material, PlayerEntity player) {
         for (ItemStack armorStack: player.getInventory().armor) {
             if(!(armorStack.getItem() instanceof ArmorItem)) {
                 return false;

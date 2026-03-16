@@ -35,6 +35,11 @@ public class ModItemGroups {
                         entries.add(new ItemStack(ModItems.DRAGON_BOW));
                         entries.add(new ItemStack(ModItems.STATIC_PEARL));
                         entries.add(new ItemStack(ModBlocks.VOID_ANCHOR));
+                        entries.add(new ItemStack(ModItems.VOID_CHAINMAIL_HELMET));
+                        entries.add(new ItemStack(ModItems.VOID_CHAINMAIL_CHESTPLATE));
+                        entries.add(new ItemStack(ModItems.VOID_CHAINMAIL_LEGGINGS));
+                        entries.add(new ItemStack(ModItems.VOID_CHAINMAIL_BOOTS));
+                        entries.add(new ItemStack(ModItems.END_STEEL_UPGRADE));
                     }).build());
 
     public static final ItemGroup THE_ARCHITECTS_TOOLS = Registry.register(Registries.ITEM_GROUP,
@@ -48,6 +53,7 @@ public class ModItemGroups {
                         entries.add(new ItemStack(ModItems.INFINITE_WATER_BUCKET));
                         entries.add(new ItemStack(ModItems.LEVEL));
                         entries.add(new ItemStack(ModItems.ANCIENT_SCRIP));
+                        entries.add(new ItemStack(ModItems.MAGNET_RING));
                         entries.add(new ItemStack(ModBlocks.UNCRAFTER));
                         entries.add(new ItemStack(ModBlocks.WAYSTONE));
                         entries.add(new ItemStack(ModBlocks.GRAVITY_ANCHOR));

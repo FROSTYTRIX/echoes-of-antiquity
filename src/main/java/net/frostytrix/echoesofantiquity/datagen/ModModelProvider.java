@@ -39,6 +39,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.ENDER_BOOTS));
         itemModelGenerator.registerArmor(((ArmorItem) ModItems.OBSIDIAN_GOGGLES));
 
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VOID_CHAINMAIL_HELMET));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VOID_CHAINMAIL_CHESTPLATE));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VOID_CHAINMAIL_LEGGINGS));
+        itemModelGenerator.registerArmor(((ArmorItem) ModItems.VOID_CHAINMAIL_BOOTS));
+
+        itemModelGenerator.register(ModItems.END_STEEL_UPGRADE, Models.GENERATED);
+
         // Failed clones
 
         itemModelGenerator.register(ModItems.SOUL_SIPHON, Models.HANDHELD);
@@ -50,6 +57,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.MEASURING_TAPE, Models.GENERATED);
         itemModelGenerator.register(ModItems.INFINITE_WATER_BUCKET, Models.GENERATED);
         itemModelGenerator.register(ModItems.LEVEL, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MAGNET_RING, Models.GENERATED);
         itemModelGenerator.register(ModItems.FOUNDATION_SHERD, Models.GENERATED);
     }
 }

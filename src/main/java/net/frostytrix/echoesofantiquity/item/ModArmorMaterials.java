@@ -22,7 +22,18 @@ public class ModArmorMaterials {
             }), 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, null,
                     List.of(new ArmorMaterial.Layer(Identifier.of(EchoesOfAntiquity.MOD_ID, "ender"))), 0,0));
 
+    public static final RegistryEntry<ArmorMaterial> VOID_CHAINMAIL_ARMOR_MATERIAL = registerArmorMaterial("void_chainmail_armor_material",
+            () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
+                map.put(ArmorItem.Type.BOOTS, 2);
+                map.put(ArmorItem.Type.LEGGINGS, 5);
+                map.put(ArmorItem.Type.CHESTPLATE, 6);
+                map.put(ArmorItem.Type.HELMET, 2);
+                map.put(ArmorItem.Type.BODY, 7);
+            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, null,
+                    List.of(new ArmorMaterial.Layer(Identifier.of(EchoesOfAntiquity.MOD_ID, "void_chainmail"))), 0,0));
+
+
     public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {
-        return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(EchoesOfAntiquity.MOD_ID), material.get());
+        return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(EchoesOfAntiquity.MOD_ID, name), material.get());
     }
 }

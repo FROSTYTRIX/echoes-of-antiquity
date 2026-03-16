@@ -98,8 +98,7 @@ public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedI
 
         // 3. If active, suppress entities
         if (hasItem) {
-            double radius = be.noTPRadius;
-            Box area = new Box(pos).expand(radius);
+            Box area = new Box(pos).expand(noTPRadius);
             List<LivingEntity> entities = world.getNonSpectatingEntities(LivingEntity.class, area);
 
             for (Entity entity : entities) {

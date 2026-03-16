@@ -43,6 +43,16 @@ public class ModItems{
     public static final Item STATIC_PEARL = registerItem("static_pearl",
             new StaticPearlItem(new Item.Settings().maxDamage(20)));
 
+    public static final Item VOID_CHAINMAIL_HELMET = registerItem("void_chainmail_helmet",
+            new ArmorItem(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(21))));
+    public static final Item VOID_CHAINMAIL_CHESTPLATE = registerItem("void_chainmail_chestplate",
+            new VoidChainmailChestplateItem(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(21))));
+    public static final Item VOID_CHAINMAIL_LEGGINGS = registerItem("void_chainmail_leggings",
+            new ArmorItem(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(21))));
+    public static final Item VOID_CHAINMAIL_BOOTS = registerItem("void_chainmail_boots",
+            new ArmorItem(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(21))));
+    public static final Item END_STEEL_UPGRADE = registerItem("end_steel_upgrade", new Item(new Item.Settings()));
+
 
     // Failed Clones
 
@@ -62,6 +72,7 @@ public class ModItems{
 
     public static final Item LEVEL = registerItem("level", new ArchitectsLevelItem(new Item.Settings().maxCount(1).maxDamage(2000)));
 
+    public static final Item MAGNET_RING = registerItem("magnet_ring", new MagnetRingItem(new Item.Settings().maxCount(1)));
 
     public static Item registerSherd(String baseName) {
         // 1. L'ID de l'Item (ex: "architect_pottery_sherd")

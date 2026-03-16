@@ -38,15 +38,19 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         ;
 
         getOrCreateTagBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
+                .add(ModItems.VOID_CHAINMAIL_HELMET)
                 ;
 
         getOrCreateTagBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
+                .add(ModItems.VOID_CHAINMAIL_CHESTPLATE)
                 ;
 
         getOrCreateTagBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
+                .add(ModItems.VOID_CHAINMAIL_LEGGINGS)
                 ;
 
         getOrCreateTagBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
+                .add(ModItems.VOID_CHAINMAIL_BOOTS)
                 .add(ModItems.ENDER_BOOTS)
                 ;
 
@@ -59,9 +63,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.DRAGON_BOW)
                 ;
-        getOrCreateTagBuilder(ItemTags.DAMPENS_VIBRATIONS)
-                .add(ModItems.ENDER_BOOTS)
-            ;
 
         getOrCreateTagBuilder(ModTags.Items.GLASS_PANES)
                 .add((Blocks.GLASS_PANE.asItem()))
@@ -94,6 +95,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Blocks.COBBLED_DEEPSLATE.asItem())
                 .add(Blocks.BLACKSTONE.asItem())
         ;
+
+        getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.VOID_CHAINMAIL_HELMET)
+                .add(ModItems.VOID_CHAINMAIL_CHESTPLATE)
+                .add(ModItems.VOID_CHAINMAIL_LEGGINGS)
+                .add(ModItems.VOID_CHAINMAIL_BOOTS)
+                .add(ModItems.ENDER_BOOTS)
+                ;
 
         var sherdTag = getOrCreateTagBuilder(ItemTags.DECORATED_POT_SHERDS);
         ModItems.CUSTOM_SHERDS.forEach(sherdTag::add);

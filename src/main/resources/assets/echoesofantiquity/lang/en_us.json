@@ -12,6 +12,13 @@
   "block.echoesofantiquity.void_pedestal": "Void Pedestal",
   "block.echoesofantiquity.void_anchor": "Void Anchor",
   "item.echoesofantiquity.static_pearl": "Static Pearl",
+  "item.echoesofantiquity.end_steel_upgrade": "End Steel Upgrade",
+
+  "item.echoesofantiquity.void_chainmail_helmet": "Void Chainmail Helmet",
+  "item.echoesofantiquity.void_chainmail_chestplate": "Void Chainmail Chestplate",
+  "item.echoesofantiquity.void_chainmail_leggings": "Void Chainmail Leggings",
+  "item.echoesofantiquity.void_chainmail_boots": "Void Chainmail Boots",
+
 
   "itemgroup.echoesofantiquity.the_fallen_humans": "The Fallen Humans",
 
@@ -58,6 +65,12 @@
 
   "item.echoesofantiquity.infinite_water_bucket": "Infinite Water Bucket",
   "item.echoesofantiquity.level": "Level",
+
+  "item.echoesofantiquity.magnet_ring": "Magnet Ring",
+  "tooltip.echoesofantiquity.magnetic_ring": "§7The Magnet Ring is : ",
+  "tooltip.echoesofantiquity.magnetic_ring.attracting": "§9Attracting",
+  "tooltip.echoesofantiquity.magnetic_ring.repulsing": "§cRepulsing",
+
 
 
 

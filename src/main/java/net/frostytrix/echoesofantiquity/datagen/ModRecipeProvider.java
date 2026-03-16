@@ -113,6 +113,33 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
                 .offerTo(recipeExporter);
 
+
+        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(ModItems.END_STEEL_UPGRADE), Ingredient.ofItems(Items.CHAINMAIL_HELMET), Ingredient.ofItems(ModItems.END_STEEL_INGOT), RecipeCategory.COMBAT, ModItems.VOID_CHAINMAIL_HELMET)
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "void_chainmail_helmet_smithing"));
+
+        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(ModItems.END_STEEL_UPGRADE), Ingredient.ofItems(Items.CHAINMAIL_CHESTPLATE), Ingredient.ofItems(ModItems.END_STEEL_INGOT), RecipeCategory.COMBAT, ModItems.VOID_CHAINMAIL_CHESTPLATE)
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "void_chainmail_chestplate_smithing"));
+
+        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(ModItems.END_STEEL_UPGRADE), Ingredient.ofItems(Items.CHAINMAIL_LEGGINGS), Ingredient.ofItems(ModItems.END_STEEL_INGOT), RecipeCategory.COMBAT, ModItems.VOID_CHAINMAIL_LEGGINGS)
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "void_chainmail_leggings_smithing"));
+
+        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(ModItems.END_STEEL_UPGRADE), Ingredient.ofItems(Items.CHAINMAIL_BOOTS), Ingredient.ofItems(ModItems.END_STEEL_INGOT), RecipeCategory.COMBAT, ModItems.VOID_CHAINMAIL_BOOTS)
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "void_chainmail_boots_smithing"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.END_STEEL_UPGRADE)
+                .input('E', Blocks.END_STONE)
+                .input('D', Items.DIAMOND)
+                .input('U', ModItems.END_STEEL_UPGRADE)
+                .pattern("DUD")
+                .pattern("DED")
+                .pattern("DDD" )
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
         // Failed Clones
 
         // Architect's Tools
@@ -184,6 +211,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .pattern(" C ")
                 .pattern("GIG")
                 .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.MAGNET_RING)
+                .input('E', ModItems.END_STEEL_INGOT)
+                .input('C', Items.COMPASS)
+                .pattern(" C ")
+                .pattern("E E")
+                .pattern(" E ")
+                .criterion(hasItem(Items.CHORUS_FRUIT), conditionsFromItem(Items.CHORUS_FRUIT))
                 .offerTo(recipeExporter);
     }
 

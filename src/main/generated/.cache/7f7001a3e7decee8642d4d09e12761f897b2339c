@@ -1,18 +1,17 @@
-// 1.21	2026-03-15T15:02:48.027035178	Echoes of Antiquity/Tags for minecraft:item
+// 1.21	2026-03-16T22:53:13.334868658	Echoes of Antiquity/Tags for minecraft:item
 96937b4142c981f5974e50dd77f4144f2b7e6ee6 data/echoesofantiquity/tags/item/glass_panes.json
-cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/enchantable/foot_armor.json
+789ce42a940cc0bcee57f3d200ea4eef7d63ca5c data/minecraft/tags/item/enchantable/foot_armor.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/hoes.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trimmable_armor.json
+39b68b991ccc181d05f234162ceeae6616e51cb6 data/minecraft/tags/item/trimmable_armor.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/shovels.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trim_materials.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/head_armor.json
+be3580043227fe1b7f46b3cb4a609300050b37d5 data/minecraft/tags/item/enchantable/head_armor.json
 5bab807ca72fce9a100f9bdc1a97a31c4dfad583 data/minecraft/tags/item/swords.json
 973669c8e1969d1b411776f65dfa50a4e4a9562c data/minecraft/tags/item/enchantable/bow.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/pickaxes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/trim_templates.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/leg_armor.json
-cd2d585342a93c720fd08daf817eddffa27df594 data/minecraft/tags/item/dampens_vibrations.json
-35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/enchantable/chest_armor.json
+517e379c64d2b5c2f33cb553d2b10baaa74f1dda data/minecraft/tags/item/enchantable/leg_armor.json
+a4ce8ef1ac894e2cc144a594ea5a115de51ad36e data/minecraft/tags/item/enchantable/chest_armor.json
 79b6a0d5fef3b7f05edcb669c30ff1f2835e19c7 data/minecraft/tags/item/decorated_pot_sherds.json
 d7f40e560d6fc6839c3b435d330d79de3b296807 data/echoesofantiquity/tags/item/all_stones.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/item/axes.json
