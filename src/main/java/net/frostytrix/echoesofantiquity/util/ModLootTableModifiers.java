@@ -29,7 +29,7 @@ public class ModLootTableModifiers {
             if (LootTables.PILLAGER_OUTPOST_CHEST.equals(key)){
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.05F))
+                        .conditionally(RandomChanceLootCondition.builder(0.1F))
                         .with(ItemEntry.builder(ModItems.SOUL_FRAGMENT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)).build());
                 tableBuilder.pool(poolBuilder.build());
@@ -38,7 +38,7 @@ public class ModLootTableModifiers {
             if (LootTables.WOODLAND_MANSION_CHEST.equals(key)){
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.07F))
+                        .conditionally(RandomChanceLootCondition.builder(0.14F))
                         .with(ItemEntry.builder(ModItems.SOUL_FRAGMENT))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 2.0F)).build());
                 tableBuilder.pool(poolBuilder.build());
@@ -47,7 +47,7 @@ public class ModLootTableModifiers {
             if (LootTables.WOODLAND_MANSION_CHEST.equals(key)){
                 LootPool.Builder poolBuilder = LootPool.builder()
                         .rolls(ConstantLootNumberProvider.create(1))
-                        .conditionally(RandomChanceLootCondition.builder(0.03F))
+                        .conditionally(RandomChanceLootCondition.builder(0.20F))
                         .with(ItemEntry.builder(ModItems.SOUL_SIPHON))
                         .apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(1.0F, 1.0F)).build());
                 tableBuilder.pool(poolBuilder.build());

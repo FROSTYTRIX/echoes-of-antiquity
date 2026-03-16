@@ -30,7 +30,7 @@ public class InfiniteWaterBucketItem extends BucketItem {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack stackToKeep = user.getStackInHand(hand);
+        ItemStack stackToKeep = user.getStackInHand(hand).copy();
 
         if (user.isSneaking()) {
             // 1. Shoot a raycast looking ONLY for fluids
