@@ -39,7 +39,6 @@ dependencies {
 
 	modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.2.2")
 
-	
 }
 
 processResources {

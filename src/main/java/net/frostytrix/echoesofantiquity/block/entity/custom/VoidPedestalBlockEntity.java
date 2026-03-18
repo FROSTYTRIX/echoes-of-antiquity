@@ -46,7 +46,7 @@ public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedI
     public float getRenderingRotation(BlockPos pos, World world, ItemStack stack) {
         PlayerEntity playerEntity = world.getClosestPlayer(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 3.0, false);
 
-        if (playerEntity != null && stack.getItem() == Items.ENDER_EYE) {
+        if (playerEntity != null && isActivated()) {
             double d = playerEntity.getX() - (pos.getX() + 0.5);
             double e = playerEntity.getZ() - (pos.getZ() + 0.5);
             rotation = (float) MathHelper.atan2(e, d);
@@ -60,7 +60,6 @@ public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedI
         }
         return rotation;
     }
-
 
     @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
