@@ -1,0 +1,42 @@
+9aa9361 added nwe structure : Abandonned house
+60250a1 house_gen_issues
+1aa3470 added stuff for future world gen
+7ac170d Updated READMEs and french translation
+de86a39 Added : - Magnet Ring :    - Has 2 modes : attracting and repulsing    - Right click to switch between them (look at tooltip to know which is active) - Void Chainmail Armor    - Crafted like netherite armor but with an End Steel Upgrade and chainmail armor.    - Can tp you back to the last coordinates where you were on solid ground if you fall in the void ( WILL COST 1/3 OF DURABILITY OF THE ARMOR)    - Gives a constant Slow Falling II effect
+a2efc4c - Fixed the bug where the Infinite Water Bucket was more of a "really finite water bucket"
+ee8a273 Added sifting sounds + animations to sieve
+b6e6b8c Added a Sieve block. It is powered by Soul Fragment.
+00f0798 Merge remote-tracking branch 'origin/master'
+401dace Added Recipe to Waystone
+1613701 Enhance README
+9d6bd00 Updated READMEs and french translation
+b588f4c Added translation key for the Level Item
+2df8cba Added a new Block : - Gravity Anchor :    - Can be activated with redstone    - When activated will stop all Falling Blocks from falling (Sand, Gravel etc will stay as a block, in the air)    - Is crafted with 6 End Steel Ingot, 1 Lodestone, 1 Echo Shard and 1 Obsidian    - Has a custom humming sound when activated
+83b3b5d Updated the code logic for MeasuringTapeItem and InfiniteWaterBucketItem so yeah work properly on servers
+dbb24a6 Added a new block : the Waystone  - Can be activated by Right-Clicking with 10 Soul Fragments. Glyphs glow when activated  - If health <= 2.5 hearts, the waystone will tp you back to its position (or a close one) if not obstructed/destroyed and get you back to 5 hearts.  - If you take enough damage to instantly die, will not stop death, it is NOT a totem of undying.  - If the block is obstructed when it tried to "recall" the player, the player will be informed. The waystone still gets destroyed and the player isn't healed.  - No craft yet.
+ba53b28 Added Infinite Water Bucket : - Craftable with 3 end steel ingot + 1 heart of the sea - Right-click to place water - Shift + Right-click to remove water
+18562e1 - *Actually* added the Uncrafter :    - Put a block or item inside, it will give you back one of its crafting/smelting ingredients    - Doesn't allow ingredients from crafting recipes that give more items than needed to craft it (ex : will NOT give a log from a plank)    - Has no craft yet
+29dc7d3 Added uncrafter, still needs refining
+12f9d9d GUI not working looking for help
+0a23433 Added : - Climbing Spider Leg : Allows the player that holds it to climb walls like a spider - Measuring Tape : A tool for measuring distances between two blocks
+99a87e6 - Updated "void_anchor_suppressed" tag to "void_pedestal_suppressed" tag to match with the block name change - Updated fr_fr.json - Update both README.md and README_FR.md
+0026fc0 Updated the Dragon Bow to be more precise !
+be53dd3 - Void Anchor :    - You can now right click a Void Anchor with magenta dye to recolor the green parts to purple/magenta    - Ypu can wash of the color by using a water bucket on it - Static Pearl :    - This item now has an enchant glint when linked to a void anchor    - The glint will be removed if the Void Anchor is destroyed
+e5ec1dc - Changed name of Void Anchor to Void Pedestal - New Block : Void Anchor (ahah dans tes fesses UwU)    -> Works as an anchor for the new item - New Item : Static Pearl    -> Right Click on Void Anchor to save its coordinates.    -> Right click with saved coordinates to tp on Void Anchor    -> Shift Right Click on new Void Anchor to save its coordinates    -> Item has a maximum of 20 use (not counting saving oordinates)
+56be1e1 New Items : - Obsidian Goggles:    - Let's you look at endermen without triggering them. Keep full fov - Dragon Bow :   Shoots arrow with twice the velocity of normal bow - Soul essence -Soul siphon : mobs drop 1 soul essence when killed by it
+1eb465e updated dragon bow
+db34ca4 Added Dragon BOw. Carefull may not work rn
+09f0c70 Update French README with new content and corrections
+0968d1b updated README infos
+9dffea7 Merge remote-tracking branch 'origin/master'
+33d6f1a New Items : - Relic Blade:   - Craftable with 3 end steel ingot in a row - Relic Greatsword :   - Craftable with a Relic Blade, stick and Void Treated Leather   - Can be enchanted with the usual Sword enchants   - Custom Holding animation and WIP attack animation
+5956e44 Create French README for Echoes of Antiquity
+defdd3a Revise README for better clarity and structure
+d93a089 Add README.md for Echoes of Antiquity mod
+9667c0f - Added French Translation - Added README (EN and FR)
+a8e1541 Updated back the reach_potion recipe to what it is supposed to be
+ab35542 Added 1 new Block (Entity) : -Void Anchor : 1. Serves a pedestal, right click it with an item, it will display it. 2. If you give it an eye of ender, when close enough the eye will look at you. If the Void Anchor holds an eye of ender the following tps are blocked in a radius of 20 blocks : Enderman tp, Shulker tp, Ender Pearl tp, Phasing Effect tp. When a tp is blocked, the tp particles are gonna appear over the void Anchor
+c0e3b72 Added 1 new Block (Entity) : -Void Anchor : 1. Serves a pedestal, right click it with an item, it will display it. 2. If you give it an eye of ender, when close enough the eye will look at you. If the Void Anchor holds an eye of ender the following tps are blocked in a radius of 20 blocks : Enderman tp, Shulker tp, Ender Pearl tp, Phasing Effect tp. When a tp is blocked, the tp particles are gonna appear over the void Anchor
+7e19525 Added 2 new effects : - Phasing : Allows you to tp through 1 block wide walls (May added higher lvls to tp through wider walls) - Reach (may change to "Long Arms" idk yet) : Increases reach (as name suggest) 2 blocks further (block reach 3b -> 5b, entity reach i dont remember lol)
+f381377 Added : - New Item Group "The Fallen Humans" - Placeholder Block - Placeholder Item (Ancient Scrip) - Void Treated Leather : Craftable with 4 chorus fruit and 1 leather - Ender Boots : Craftable in the smithing table with leather boots and 1 void treated leather. Allows for all actions to not be heard by sculk sensors etc
+ea305f5 Initial commit

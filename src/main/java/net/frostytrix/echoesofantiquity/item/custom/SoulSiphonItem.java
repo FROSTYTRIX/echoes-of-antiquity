@@ -1,6 +1,7 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
 import net.frostytrix.echoesofantiquity.item.ModItems;
+import net.frostytrix.echoesofantiquity.util.ModTags;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -21,9 +22,18 @@ public class SoulSiphonItem extends SwordItem {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (target.isDead() && !target.getWorld().isClient) {
-            ItemEntity soul = new ItemEntity(target.getWorld(), target.getX(), target.getY(), target.getZ(),
-                    new ItemStack(ModItems.SOUL_FRAGMENT));
-            target.getWorld().spawnEntity(soul);
+            if (target.getType().isIn(ModTags.Entities.SOULLESS)) {
+                return super.postHit(stack, target, attacker);
+            }
+
+            float maxHealth = target.getMaxHealth();
+            int fragmentsToDrop = 1 + (int)(maxHealth / 20.0f);
+
+            ItemEntity soulDrop = new ItemEntity(
+                    target.getWorld(), target.getX(), target.getY(), target.getZ(),
+                    new ItemStack(ModItems.SOUL_FRAGMENT, fragmentsToDrop)
+            );
+            target.getWorld().spawnEntity(soulDrop);
         }
         return super.postHit(stack, target, attacker);
     }

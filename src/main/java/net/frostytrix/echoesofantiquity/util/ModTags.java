@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.util;
 
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -26,6 +27,14 @@ public class ModTags {
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(EchoesOfAntiquity.MOD_ID, name));
+        }
+    }
+
+    public static class Entities {
+        public static final TagKey<EntityType<?>> SOULLESS = createTag("soulless");
+
+        private static TagKey<EntityType<?>> createTag(String name) {
+            return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(EchoesOfAntiquity.MOD_ID, name));
         }
     }
 }
