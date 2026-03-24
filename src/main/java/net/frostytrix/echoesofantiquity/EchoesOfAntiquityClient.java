@@ -2,11 +2,16 @@ package net.frostytrix.echoesofantiquity;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.SieveBERenderer;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.VoidPedestalBERenderer;
 import net.frostytrix.echoesofantiquity.block.entity.renderer.WaystoneBERenderer;
+import net.frostytrix.echoesofantiquity.entity.ModEntities;
+import net.frostytrix.echoesofantiquity.entity.client.ChorusHusk.ChorusHuskModel;
+import net.frostytrix.echoesofantiquity.entity.client.ChorusHusk.ChorusHuskRenderer;
 import net.frostytrix.echoesofantiquity.screen.ModScreenHandlers;
 import net.frostytrix.echoesofantiquity.screen.custom.SieveScreen;
 import net.frostytrix.echoesofantiquity.screen.custom.UncrafterScreen;
@@ -26,6 +31,8 @@ public class EchoesOfAntiquityClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.GRAVITY_ANCHOR, RenderLayer.getCutout());
 
         BlockEntityRendererFactories.register(ModBlockEntities.SIEVE_BE, SieveBERenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ChorusHuskModel.CHORUS_HUSK, ChorusHuskModel::getTexturedModelData);
+        EntityRendererRegistry.register(ModEntities.CHORUS_HUSK, ChorusHuskRenderer::new);
 
         ModModelPredicates.registerModelPredicate();
 

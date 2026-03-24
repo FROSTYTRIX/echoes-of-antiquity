@@ -21,6 +21,7 @@ public class EchoesOfAntiquityDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModRegistryDataGenerator::new);
 		pack.addProvider(ModWorldGenerator::new);
+		pack.addProvider(ModEntityLootTableProvider::new);
 	}
 
 	@Override

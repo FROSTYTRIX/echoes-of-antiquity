@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.entity.ModEntities;
 import net.frostytrix.echoesofantiquity.item.custom.*;
 import net.minecraft.block.DecoratedPotPattern;
 import net.minecraft.item.*;
@@ -53,7 +54,8 @@ public class ModItems{
             new ArmorItem(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(21))));
     public static final Item END_STEEL_UPGRADE = registerItem("end_steel_upgrade", new Item(new Item.Settings()));
 
-
+    public static final Item CHORUS_HUSK_SPAWN_EGG = registerItem("chorus_husk_spawn_egg",
+            new SpawnEggItem(ModEntities.CHORUS_HUSK, 0x5E2B85, 0x1A1A1A, new Item.Settings()));
     // Failed Clones
 
     public static final Item SOUL_FRAGMENT = registerItem("soul_fragment", new Item(new Item.Settings()));
