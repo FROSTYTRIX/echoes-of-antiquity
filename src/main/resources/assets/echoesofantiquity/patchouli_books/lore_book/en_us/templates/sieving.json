@@ -1,0 +1,84 @@
+{
+  "components": [
+    {
+      "type": "patchouli:text",
+      "text": "#title",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#input",
+      "framed": true,
+      "x": 12,
+      "y": 14
+    },
+    {
+      "type": "patchouli:item",
+      "item": "echoesofantiquity:soul_fragment",
+      "framed": true,
+      "x": 12,
+      "y": 44
+    },
+    {
+      "type": "patchouli:image",
+      "image": "echoesofantiquity:textures/gui/sieve/arrow_progress.png",
+      "u": 0,
+      "v": 0,
+      "width": 24,
+      "height": 17,
+      "texture_width": 24,
+      "texture_height": 17,
+      "x": 34,
+      "y": 28
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#out1",
+      "framed": true,
+      "x": 62,
+      "y": 20
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#out2",
+      "framed": true,
+      "x": 80,
+      "y": 20
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#out3",
+      "framed": true,
+      "x": 98,
+      "y": 20
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#out4",
+      "framed": true,
+      "x": 62,
+      "y": 38
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#out5",
+      "framed": true,
+      "x": 80,
+      "y": 38
+    },
+    {
+      "type": "patchouli:item",
+      "item": "#out6",
+      "framed": true,
+      "x": 98,
+      "y": 38
+    },
+    {
+      "type": "patchouli:text",
+      "text": "#description",
+      "x": 0,
+      "y": 65
+    }
+  ]
+}

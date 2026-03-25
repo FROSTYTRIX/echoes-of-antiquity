@@ -1,0 +1,26 @@
+{
+  "name": "okay does it work...",
+  "category": "echoesofantiquity:chapter_one",
+  "icon": "minecraft:paper",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "recipe": "echoesofantiquity:gravity_anchor",
+      "text": "i guess it does work yippie"
+    },
+    {
+      "type": "echoesofantiquity:sieving",
+      "title": "Basic Sieving",
+      "input": "minecraft:gravel",
+
+      "out1": "minecraft:flint[minecraft:lore=['{\"text\":\"50% Chance\",\"color\":\"gold\",\"italic\":false}']]",
+      "out2": "minecraft:gold_nugget[minecraft:lore=['{\"text\":\"15% Chance\",\"color\":\"gold\",\"italic\":false}']]",
+      "out3": "minecraft:air",
+      "out4": "minecraft:air",
+      "out5": "minecraft:air",
+      "out6": "minecraft:air",
+
+      "description": "This is not an acutal thing, it's still just a test"
+    }
+  ]
+}
