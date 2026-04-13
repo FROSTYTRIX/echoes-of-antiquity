@@ -53,7 +53,7 @@ public class MagnetRingItem extends Item {
                 if (distanceSq > 0.5 && nbt.getBoolean("attracting")) {
                     Vec3d direction = player.getPos().add(0, 0.75, 0).subtract(itemEntity.getPos()).normalize();
 
-                    double pullStrength = 0.05 + (RANGE / (distanceSq + 1)) * 0.02;
+                    double pullStrength = 0.05 + (RANGE / (distanceSq + 1)) * SPEED;
 
                     Vec3d newVelocity = itemEntity.getVelocity().multiply(0.95).add(direction.multiply(pullStrength));
                     itemEntity.setVelocity(newVelocity);
@@ -63,7 +63,7 @@ public class MagnetRingItem extends Item {
                 } else {
                     Vec3d direction = player.getPos().add(0, 0.75, 0).subtract(itemEntity.getPos()).normalize();
 
-                    double pullStrength = - 0.05 - (RANGE / (distanceSq + 1)) * 0.02;
+                    double pullStrength = - 0.05 - (RANGE / (distanceSq + 1)) * SPEED;
 
                     Vec3d newVelocity = itemEntity.getVelocity().multiply(0.95).add(direction.multiply(pullStrength));
                     itemEntity.setVelocity(newVelocity);

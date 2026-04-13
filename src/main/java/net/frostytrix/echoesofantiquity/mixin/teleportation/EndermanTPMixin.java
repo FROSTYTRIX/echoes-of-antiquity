@@ -20,7 +20,8 @@ public class EndermanTPMixin {
 
 
     @Inject(method = "teleportTo(DDD)Z", at = @At("HEAD"), cancellable = true)
-    private void stopTeleportIfSuppressed(double x, double y, double z, CallbackInfoReturnable<Boolean> cir) {
+// Removed double x, double y, double z
+    private void stopTeleportIfSuppressed(CallbackInfoReturnable<Boolean> cir) {
         // 'this' in a Mixin refers to the class being mixed into
         EndermanEntity enderman = (EndermanEntity) (Object) this;
 
@@ -28,13 +29,17 @@ public class EndermanTPMixin {
         if (enderman.getCommandTags().contains("void_pedestal_suppressed")) {
             BlockPos anchorPos = this.findNearestActiveAnchor(enderman);
             if (anchorPos != null) {
-                ServerWorld serverWorld = (ServerWorld) enderman.getWorld();
-                // Spawn "Portal" or "Witch" particles at the block
-                serverWorld.spawnParticles(ParticleTypes.PORTAL,
-                        anchorPos.getX() + 0.5, anchorPos.getY() + 1.2, anchorPos.getZ() + 0.5,
-                        20, 0.2, 0.2, 0.2, 0.1);
+                // Ensure we are on a ServerWorld before casting
+                if (enderman.getWorld() instanceof ServerWorld serverWorld) {
+                    // Spawn "Portal" or "Witch" particles at the block
+                    serverWorld.spawnParticles(ParticleTypes.PORTAL,
+                            anchorPos.getX() + 0.5, anchorPos.getY() + 1.2, anchorPos.getZ() + 0.5,
+                            20, 0.2, 0.2, 0.2, 0.1);
+                }
             }
             enderman.removeCommandTag("void_pedestal_suppressed");
+
+            // Cancel the teleport and return false (teleport failed)
             cir.setReturnValue(false);
         }
     }
