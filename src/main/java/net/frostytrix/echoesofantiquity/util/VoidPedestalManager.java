@@ -18,7 +18,7 @@ public class VoidPedestalManager {
 
     /** @return the nearest active pedestal in range, or null. */
     public static BlockPos findNearestActivePedestal(World world, BlockPos targetPos) {
-        return PEDESTALS.findNearest(world, targetPos, VoidPedestalBlockEntity.noTPRadius);
+        return PEDESTALS.findNearest(world, targetPos, VoidPedestalBlockEntity.noTPRadius());
     }
 
     public static boolean isSuppressed(World world, BlockPos targetPos) {

@@ -1,5 +1,6 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.frostytrix.echoesofantiquity.util.ModTags;
 import net.minecraft.entity.ItemEntity;
@@ -21,7 +22,6 @@ public class SoulSiphonItem extends SwordItem {
         super(toolMaterial, settings);
     }
 
-    private static final int BUFF_COOLDOWN = 200;
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
@@ -63,7 +63,7 @@ public class SoulSiphonItem extends SwordItem {
 
             world.playSound(null, user.getBlockPos(), SoundEvents.PARTICLE_SOUL_ESCAPE.value(),
                     SoundCategory.PLAYERS, 1.0f, 1.0f);
-            user.getItemCooldownManager().set(this, BUFF_COOLDOWN);
+            user.getItemCooldownManager().set(this, ModConfig.get().soulSiphonCooldown);
         }
 
         return TypedActionResult.success(stack, world.isClient());

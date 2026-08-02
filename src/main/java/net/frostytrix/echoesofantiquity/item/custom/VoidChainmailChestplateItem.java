@@ -1,6 +1,7 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
 import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.item.ModArmorMaterials;
 import net.frostytrix.echoesofantiquity.util.TeleportUtils;
 import net.minecraft.component.DataComponentTypes;
@@ -89,7 +90,7 @@ public class VoidChainmailChestplateItem extends ModArmorItem {
 
                             if (!armorPiece.isEmpty()) {
                                 int maxDamage = armorPiece.getMaxDamage();
-                                int damageAmount = maxDamage / 3;
+                                int damageAmount = maxDamage / ModConfig.get().voidRescueDurabilityDivisor;
                                 int currentDamage = armorPiece.getOrDefault(DataComponentTypes.DAMAGE, 0);
 
                                 if (currentDamage + damageAmount >= maxDamage) {

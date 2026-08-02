@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.entity.ModEntities;
 import net.frostytrix.echoesofantiquity.item.custom.*;
 import net.minecraft.block.DecoratedPotPattern;
@@ -42,7 +43,7 @@ public class ModItems{
             new DragonBowItem(new Item.Settings().maxDamage(2500)));
 
     public static final Item STATIC_PEARL = registerItem("static_pearl",
-            new StaticPearlItem(new Item.Settings().maxDamage(20)));
+            new StaticPearlItem(new Item.Settings().maxDamage(ModConfig.get().staticPearlUses)));
 
     public static final Item VOID_CHAINMAIL_HELMET = registerItem("void_chainmail_helmet",
             new ArmorItem(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(21))));

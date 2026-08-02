@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.frostytrix.echoesofantiquity.block.ModBlocks;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.effect.ModEffects;
 import net.frostytrix.echoesofantiquity.entity.ModEntities;
 import net.frostytrix.echoesofantiquity.entity.custom.ChorusHuskEntity;
@@ -35,6 +36,8 @@ public class EchoesOfAntiquity implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModConfig.load();
+
 		ModItems.registerModItems();
 		ModItemGroups.registerItemGroups();
 		ModBlocks.registerModBlocks();

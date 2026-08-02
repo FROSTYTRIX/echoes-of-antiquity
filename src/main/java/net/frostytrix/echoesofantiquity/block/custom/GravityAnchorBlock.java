@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.block.entity.custom.GravityAnchorBlockEntity;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.util.GravityAnchorManager;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -19,7 +20,9 @@ import org.jetbrains.annotations.Nullable;
 public class GravityAnchorBlock extends BlockWithEntity{
     public static final MapCodec<GravityAnchorBlock> CODEC = GravityAnchorBlock.createCodec(GravityAnchorBlock::new);
     public static final BooleanProperty ACTIVE = BooleanProperty.of("active");
-    public static final int RANGE = 10;
+    public static int range() {
+        return ModConfig.get().gravityAnchorRadius;
+    }
 
     public GravityAnchorBlock(Settings settings) {
         super(settings);
@@ -74,7 +77,8 @@ public class GravityAnchorBlock extends BlockWithEntity{
     }
 
     private void forceUpdateFallingBlocks(World world, BlockPos center) {
-        BlockPos.iterate(center.add(-RANGE, -RANGE, -RANGE), center.add(RANGE, RANGE, RANGE)).forEach(pos -> {
+        int range = range();
+        BlockPos.iterate(center.add(-range, -range, -range), center.add(range, range, range)).forEach(pos -> {
             BlockState state = world.getBlockState(pos);
 
             if (state.getBlock() instanceof FallingBlock) {

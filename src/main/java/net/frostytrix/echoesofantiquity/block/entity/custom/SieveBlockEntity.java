@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.block.entity.custom;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.frostytrix.echoesofantiquity.block.entity.ImplementedInventory;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.frostytrix.echoesofantiquity.recipe.ModRecipes;
 import net.frostytrix.echoesofantiquity.recipe.sieve.SievePool;
@@ -46,7 +47,7 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
 
     protected final PropertyDelegate delegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = ModConfig.get().sieveDuration;
 
     private Item cachedRenderItem = null;
     private boolean cachedRecipeResult = false;

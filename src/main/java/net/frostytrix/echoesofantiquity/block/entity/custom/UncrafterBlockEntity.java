@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.block.entity.custom;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.frostytrix.echoesofantiquity.block.entity.ImplementedInventory;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.screen.custom.UncrafterScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -47,7 +48,7 @@ public class UncrafterBlockEntity extends BlockEntity implements ImplementedInve
 
     protected final PropertyDelegate delegate;
     private int progress = 0;
-    private int maxProgress = 72;
+    private int maxProgress = ModConfig.get().uncrafterDuration;
 
     public UncrafterBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.UNCRAFTER_BE, pos, state);
@@ -167,7 +168,7 @@ public class UncrafterBlockEntity extends BlockEntity implements ImplementedInve
 
     private void resetProgress() {
         this.progress = 0;
-        this.maxProgress = 72;
+        this.maxProgress = ModConfig.get().uncrafterDuration;
     }
 
     private boolean hasUncraftingFinished() {

@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.block.custom;
 import com.mojang.serialization.MapCodec;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
 import net.frostytrix.echoesofantiquity.block.entity.custom.WaystoneBlockEntity;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -29,7 +30,6 @@ public class WaystoneBlock extends BlockWithEntity implements BlockEntityProvide
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final MapCodec<WaystoneBlock> CODEC = WaystoneBlock.createCodec(WaystoneBlock::new);
 
-    private static final int COST = 10;
 
     private static final VoxelShape SHAPE_N_S = Block.createCuboidShape(1.0, 0.0, 5.0, 15.0, 18.0, 11.0);
     private static final VoxelShape SHAPE_E_W = Block.createCuboidShape(5.0, 0.0, 1.0, 11.0, 18.0, 15.0);
@@ -77,9 +77,10 @@ public class WaystoneBlock extends BlockWithEntity implements BlockEntityProvide
                 world.setBlockState(pos, state.with(ACTIVE, true));
             }
         }else {
-            if (!state.get(ACTIVE) && player.getMainHandStack().getCount() >= COST && player.getMainHandStack().isOf(ModItems.SOUL_FRAGMENT)) {
+            int cost = ModConfig.get().waystoneSoulFragmentCost;
+            if (!state.get(ACTIVE) && player.getMainHandStack().getCount() >= cost && player.getMainHandStack().isOf(ModItems.SOUL_FRAGMENT)) {
                 world.setBlockState(pos, state.with(ACTIVE, true));
-                player.getMainHandStack().decrement(COST);
+                player.getMainHandStack().decrement(cost);
             }
         }
         return ActionResult.SUCCESS;

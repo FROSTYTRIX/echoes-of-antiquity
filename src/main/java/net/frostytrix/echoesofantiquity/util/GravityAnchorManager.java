@@ -16,6 +16,6 @@ public class GravityAnchorManager {
     }
 
     public static boolean isProtected(World world, BlockPos targetPos) {
-        return ANCHORS.isWithin(world, targetPos, GravityAnchorBlock.RANGE);
+        return ANCHORS.isWithin(world, targetPos, GravityAnchorBlock.range());
     }
 }

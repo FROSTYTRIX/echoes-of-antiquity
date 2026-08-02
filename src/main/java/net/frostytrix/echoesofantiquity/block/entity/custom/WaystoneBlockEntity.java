@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.block.entity.custom;
 
 import net.frostytrix.echoesofantiquity.block.custom.WaystoneBlock;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.util.TeleportUtils;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -69,7 +70,7 @@ public class WaystoneBlockEntity extends BlockEntity {
 
         if (state.get(WaystoneBlock.ACTIVE) && this.ownerUuid != null) {
             PlayerEntity player = world.getPlayerByUuid(this.ownerUuid);
-            if (player != null && player.getHealth() <= 5f && !player.isDead()) {
+            if (player != null && player.getHealth() <= ModConfig.get().waystoneRecallHealth && !player.isDead()) {
                 Optional<Vec3d> safeSpot = TeleportUtils.findSafeTeleportSpot(world, pos);
 
                 if (safeSpot.isPresent()) {
@@ -88,8 +89,7 @@ public class WaystoneBlockEntity extends BlockEntity {
     }
 
     private static void performRecall(World world, PlayerEntity player, Vec3d destination) {
-        // 5 hearts
-        player.setHealth(10.0f);
+        player.setHealth(ModConfig.get().waystoneHealAmount);
 
         player.teleport(destination.x, destination.y, destination.z, false);
 

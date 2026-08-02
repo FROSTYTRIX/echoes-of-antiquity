@@ -2,6 +2,7 @@ package net.frostytrix.echoesofantiquity.item.custom;
 
 import net.frostytrix.echoesofantiquity.component.MagnetMode;
 import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -20,8 +21,6 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class MagnetRingItem extends Item {
-    public static final int RANGE = 4;
-    public static final float SPEED = 0.02f;
 
     public MagnetRingItem(Settings settings) {
         super(settings);
@@ -55,7 +54,8 @@ public class MagnetRingItem extends Item {
             return;
         }
 
-        Box area = player.getBoundingBox().expand(RANGE);
+        int range = ModConfig.get().magnetRingRange;
+        Box area = player.getBoundingBox().expand(range);
         List<ItemEntity> entities = world.getNonSpectatingEntities(ItemEntity.class, area);
 
         for (ItemEntity itemEntity : entities) {
@@ -65,7 +65,7 @@ public class MagnetRingItem extends Item {
             }
 
             Vec3d direction = player.getPos().add(0, 0.75, 0).subtract(itemEntity.getPos()).normalize();
-            double pullStrength = 0.05 + (RANGE / (distanceSq + 1)) * SPEED;
+            double pullStrength = 0.05 + (range / (distanceSq + 1)) * ModConfig.get().magnetRingSpeed;
             if (mode == MagnetMode.REPULSING) {
                 pullStrength = -pullStrength;
             }

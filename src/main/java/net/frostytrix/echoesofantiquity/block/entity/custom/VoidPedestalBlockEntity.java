@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.block.entity.custom;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.frostytrix.echoesofantiquity.block.entity.ImplementedInventory;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
+import net.frostytrix.echoesofantiquity.config.ModConfig;
 import net.frostytrix.echoesofantiquity.util.VoidPedestalManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
@@ -25,7 +26,9 @@ public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedI
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
     private float rotation = 0;
     private boolean registered = false;
-    public static final int noTPRadius = 20;
+    public static int noTPRadius() {
+        return ModConfig.get().voidPedestalRadius;
+    }
 
     public VoidPedestalBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.VOID_PEDESTAL_BE, pos, state);
