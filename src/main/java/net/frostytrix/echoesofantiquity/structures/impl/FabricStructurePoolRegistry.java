@@ -75,12 +75,9 @@ public class FabricStructurePoolRegistry {
 
     public static void processRegistry(FabricStructurePool structurePool) {
         String poolId = structurePool.getId().toString();
-        //System.out.println(poolId);
         for (String key : structuresInfo.keys()) {
             if (Objects.equals(key, poolId)) {
-                //System.out.println("found a match with " + key);
                 structuresInfo.get(key).forEach(value -> addToPool(structurePool, value, key, registryEntryLookup));
-                //structurePool.getUnderlyingPool().getElementIndicesInRandomOrder(new LocalRandom(5)).forEach(value -> System.out.println(value.toString()));
             }
         }
     }
@@ -92,7 +89,6 @@ public class FabricStructurePoolRegistry {
             RegistryEntry<StructureProcessorList> entry = registryEntryLookup.getOrThrow(quint.c);
             spe.add(StructurePoolElement.ofProcessedSingle(quint.a, entry).apply(StructurePool.Projection.getById(quint.d)));
         } else if (type == StructurePoolElementType.LEGACY_SINGLE_POOL_ELEMENT) {
-            //System.out.println("adding " + quint.a);
             RegistryEntry<StructureProcessorList> entry = registryEntryLookup.getOrThrow(quint.c);
             spe.add(StructurePoolElement.ofProcessedLegacySingle(quint.a, entry).apply(StructurePool.Projection.getById(quint.d)));
         } else if (type == StructurePoolElementType.LIST_POOL_ELEMENT) {

@@ -11,15 +11,13 @@ import java.util.Map;
 import java.util.Set;
 
 public class GravityAnchorManager {
-    // Stocke les positions des ancres actives par dimension (Overworld, Nether, etc.)
+    // Active anchors per dimension.
     private static final Map<RegistryKey<World>, Set<BlockPos>> ANCHORS = new HashMap<>();
 
-    // Appelé quand le bloc est posé ou allumé
     public static void addAnchor(World world, BlockPos pos) {
-        ANCHORS.computeIfAbsent(world.getRegistryKey(), k -> new HashSet<>()).add(pos);
+        ANCHORS.computeIfAbsent(world.getRegistryKey(), k -> new HashSet<>()).add(pos.toImmutable());
     }
 
-    // Appelé quand le bloc est cassé ou éteint
     public static void removeAnchor(World world, BlockPos pos) {
         Set<BlockPos> set = ANCHORS.get(world.getRegistryKey());
         if (set != null) {
@@ -27,7 +25,6 @@ public class GravityAnchorManager {
         }
     }
 
-    // Vérifie si un bloc est dans le rayon d'une ancre
     public static boolean isProtected(World world, BlockPos targetPos) {
         Set<BlockPos> set = ANCHORS.get(world.getRegistryKey());
         if (set == null || set.isEmpty()) return false;

@@ -31,8 +31,7 @@ public record SieveRecipe(Ingredient inputItem, List<SieveResult> results, List<
         return this.inputItem.test(input.getStackInSlot(0));
     }
 
-    // This is called by the standard crafting system, but since we have a custom
-    // probability system handled in the BlockEntity, we just return an empty stack here.
+    // Probabilities are handled in the BlockEntity.
     @Override
     public ItemStack craft(SieveRecipeInput input, RegistryWrapper.WrapperLookup lookup) {
         return ItemStack.EMPTY;
@@ -62,7 +61,7 @@ public record SieveRecipe(Ingredient inputItem, List<SieveResult> results, List<
         public static final MapCodec<SieveRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(SieveRecipe::inputItem),
                 SieveResult.CODEC.listOf().fieldOf("results").forGetter(SieveRecipe::results),
-                // We make pools optional so old recipes don't break!
+                // Optional, so older recipes keep working.
                 SievePool.CODEC.listOf().optionalFieldOf("pools", List.of()).forGetter(SieveRecipe::pools)
         ).apply(inst, SieveRecipe::new));
 

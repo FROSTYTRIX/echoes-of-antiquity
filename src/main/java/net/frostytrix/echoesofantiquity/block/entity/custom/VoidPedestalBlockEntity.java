@@ -3,10 +3,9 @@ package net.frostytrix.echoesofantiquity.block.entity.custom;
 import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
 import net.frostytrix.echoesofantiquity.block.entity.ImplementedInventory;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
+import net.frostytrix.echoesofantiquity.util.VoidPedestalManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
@@ -18,12 +17,9 @@ import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
 
 public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
@@ -95,14 +91,19 @@ public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedI
             world.setBlockState(pos, state.with(VoidPedestalBlock.ACTIVE, hasItem), 3);
         }
 
-        // 3. If active, suppress entities
+        // 3. Keep the suppression registry up to date; teleports query it themselves.
         if (hasItem) {
-            Box area = new Box(pos).expand(noTPRadius);
-            List<LivingEntity> entities = world.getNonSpectatingEntities(LivingEntity.class, area);
-
-            for (Entity entity : entities) {
-                entity.addCommandTag("void_pedestal_suppressed");
-            }
+            VoidPedestalManager.addPedestal(world, pos);
+        } else {
+            VoidPedestalManager.removePedestal(world, pos);
         }
+    }
+
+    @Override
+    public void markRemoved() {
+        if (this.world != null && !this.world.isClient) {
+            VoidPedestalManager.removePedestal(this.world, this.pos);
+        }
+        super.markRemoved();
     }
 }

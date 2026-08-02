@@ -19,6 +19,10 @@
   "block.echoesofantiquity.void_anchor": "Ancre du Vide",
   "item.echoesofantiquity.static_pearl": "Perle Statique",
 
+  "biome.echoesofantiquity.void_infection": "Infection du Néant",
+  "entity.echoesofantiquity.chorus_husk": "Carcasse de Chorus",
+  "item.echoesofantiquity.chorus_husk_spawn_egg": "Œuf d'apparition de Carcasse de Chorus",
+
   "itemgroup.echoesofantiquity.the_fallen_humans": "Les Humains Déchus",
 
   "item.minecraft.potion.effect.phasing_potion": "Potion de Déphasage",
@@ -59,7 +63,11 @@
 
   "block.echoesofantiquity.gravity_anchor": "Ancre de Gravité",
   "sounds.echoesofantiquity.gravity_anchor_active": "Bourdonnement de l'Ancre de Gravité",
+  "sounds.echoesofantiquity.sifting": "Tamisage du Tamis",
 
   "item.echoesofantiquity.infinite_water_bucket": "Seau d'Eau Infini",
-  "item.echoesofantiquity.level": "Niveau"
+  "item.echoesofantiquity.level": "Niveau",
+
+  "tag.item.echoesofantiquity.glass_panes": "Vitres",
+  "tag.item.echoesofantiquity.all_stones": "Toutes les Pierres"
 }

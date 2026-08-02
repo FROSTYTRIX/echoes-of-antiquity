@@ -31,6 +31,7 @@ public class ModItemGroups {
                         entries.add(new ItemStack(ModItems.ENDER_BOOTS));
                         entries.add(new ItemStack(ModItems.END_STEEL_INGOT));
                         entries.add(new ItemStack(ModBlocks.VOID_PEDESTAL));
+                        entries.add(new ItemStack(ModItems.RELIC_BlADE));
                         entries.add(new ItemStack(ModItems.RELIC_GREATSWORD));
                         entries.add(new ItemStack(ModItems.DRAGON_BOW));
                         entries.add(new ItemStack(ModItems.STATIC_PEARL));

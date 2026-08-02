@@ -35,8 +35,9 @@ public class SieveScreen extends HandledScreen<SieveScreenHandler> {
 
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if (handler.isSifting()) {
+            // This arrow is 22x16; the uncrafter one is 24x16.
             context.drawTexture(ARROW_TEXTURE, x + 58, y+35, 0, 0,
-                    handler.getScaledArrowProgress(), 16, 24,16);
+                    handler.getScaledArrowProgress(), 16, 22,16);
         }
     }
 

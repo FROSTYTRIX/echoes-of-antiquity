@@ -20,18 +20,15 @@ import java.util.UUID;
 
 public class WaystoneBlockEntity extends BlockEntity {
 
-    // Stores the unique ID of the player who placed the block
     private UUID ownerUuid = null;
 
     public WaystoneBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.WAYSTONE_BE, pos, state);
     }
 
-    // --- OWNER LOGIC ---
 
     public void setOwner(UUID uuid) {
         this.ownerUuid = uuid;
-        // markDirty() tells the game this chunk needs to be saved to the hard drive
         this.markDirty();
     }
 
@@ -39,11 +36,7 @@ public class WaystoneBlockEntity extends BlockEntity {
         return this.ownerUuid;
     }
 
-    // --- STATE CHECKING LOGIC ---
 
-    /**
-     * Helper method to instantly check if this Waystone is currently fueled and active.
-     */
     public boolean isActive() {
         BlockState state = this.getCachedState();
         if (state.contains(WaystoneBlock.ACTIVE)) {
@@ -52,13 +45,11 @@ public class WaystoneBlockEntity extends BlockEntity {
         return false;
     }
 
-    // --- DATA SAVING (NBT) ---
 
     @Override
     protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.writeNbt(nbt, registryLookup);
 
-        // If an owner exists, save their UUID under the key "WaystoneOwner"
         if (this.ownerUuid != null) {
             nbt.putUuid("WaystoneOwner", this.ownerUuid);
         }
@@ -68,7 +59,6 @@ public class WaystoneBlockEntity extends BlockEntity {
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.readNbt(nbt, registryLookup);
 
-        // When the chunk loads, check if the key exists and pull the UUID back out
         if (nbt.containsUuid("WaystoneOwner")) {
             this.ownerUuid = nbt.getUuid("WaystoneOwner");
         }
@@ -98,13 +88,11 @@ public class WaystoneBlockEntity extends BlockEntity {
     }
 
     private static void performRecall(World world, PlayerEntity player, Vec3d destination) {
-        // Set health to 5 hearts (10.0 HP)
+        // 5 hearts
         player.setHealth(10.0f);
 
-        // Teleport to the safe Vec3d coordinates
         player.teleport(destination.x, destination.y, destination.z, false);
 
-        // Visual and Sound effects at the player's new location
         world.playSound(null, player.getBlockPos(), SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
     }
 }

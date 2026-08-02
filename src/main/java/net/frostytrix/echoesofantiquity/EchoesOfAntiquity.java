@@ -25,7 +25,6 @@ import net.minecraft.potion.Potions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-//test
 
 
 import static net.frostytrix.echoesofantiquity.item.ModItems.CHORUS_HUSK_SPAWN_EGG;

@@ -72,18 +72,13 @@ public class ModArmorItem extends ArmorItem {
     }
 
     public boolean hasCorrectArmorOn(RegistryEntry<ArmorMaterial> material, PlayerEntity player) {
-        for (ItemStack armorStack: player.getInventory().armor) {
-            if(!(armorStack.getItem() instanceof ArmorItem)) {
+        // Each slot is checked and read together; the old split version could throw ClassCastException.
+        for (int slot = 0; slot < 4; slot++) {
+            if (!(player.getInventory().getArmorStack(slot).getItem() instanceof ArmorItem armorItem)
+                    || armorItem.getMaterial() != material) {
                 return false;
             }
         }
-
-        ArmorItem boots = ((ArmorItem)player.getInventory().getArmorStack(0).getItem());
-        ArmorItem leggings = ((ArmorItem)player.getInventory().getArmorStack(1).getItem());
-        ArmorItem breastplate = ((ArmorItem)player.getInventory().getArmorStack(2).getItem());
-        ArmorItem helmet = ((ArmorItem)player.getInventory().getArmorStack(3).getItem());
-
-        return helmet.getMaterial() == material && breastplate.getMaterial() == material &&
-                leggings.getMaterial() == material && boots.getMaterial() == material;
+        return true;
     }
 }

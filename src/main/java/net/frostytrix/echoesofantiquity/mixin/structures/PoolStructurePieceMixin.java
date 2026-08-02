@@ -35,7 +35,6 @@ public class PoolStructurePieceMixin {
                 nbtElement.putString("projection", info.getRight());
                 nbt.put("pool_element", nbtElement);
             }
-            //System.out.println(nbt);
         }
     }
 

@@ -28,13 +28,17 @@ public class MeasuringTapeItem extends Item {
     public ActionResult useOnBlock(ItemUsageContext context) {
         ItemStack stack = context.getStack();
         BlockPos pos = context.getBlockPos();
+        PlayerEntity player = context.getPlayer();
 
-        // 1. Get the NbtComponent attached to THIS specific item
+        // Server-side write; the component syncs to the client for the tooltip.
+        if (player == null || context.getWorld().isClient) {
+            return ActionResult.SUCCESS;
+        }
+
         NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
         NbtCompound nbt = customData.copyNbt();
 
-        // 2. Save the coordinates to the NBT based on sneaking
-        if (!context.getPlayer().isSneaking()) {
+        if (!player.isSneaking()) {
             nbt.putInt("FirstX", pos.getX());
             nbt.putInt("FirstY", pos.getY());
             nbt.putInt("FirstZ", pos.getZ());
@@ -46,7 +50,6 @@ public class MeasuringTapeItem extends Item {
             nbt.putBoolean("HasSecond", true);
         }
 
-        // 3. Save the data back onto the item (This syncs from server to client automatically!)
         stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
 
         return ActionResult.SUCCESS;
@@ -55,6 +58,10 @@ public class MeasuringTapeItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack stack = user.getStackInHand(hand);
+
+        if (world.isClient) {
+            return TypedActionResult.success(stack, true);
+        }
 
         NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
         NbtCompound nbt = customData.copyNbt();
@@ -67,7 +74,6 @@ public class MeasuringTapeItem extends Item {
                 nbt.putString("Mode", "vector_distance");
             }
         } else {
-            // Clear the coordinates
             nbt.remove("HasFirst");
             nbt.remove("HasSecond");
         }
@@ -78,7 +84,6 @@ public class MeasuringTapeItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        // Read the data directly from the item for the tooltip
         NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
         NbtCompound nbt = customData.copyNbt();
 

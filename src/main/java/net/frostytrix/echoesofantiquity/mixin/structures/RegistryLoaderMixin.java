@@ -34,7 +34,6 @@ public class RegistryLoaderMixin {
                         FabricStructurePoolRegistry.registryEntryLookup = info.entryLookup();
                     });
                 }
-                //System.out.println("successfully registered a callback");
                 StructurePoolAddCallback.EVENT.invoker().onAdd(new FabricStructurePoolImpl(pool, id));
             }
         }

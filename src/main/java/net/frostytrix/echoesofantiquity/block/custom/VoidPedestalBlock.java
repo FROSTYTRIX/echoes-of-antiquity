@@ -113,7 +113,6 @@ public class VoidPedestalBlock extends BlockWithEntity implements BlockEntityPro
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        // This "registers" the property to this specific block
         builder.add(ACTIVE);
     }
 

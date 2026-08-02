@@ -77,20 +77,17 @@ public class ModItems{
     public static final Item MAGNET_RING = registerItem("magnet_ring", new MagnetRingItem(new Item.Settings().maxCount(1)));
 
     public static Item registerSherd(String baseName) {
-        // 1. L'ID de l'Item (ex: "architect_pottery_sherd")
         Identifier itemId = Identifier.of(EchoesOfAntiquity.MOD_ID, baseName + "_pottery_sherd");
 
-        // 2. L'ID du Motif 3D (ex: "architect_pottery_pattern")
         Identifier patternId = Identifier.of(EchoesOfAntiquity.MOD_ID, baseName + "_pottery_pattern");
         RegistryKey<DecoratedPotPattern> patternKey = RegistryKey.of(Registries.DECORATED_POT_PATTERN.getKey(), patternId);
 
-        // 3. On enregistre les deux (Minecraft cherchera donc l'image "baseName_pottery_pattern.png")
+        // Texture is looked up as <baseName>_pottery_pattern.png
         DecoratedPotPattern pattern = new DecoratedPotPattern(patternId);
         Registry.register(Registries.DECORATED_POT_PATTERN, patternKey, pattern);
 
         Item sherdItem = Registry.register(Registries.ITEM, itemId, new Item(new Item.Settings()));
 
-        // 4. On sauvegarde pour le DataGen et notre Mixin
         CUSTOM_SHERDS.add(sherdItem);
         SHERD_TO_PATTERN.put(sherdItem, patternKey);
 

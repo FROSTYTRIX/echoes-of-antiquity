@@ -55,7 +55,6 @@ public class WaystoneBlock extends BlockWithEntity implements BlockEntityProvide
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        // This makes the block face the player when placed
         return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 

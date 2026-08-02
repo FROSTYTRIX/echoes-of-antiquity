@@ -16,7 +16,6 @@ public class FallingBlockMixin {
 
     @Inject(method = "scheduledTick", at = @At("HEAD"), cancellable = true)
     private void preventFall(BlockState state, ServerWorld world, BlockPos pos, Random random, CallbackInfo ci) {
-        // Si le bloc est à côté d'une ancre, on annule la mise à jour qui le fait tomber.
         if (GravityAnchorManager.isProtected(world, pos)) {
             ci.cancel();
         }

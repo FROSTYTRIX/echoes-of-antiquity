@@ -1,6 +1,7 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
 import net.frostytrix.echoesofantiquity.util.ModTags;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,67 +34,71 @@ public class ArchitectsLevelItem extends Item {
         }
     }
 
+    /** A bump to shave: natural block or fluid. */
+    private boolean isLevelable(World world, BlockPos pos) {
+        return world.getBlockState(pos).isIn(ModTags.Blocks.NATURAL_BLOCKS_LEVEL)
+                || world.getFluidState(pos).isIn(FluidTags.WATER)
+                || world.getFluidState(pos).isIn(FluidTags.LAVA);
+    }
+
+    /** A hole to fill: air, fluid or replaceable block. Anything else is left alone. */
+    private boolean isHole(World world, BlockPos pos) {
+        BlockState state = world.getBlockState(pos);
+        return state.isAir() || state.isReplaceable() || !world.getFluidState(pos).isEmpty();
+    }
+
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos centerPos = context.getBlockPos(); // Le bloc cliqué (niveau de référence)
         PlayerEntity player = context.getPlayer();
 
-        if (!world.isClient && player != null) {
-            // On définit le rayon (1 bloc autour du centre = 3x3)
-            int radius = 1;
-
-            for (int x = -radius; x <= radius; x++) {
-                for (int z = -radius; z <= radius; z++) {
-
-                    boolean canPlace = player.isCreative() || hasRequiredBlock(player, Blocks.DIRT.asItem());
-
-                    // 1. Définir la position cible au sol
-                    BlockPos targetFloor = centerPos.add(x, 0, z);
-
-                    // 2. Définir la position juste au-dessus (la "bosse" à raser)
-                    BlockPos targetAbove = targetFloor.up();
-                    BlockPos targetAbove2 = targetAbove.up();
-
-                    // --- LOGIQUE DE NETTOYAGE (Rasage) ---
-                    if (world.getBlockState(targetAbove).isIn(ModTags.Blocks.NATURAL_BLOCKS_LEVEL)
-                            || world.getFluidState(targetAbove).isIn(FluidTags.WATER) || world.getFluidState(targetAbove).isIn(FluidTags.LAVA)) {
-                        world.breakBlock(targetAbove, true, player);
-                        context.getStack().damage(1,  (ServerWorld) world, (ServerPlayerEntity) player,
-                                item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
-                    }
-
-                    if (world.getBlockState(targetAbove2).isIn(ModTags.Blocks.NATURAL_BLOCKS_LEVEL)
-                            || world.getFluidState(targetAbove2).isIn(FluidTags.WATER) || world.getFluidState(targetAbove2).isIn(FluidTags.LAVA)) {
-                        world.breakBlock(targetAbove2, true, player);
-                        context.getStack().damage(1,  (ServerWorld) world, (ServerPlayerEntity) player,
-                                item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
-                    }
-
-                    // --- LOGIQUE DE REMPLISSAGE (Trou) ---
-                    if (world.getBlockState(targetFloor).isIn(ModTags.Blocks.NATURAL_BLOCKS_LEVEL)
-                    || world.getFluidState(targetFloor).isIn(FluidTags.WATER) || world.getFluidState(targetFloor).isIn(FluidTags.LAVA)
-                    || !world.getBlockState(targetFloor).isOf(Blocks.AIR) || !world.getBlockState(targetFloor).isOf(Blocks.CAVE_AIR)
-                            || !world.getBlockState(targetFloor).isOf(Blocks.VOID_AIR)) {
-
-                        // Ici on place de la terre par défaut, ou le bloc souhaité
-                        if (!world.getBlockState(targetFloor).isOf(Blocks.DIRT) && canPlace) {
-                            world.breakBlock(targetFloor, true, player);
-                            world.setBlockState(targetFloor, Blocks.DIRT.getDefaultState());
-                            if (!player.isCreative()) {
-                                consumeItem(player, Blocks.DIRT.asItem());
-                            }
-                            context.getStack().damage(1,  (ServerWorld) world, (ServerPlayerEntity) player,
-                                    item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
-                        }
-                    }
-                }
-            }
-
-            // Ajouter un petit cooldown pour le "Game Feel"
-            player.getItemCooldownManager().set(this, 5); // 0.5 seconde
+        // Server-side, real player only.
+        if (!(world instanceof ServerWorld serverWorld) || !(player instanceof ServerPlayerEntity serverPlayer)) {
+            return ActionResult.SUCCESS;
         }
 
+        int radius = 1;
+
+        for (int x = -radius; x <= radius; x++) {
+            for (int z = -radius; z <= radius; z++) {
+
+                BlockPos targetFloor = centerPos.add(x, 0, z);
+
+                BlockPos targetAbove = targetFloor.up();
+                BlockPos targetAbove2 = targetAbove.up();
+
+                if (isLevelable(world, targetAbove)) {
+                    world.breakBlock(targetAbove, true, player);
+                    damageLevel(context.getStack(), serverWorld, serverPlayer);
+                }
+
+                if (isLevelable(world, targetAbove2)) {
+                    world.breakBlock(targetAbove2, true, player);
+                    damageLevel(context.getStack(), serverWorld, serverPlayer);
+                }
+
+                boolean canPlace = player.isCreative() || hasRequiredBlock(player, Blocks.DIRT.asItem());
+
+                if (canPlace && isHole(world, targetFloor)) {
+                    // Clears tall grass / water before placing
+                    world.breakBlock(targetFloor, true, player);
+                    world.setBlockState(targetFloor, Blocks.DIRT.getDefaultState());
+
+                    if (!player.isCreative()) {
+                        consumeItem(player, Blocks.DIRT.asItem());
+                    }
+                    damageLevel(context.getStack(), serverWorld, serverPlayer);
+                }
+            }
+        }
+
+        player.getItemCooldownManager().set(this, 5);
+
         return ActionResult.SUCCESS;
+    }
+
+    private void damageLevel(ItemStack stack, ServerWorld world, ServerPlayerEntity player) {
+        stack.damage(1, world, player, item -> player.sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
     }
 }

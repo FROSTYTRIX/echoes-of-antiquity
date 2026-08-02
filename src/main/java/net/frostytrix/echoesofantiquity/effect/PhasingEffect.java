@@ -1,10 +1,6 @@
 package net.frostytrix.echoesofantiquity.effect;
 
-import net.frostytrix.echoesofantiquity.block.ModBlocks;
-import net.frostytrix.echoesofantiquity.block.custom.VoidPedestalBlock;
-import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
+import net.frostytrix.echoesofantiquity.util.VoidPedestalManager;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
@@ -25,59 +21,44 @@ public class PhasingEffect extends StatusEffect {
     @Override
     public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
         World world = entity.getWorld();
+
+        // Server-side only.
+        if (!(world instanceof ServerWorld serverWorld)) {
+            return super.applyUpdateEffect(entity, amplifier);
+        }
+
         Direction dir = entity.getHorizontalFacing();
-        // 1. Manually check for a wall by expanding the player's collision check area slightly where they are looking
         Box collisionCheckArea = entity.getBoundingBox().stretch(
                 dir.getOffsetX() * 0.2,
                 0,
                 dir.getOffsetZ() * 0.2
         );
-        // 2. See if any solid blocks intersect this tiny area
         boolean isTouchingWall = world.getBlockCollisions(entity, collisionCheckArea).iterator().hasNext();
 
-        double Velocity = entity.getVelocity().lengthSquared();
+        // Only true when actually blocked while moving. lengthSquared() > 0 also passed
+        // while standing still, since gravity always leaves a vertical component.
+        boolean pushingIntoWall = entity.horizontalCollision;
 
-        if (Velocity > 0 && isTouchingWall) {
-            if (entity.getCommandTags().contains("void_anchor_suppressed")) {
-                BlockPos pedestalPos = this.findNearestActivePedestal(entity);
-                if (pedestalPos != null) {
-                    ServerWorld serverWorld = (ServerWorld) entity.getWorld();
-                    serverWorld.spawnParticles(ParticleTypes.PORTAL,
-                            pedestalPos.getX() + 0.5, pedestalPos.getY() + 1.2, pedestalPos.getZ() + 0.5,
-                            20, 0.2, 0.2, 0.2, 0.1);
-                }
+        if (pushingIntoWall && isTouchingWall) {
+            BlockPos pedestalPos = VoidPedestalManager.findNearestActivePedestal(world, entity.getBlockPos());
+
+            if (pedestalPos != null) {
+                // Active pedestal in range: phasing is cancelled.
+                serverWorld.spawnParticles(ParticleTypes.PORTAL,
+                        pedestalPos.getX() + 0.5, pedestalPos.getY() + 1.2, pedestalPos.getZ() + 0.5,
+                        20, 0.2, 0.2, 0.2, 0.1);
             } else {
                 BlockPos targetPos = entity.getBlockPos().offset(dir, 2);
 
-                // Check for safe landing (Air at feet and head)
-                if (world.getBlockState(targetPos).isAir() && world.getBlockState(targetPos.up()).isAir() && !entity.getWorld().isClient) {
-                    ServerWorld worldServer = (ServerWorld) world;
-                    // Visuals
-                    worldServer.spawnParticles(ParticleTypes.PORTAL, entity.getX(), entity.getY() + 1, entity.getZ(), 20, 0.5, 0.5, 0.5, 0.1);
-                    // Teleport
+                if (world.getBlockState(targetPos).isAir() && world.getBlockState(targetPos.up()).isAir()) {
+                    serverWorld.spawnParticles(ParticleTypes.PORTAL, entity.getX(), entity.getY() + 1, entity.getZ(), 20, 0.5, 0.5, 0.5, 0.1);
                     entity.teleport(targetPos.getX() + 0.5, targetPos.getY(), targetPos.getZ() + 0.5, ParticleTypes.PORTAL.shouldAlwaysSpawn());
-                    // Sound
                     world.playSound(null, targetPos, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.PLAYERS, 1.0f, 1.0f);
-                    // Visuals n.2
-                    worldServer.spawnParticles(ParticleTypes.PORTAL, entity.getX(), entity.getY() + 1, entity.getZ(), 20, 0.5, 0.5, 0.5, 0.1);
+                    serverWorld.spawnParticles(ParticleTypes.PORTAL, entity.getX(), entity.getY() + 1, entity.getZ(), 20, 0.5, 0.5, 0.5, 0.1);
                 }
             }
         }
-        entity.removeCommandTag("void_anchor_suppressed");
         return super.applyUpdateEffect(entity, amplifier);
-    }
-
-    private BlockPos findNearestActivePedestal(Entity entity) {
-        BlockPos pos = entity.getBlockPos();
-        int r = VoidPedestalBlockEntity.noTPRadius;
-        for (BlockPos target : BlockPos.iterate(pos.add(-r, -r, -r), pos.add(r, r, r))) {
-            BlockState state = entity.getWorld().getBlockState(target);
-            if (state.isOf(ModBlocks.VOID_PEDESTAL) && state.get(VoidPedestalBlock.ACTIVE)) {
-                return target.toImmutable();
-            }
-        }
-        return null;
-
     }
 
     @Override

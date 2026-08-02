@@ -21,12 +21,10 @@ public class GravityAnchorSoundInstance extends MovingSoundInstance {
         this.world = world;
         this.pos = pos;
 
-        // Pin the sound to the exact center of the block
         this.x = (double) pos.getX() + 0.5;
         this.y = (double) pos.getY() + 0.5;
         this.z = (double) pos.getZ() + 0.5;
 
-        // This makes the hum loop infinitely
         this.repeat = true;
         this.repeatDelay = 0;
         this.volume = 1.4f;
@@ -34,7 +32,6 @@ public class GravityAnchorSoundInstance extends MovingSoundInstance {
 
     @Override
     public void tick() {
-        // If the block is broken OR turned off, kill the audio loop
         if (!world.getBlockState(pos).isOf(ModBlocks.GRAVITY_ANCHOR) || !world.getBlockState(pos).get(GravityAnchorBlock.ACTIVE)) {
             this.setDone();
         }

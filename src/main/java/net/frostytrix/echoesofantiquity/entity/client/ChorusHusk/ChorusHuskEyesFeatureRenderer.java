@@ -9,7 +9,6 @@ import net.minecraft.util.Identifier;
 
 public class ChorusHuskEyesFeatureRenderer extends EyesFeatureRenderer<ChorusHuskEntity, ChorusHuskModel<ChorusHuskEntity>> {
 
-    // Points to your new transparent texture with just the eyes
     private static final RenderLayer SKIN = RenderLayer.getEyes(Identifier.of(EchoesOfAntiquity.MOD_ID, "textures/entity/chorus_husk/chorus_husk_eyes.png"));
 
     public ChorusHuskEyesFeatureRenderer(FeatureRendererContext<ChorusHuskEntity, ChorusHuskModel<ChorusHuskEntity>> featureRendererContext) {

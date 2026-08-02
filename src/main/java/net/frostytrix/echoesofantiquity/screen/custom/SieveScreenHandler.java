@@ -115,7 +115,7 @@ public class SieveScreenHandler extends ScreenHandler {
     public int getScaledArrowProgress(){
         int progress = propertyDelegate.get(0);
         int maxProgress = propertyDelegate.get(1);
-        int arrowPixelSize = 24;
+        int arrowPixelSize = 22; // real arrow_progress.png width
         return maxProgress != 0 && progress != 0 ? progress * arrowPixelSize / maxProgress : 0;
     }
 

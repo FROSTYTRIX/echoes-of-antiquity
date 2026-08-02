@@ -15,7 +15,6 @@ import net.minecraft.util.math.RotationAxis;
 import org.joml.Matrix4f;
 
 public class WaystoneBERenderer implements BlockEntityRenderer<WaystoneBlockEntity> {
-    // Target the texture file directly
     private static final Identifier GLOW_TEXTURE = Identifier.of(EchoesOfAntiquity.MOD_ID, "textures/block/waystone_glow_e.png");
 
     public WaystoneBERenderer(BlockEntityRendererFactory.Context context) {}
@@ -24,11 +23,9 @@ public class WaystoneBERenderer implements BlockEntityRenderer<WaystoneBlockEnti
     public void render(WaystoneBlockEntity entity, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
         BlockState state = entity.getCachedState();
 
-        // Check if the Waystone is ACTIVE
         if (state.get(WaystoneBlock.ACTIVE)) {
             matrices.push();
 
-            // 1. Handle Rotation: Move to center, rotate, move back
             matrices.translate(0.5f, 0.5f, 0.5f);
             float angle = switch (state.get(WaystoneBlock.FACING)) {
                 case NORTH -> 0f;
@@ -43,7 +40,7 @@ public class WaystoneBERenderer implements BlockEntityRenderer<WaystoneBlockEnti
             VertexConsumer consumer = vertexConsumers.getBuffer(RenderLayer.getEyes(GLOW_TEXTURE));
             Matrix4f matrix = matrices.peek().getPositionMatrix();
 
-            // UV and Geometry (Corrected 14x14 mapping)
+            // 14x14 UV mapping
             float x1 = 1f / 16f;
             float x2 = 15f / 16f;
             float y1 = 0f;
@@ -57,7 +54,6 @@ public class WaystoneBERenderer implements BlockEntityRenderer<WaystoneBlockEnti
 
             int maxLight = 15728880;
 
-            // Draw the Quad (North face relative to the rotated matrix)
             consumer.vertex(matrix, x2, y1, z).color(255, 255, 255, 255).texture(u1, v2).overlay(overlay).light(maxLight).normal(0, 0, -1);
             consumer.vertex(matrix, x1, y1, z).color(255, 255, 255, 255).texture(u2, v2).overlay(overlay).light(maxLight).normal(0, 0, -1);
             consumer.vertex(matrix, x1, y2, z).color(255, 255, 255, 255).texture(u2, v1).overlay(overlay).light(maxLight).normal(0, 0, -1);

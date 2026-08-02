@@ -60,8 +60,7 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
             return false;
         }
 
-        // If the item in the slot is different from the last time we checked,
-        // we ask the RecipeManager. Otherwise, we just return the saved answer!
+        // Only ask the RecipeManager when the input item changes.
         if (currentStack.getItem() != this.cachedRenderItem) {
             this.cachedRenderItem = currentStack.getItem();
             this.cachedRecipeResult = this.world.getRecipeManager()
@@ -123,7 +122,7 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
     protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
         super.readNbt(nbt, registryLookup);
 
-        // Safely wipe the client memory before reading so the 3D block doesn't get stuck
+        // Wipe first, or the 3D render sticks on stale items.
         for (int i = 0; i < this.inventory.size(); i++) {
             this.inventory.set(i, ItemStack.EMPTY);
         }
@@ -156,6 +155,15 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
         return new SieveScreenHandler(syncId, playerInventory, this, this.delegate);
     }
 
+    @Override
+    public boolean canPlayerUse(PlayerEntity player) {
+        // ImplementedInventory defaults to true: no distance or existence check.
+        if (this.world == null || this.world.getBlockEntity(this.pos) != this) {
+            return false;
+        }
+        return player.squaredDistanceTo(this.pos.getX() + 0.5, this.pos.getY() + 0.5, this.pos.getZ() + 0.5) <= 64.0;
+    }
+
     @Nullable
     @Override
     public Packet<ClientPlayPacketListener> toUpdatePacket() {
@@ -168,7 +176,6 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
     }
 
     public void tick(World world, BlockPos pos, BlockState state) {
-        // --- 1. CLIENT SIDE (Visuals Only) ---
         if (world.isClient) {
             if (this.progress > 0 && this.progress < this.maxProgress) {
                 this.progress++;
@@ -176,7 +183,6 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
             return;
         }
 
-        // --- 2. SERVER SIDE (Math and Crafting) ---
         if (hasRecipe() && hasOutputSpace() && hasFuel()) {
             increaseSiftingProcess();
             markDirty(world, pos, state);
@@ -218,19 +224,16 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
 
     private boolean hasRecipe() {
         Optional<RecipeEntry<SieveRecipe>> recipe = getCurrentRecipe();
-        // The sieve only processes if it has a recipe AND at least some space left
         return recipe.isPresent() && hasOutputSpace();
     }
 
     private boolean hasOutputSpace() {
         for (int i = 2; i <= 7; i++) {
             ItemStack slotStack = this.inventory.get(i);
-            // If we find an empty slot, OR a slot that isn't fully stacked to 64 yet
             if (slotStack.isEmpty() || slotStack.getCount() < slotStack.getMaxCount()) {
                 return true;
             }
         }
-        // If the loop finishes without returning true, the sieve is 100% full
         return false;
     }
 
@@ -245,18 +248,17 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
 
         SieveRecipe recipe = recipeEntry.get().value();
 
-        // 1. Consume Fuel and Input directly
         this.inventory.get(SOUL_FRAGMENT_SLOT).decrement(1);
         this.inventory.get(INPUT_SLOT).decrement(1);
 
-        // 2. Roll independent probabilities
+        // Independent per-result rolls
         for (SieveResult result : recipe.results()) {
             if (this.world.random.nextFloat() <= result.chance()) {
                 insertOutput(result.stack().copy());
             }
         }
 
-        // 3. Roll grouped pools
+        // One item per pool
         for (SievePool pool : recipe.pools()) {
             if (!pool.items().isEmpty() && this.world.random.nextFloat() <= pool.chance()) {
                 int randomIndex = this.world.random.nextInt(pool.items().size());
