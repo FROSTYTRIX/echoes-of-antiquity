@@ -15,9 +15,6 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public static final Block PLACEHOLDER = registerBlock("placeholder",
-            new Block(AbstractBlock.Settings.create().strength(1f)));
-
     public static final Block VOID_PEDESTAL = registerBlock("void_pedestal",
             new VoidPedestalBlock(AbstractBlock.Settings.create().nonOpaque().strength(50.0F, 1200.0F).requiresTool()));
 
