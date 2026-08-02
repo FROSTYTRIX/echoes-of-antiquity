@@ -118,3 +118,17 @@
 ### 🥽 Lunettes d'Obsidienne 🟣
 * Regardez les Endermen sans les énerver sans masquer votre vue.
 </details>
+
+---
+
+## 📖 Livre Guide
+Patchouli est **optionnel**. Si vous l'installez, le livre de lore se fabrique avec un Livre et un Écrit
+Ancien. Sans lui, le mod fonctionne à l'identique, seule cette recette disparaît.
+
+---
+
+## 🙏 Remerciements
+Ce mod embarque du code venant d'autres projets, sous leurs propres licences.
+La liste complète est dans [CREDITS.md](./CREDITS.md) — ImplementedInventory (Juuz, CC0),
+structurized-reborn (fzzyhmstrs, MIT), MedievalWeapons (Globox1997, MIT) et
+StructureTutorialMod (TelepathicGrunt, MIT).

@@ -124,3 +124,17 @@
 ## ✨ Potions & Effects 🥛
 * **Phasing:** Walk through walls (max 1 block thick).
 * **Long Arms (Reach):** Increases interaction range by **+2.0 blocks**.
+
+---
+
+## 📖 Guide Book
+Patchouli is **optional**. Install it and you can craft the lore book with a Book and an Ancient Scrip.
+Without it the mod runs exactly the same, minus that recipe.
+
+---
+
+## 🙏 Credits
+This mod bundles code from a few other projects, under their own licenses.
+See [CREDITS.md](./CREDITS.md) for the full list — ImplementedInventory (Juuz, CC0),
+structurized-reborn (fzzyhmstrs, MIT), MedievalWeapons (Globox1997, MIT) and
+StructureTutorialMod (TelepathicGrunt, MIT).
