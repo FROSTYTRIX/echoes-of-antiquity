@@ -41,7 +41,10 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_version}"
+
+	// Optional at runtime: no java code touches Patchouli, only the guide book recipe,
+	// which is gated behind a resource condition.
+	modLocalRuntime "vazkii.patchouli:Patchouli:${project.patchouli_version}"
 
 	modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.2.2")
 

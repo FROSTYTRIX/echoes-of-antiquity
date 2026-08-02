@@ -26,13 +26,19 @@
 		]
 	},
 	"mixins": [
-		"echoesofantiquity.mixins.json"
+		"echoesofantiquity.mixins.json",
+		{
+			"config": "echoesofantiquity.client.mixins.json",
+			"environment": "client"
+		}
 	],
 	"depends": {
 		"fabricloader": ">=0.18.4",
 		"minecraft": "~1.21",
 		"java": ">=21",
-		"fabric-api": "*",
+		"fabric-api": "*"
+	},
+	"suggests": {
 		"patchouli": "*"
 	}
 }
