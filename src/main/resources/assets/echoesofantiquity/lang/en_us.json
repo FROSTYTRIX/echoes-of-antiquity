@@ -105,5 +105,8 @@
   "advancements.echoesofantiquity.gravity_anchor.description": "Freeze falling sand in mid air, because you can",
   "advancements.echoesofantiquity.climbing_spider_leg.title": "Eight Legs, One Hand",
   "advancements.echoesofantiquity.climbing_spider_leg.description": "Climb a wall holding nothing but a leg",
-  "trim_material.echoesofantiquity.end_steel": "End Steel"
+  "trim_material.echoesofantiquity.end_steel": "End Steel",
+  "emi.category.echoesofantiquity.sieve": "Sifting",
+  "emi.echoesofantiquity.sieve.fuel": "Fuel: consumed per sift",
+  "emi.echoesofantiquity.sieve.chance": "%s%% chance"
 }

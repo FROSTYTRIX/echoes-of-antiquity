@@ -105,5 +105,8 @@
   "advancements.echoesofantiquity.gravity_anchor.description": "Figez du sable en pleine chute, parce que c'est possible",
   "advancements.echoesofantiquity.climbing_spider_leg.title": "Huit Pattes, Une Main",
   "advancements.echoesofantiquity.climbing_spider_leg.description": "Grimpez un mur en ne tenant qu'une patte",
-  "trim_material.echoesofantiquity.end_steel": "Acier de l'End"
+  "trim_material.echoesofantiquity.end_steel": "Acier de l'End",
+  "emi.category.echoesofantiquity.sieve": "Tamisage",
+  "emi.echoesofantiquity.sieve.fuel": "Carburant : consommé à chaque tamisage",
+  "emi.echoesofantiquity.sieve.chance": "%s%% de chance"
 }

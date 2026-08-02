@@ -23,6 +23,9 @@
 		],
 		"client": [
 			"net.frostytrix.echoesofantiquity.EchoesOfAntiquityClient"
+		],
+		"emi": [
+			"net.frostytrix.echoesofantiquity.compat.emi.EchoesEmiPlugin"
 		]
 	},
 	"mixins": [
@@ -39,6 +42,7 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"patchouli": "*"
+		"patchouli": "*",
+		"emi": "*"
 	}
 }
