@@ -47,13 +47,14 @@
   "item.echoesofantiquity.foundation_pottery_sherd": "Tesson de Poterie de Fondation",
   "item.echoesofantiquity.magnet_ring": "Anneau Magnétique",
   "tooltip.echoesofantiquity.magnetic_ring": "§7L'Anneau Magnétique est : ",
+  "tooltip.echoesofantiquity.magnetic_ring.off": "§8Éteint",
   "tooltip.echoesofantiquity.magnetic_ring.attracting": "§9Attractif",
   "tooltip.echoesofantiquity.magnetic_ring.repulsing": "§cRépulsif",
 
   "item.echoesofantiquity.measuring_tape": "Mètre Ruban",
   "tooltip.echoesofantiquity.measuring_tape.first_pos": "§7La position du premier bloc est : §f",
   "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7La position du second bloc est : §f",
-  "tooltip.echoesofantiquity.measuring_tape.distance": "§7La §adistance vectorielle §7entre les deux blocs est : §f",
+  "tooltip.echoesofantiquity.measuring_tape.vector_distance": "§7La §adistance vectorielle §7entre les deux blocs est : §f",
   "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7La §adistance de Manhattan §7entre les deux blocs est : §f",
 
   "block.echoesofantiquity.uncrafter": "Décrafteur",

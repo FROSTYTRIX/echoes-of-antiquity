@@ -1,13 +1,12 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.NbtComponent;
+import net.frostytrix.echoesofantiquity.component.MeasuringTapeData;
+import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
@@ -24,6 +23,10 @@ public class MeasuringTapeItem extends Item {
         super(settings);
     }
 
+    private static MeasuringTapeData dataOf(ItemStack stack) {
+        return stack.getOrDefault(ModDataComponentTypes.MEASURING_TAPE, MeasuringTapeData.EMPTY);
+    }
+
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         ItemStack stack = context.getStack();
@@ -35,22 +38,9 @@ public class MeasuringTapeItem extends Item {
             return ActionResult.SUCCESS;
         }
 
-        NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
-        NbtCompound nbt = customData.copyNbt();
-
-        if (!player.isSneaking()) {
-            nbt.putInt("FirstX", pos.getX());
-            nbt.putInt("FirstY", pos.getY());
-            nbt.putInt("FirstZ", pos.getZ());
-            nbt.putBoolean("HasFirst", true);
-        } else {
-            nbt.putInt("SecondX", pos.getX());
-            nbt.putInt("SecondY", pos.getY());
-            nbt.putInt("SecondZ", pos.getZ());
-            nbt.putBoolean("HasSecond", true);
-        }
-
-        stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
+        MeasuringTapeData data = dataOf(stack);
+        stack.set(ModDataComponentTypes.MEASURING_TAPE,
+                player.isSneaking() ? data.withSecond(pos) : data.withFirst(pos));
 
         return ActionResult.SUCCESS;
     }
@@ -63,60 +53,36 @@ public class MeasuringTapeItem extends Item {
             return TypedActionResult.success(stack, true);
         }
 
-        NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
-        NbtCompound nbt = customData.copyNbt();
+        MeasuringTapeData data = dataOf(stack);
+        stack.set(ModDataComponentTypes.MEASURING_TAPE,
+                user.isSneaking() ? data.toggledMode() : data.cleared());
 
-        if (user.isSneaking()) {
-            String mode = nbt.getString("Mode");
-            if (mode.isEmpty() || mode.equals("vector_distance")) {
-                nbt.putString("Mode", "manhattan_distance");
-            } else {
-                nbt.putString("Mode", "vector_distance");
-            }
-        } else {
-            nbt.remove("HasFirst");
-            nbt.remove("HasSecond");
-        }
-
-        stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
         return TypedActionResult.success(stack);
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
-        NbtCompound nbt = customData.copyNbt();
+        MeasuringTapeData data = dataOf(stack);
 
-        boolean hasFirst = nbt.getBoolean("HasFirst");
-        boolean hasSecond = nbt.getBoolean("HasSecond");
-        String mode = nbt.getString("Mode");
-        if (mode.isEmpty()) mode = "vector_distance";
+        data.first().ifPresent(pos -> tooltip.add(Text.translatable("tooltip.echoesofantiquity.measuring_tape.first_pos")
+                .append(Text.literal("X: " + pos.getX() + ", Y: " + pos.getY() + ", Z: " + pos.getZ()))));
 
-        BlockPos firstPos = null;
-        BlockPos secondPos = null;
+        data.second().ifPresent(pos -> tooltip.add(Text.translatable("tooltip.echoesofantiquity.measuring_tape.second_pos")
+                .append(Text.literal("X: " + pos.getX() + ", Y: " + pos.getY() + ", Z: " + pos.getZ()))));
 
-        if (hasFirst) {
-            firstPos = new BlockPos(nbt.getInt("FirstX"), nbt.getInt("FirstY"), nbt.getInt("FirstZ"));
-            tooltip.add(Text.translatable("tooltip.echoesofantiquity.measuring_tape.first_pos")
-                    .append(Text.literal("X: " + firstPos.getX() + ", Y: " + firstPos.getY() + ", Z: " + firstPos.getZ())));
-        }
+        if (data.first().isPresent() && data.second().isPresent()) {
+            BlockPos first = data.first().get();
+            BlockPos second = data.second().get();
 
-        if (hasSecond) {
-            secondPos = new BlockPos(nbt.getInt("SecondX"), nbt.getInt("SecondY"), nbt.getInt("SecondZ"));
-            tooltip.add(Text.translatable("tooltip.echoesofantiquity.measuring_tape.second_pos")
-                    .append(Text.literal("X: " + secondPos.getX() + ", Y: " + secondPos.getY() + ", Z: " + secondPos.getZ())));
-        }
+            String distance = switch (data.mode()) {
+                case VECTOR -> String.format("%.2f", new Vec3d(
+                        first.getX() - second.getX(),
+                        first.getY() - second.getY(),
+                        first.getZ() - second.getZ()).length() + 1);
+                case MANHATTAN -> String.valueOf(first.getManhattanDistance(second) + 1);
+            };
 
-        if (hasFirst && hasSecond) {
-            Vec3d newVec = new Vec3d(firstPos.getX() - secondPos.getX(), firstPos.getY() - secondPos.getY(), firstPos.getZ() - secondPos.getZ());
-            if (mode.equals("vector_distance")) {
-                double distance = newVec.length();
-                String rounded = String.format("%.2f", distance + 1);
-                tooltip.add(Text.translatable("tooltip.echoesofantiquity.measuring_tape.distance").append(rounded));
-            } else if (mode.equals("manhattan_distance")) {
-                int distance = firstPos.getManhattanDistance(secondPos) + 1;
-                tooltip.add(Text.translatable("tooltip.echoesofantiquity.measuring_tape.manhattan_distance").append(String.valueOf(distance)));
-            }
+            tooltip.add(Text.translatable(data.mode().translationKey()).append(distance));
         }
         super.appendTooltip(stack, context, tooltip, type);
     }

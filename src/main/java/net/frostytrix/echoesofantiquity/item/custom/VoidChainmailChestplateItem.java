@@ -1,14 +1,13 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
+import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
 import net.frostytrix.echoesofantiquity.item.ModArmorMaterials;
 import net.frostytrix.echoesofantiquity.util.TeleportUtils;
 import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.NbtComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.SoundCategory;
@@ -16,8 +15,6 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
-import java.util.Optional;
 
 public class VoidChainmailChestplateItem extends ModArmorItem {
 
@@ -44,57 +41,42 @@ public class VoidChainmailChestplateItem extends ModArmorItem {
 
             if (hasFullSuitOfArmorOn(player) && hasCorrectArmorOn(ModArmorMaterials.VOID_CHAINMAIL_ARMOR_MATERIAL, player)) {
 
-                NbtComponent nbtComponent = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
-                NbtCompound nbt = nbtComponent.copyNbt();
+                Vec3d lastSafe = stack.get(ModDataComponentTypes.LAST_SAFE_POS);
 
                 if (player.isOnGround()) {
 
                     // Centered to prevent edge-slipping.
-                    double safeX = Math.floor(player.getX()) + 0.5;
-                    double safeY = player.getY();
-                    double safeZ = Math.floor(player.getZ()) + 0.5;
+                    Vec3d safe = new Vec3d(
+                            Math.floor(player.getX()) + 0.5,
+                            player.getY(),
+                            Math.floor(player.getZ()) + 0.5);
 
                     // Walking off a ledge keeps isOnGround() true while the centered column is already void.
-                    if (hasGroundBelow(world, BlockPos.ofFloored(safeX, safeY, safeZ))) {
+                    if (hasGroundBelow(world, BlockPos.ofFloored(safe))) {
 
-                        boolean shouldUpdate = true;
-                        if (nbt.contains("last_safe_x")) {
-                            double lastX = nbt.getDouble("last_safe_x");
-                            double lastY = nbt.getDouble("last_safe_y");
-                            double lastZ = nbt.getDouble("last_safe_z");
-
-                            if (Math.abs(lastX - safeX) < 0.1 && Math.abs(lastY - safeY) < 0.5 && Math.abs(lastZ - safeZ) < 0.1) {
-                                shouldUpdate = false;
-                            }
-                        }
+                        boolean shouldUpdate = lastSafe == null
+                                || Math.abs(lastSafe.x - safe.x) >= 0.1
+                                || Math.abs(lastSafe.y - safe.y) >= 0.5
+                                || Math.abs(lastSafe.z - safe.z) >= 0.1;
 
                         if (shouldUpdate) {
-                            nbt.putDouble("last_safe_x", safeX);
-                            nbt.putDouble("last_safe_y", safeY);
-                            nbt.putDouble("last_safe_z", safeZ);
-                            stack.set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
+                            stack.set(ModDataComponentTypes.LAST_SAFE_POS, safe);
+                            lastSafe = safe;
                         }
                     }
                 }
 
                 if (player.getY() < -64) {
-                    if (nbt.contains("last_safe_x")) {
-                        double safeX = nbt.getDouble("last_safe_x");
-                        double safeY = nbt.getDouble("last_safe_y");
-                        double safeZ = nbt.getDouble("last_safe_z");
+                    if (lastSafe != null) {
+                        Vec3d destination = lastSafe;
 
                         // Stored ground may have been mined since; otherwise the player falls again in a loop.
-                        BlockPos rescuePos = BlockPos.ofFloored(safeX, safeY, safeZ);
+                        BlockPos rescuePos = BlockPos.ofFloored(destination);
                         if (!hasGroundBelow(world, rescuePos)) {
-                            Optional<Vec3d> fallback = TeleportUtils.findSafeTeleportSpot(world, rescuePos);
-                            if (fallback.isPresent()) {
-                                safeX = fallback.get().x;
-                                safeY = fallback.get().y;
-                                safeZ = fallback.get().z;
-                            }
+                            destination = TeleportUtils.findSafeTeleportSpot(world, rescuePos).orElse(destination);
                         }
 
-                        player.teleport(safeX, safeY + 0.2, safeZ, ParticleTypes.PORTAL.shouldAlwaysSpawn());
+                        player.teleport(destination.x, destination.y + 0.2, destination.z, ParticleTypes.PORTAL.shouldAlwaysSpawn());
 
                         player.setVelocity(0, 0, 0);
                         player.velocityModified = true;

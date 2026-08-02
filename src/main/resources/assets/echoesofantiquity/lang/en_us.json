@@ -56,7 +56,7 @@
 
   "tooltip.echoesofantiquity.measuring_tape.first_pos": "§7The first block position is : §f",
   "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7The second block position is : §f",
-  "tooltip.echoesofantiquity.measuring_tape.distance": "§7The §avector distance §7between both blocks is : §f",
+  "tooltip.echoesofantiquity.measuring_tape.vector_distance": "§7The §avector distance §7between both blocks is : §f",
   "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7The §aManhattan distance §7between both blocks is : §f",
 
   "block.echoesofantiquity.sieve": "Sieve",
@@ -72,6 +72,7 @@
 
   "item.echoesofantiquity.magnet_ring": "Magnet Ring",
   "tooltip.echoesofantiquity.magnetic_ring": "§7The Magnet Ring is : ",
+  "tooltip.echoesofantiquity.magnetic_ring.off": "§8Off",
   "tooltip.echoesofantiquity.magnetic_ring.attracting": "§9Attracting",
   "tooltip.echoesofantiquity.magnetic_ring.repulsing": "§cRepulsing",
 

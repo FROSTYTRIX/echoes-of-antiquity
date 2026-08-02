@@ -1,14 +1,15 @@
 package net.frostytrix.echoesofantiquity.item.custom;
 
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.NbtComponent;
+import net.frostytrix.echoesofantiquity.component.MagnetMode;
+import net.frostytrix.echoesofantiquity.component.ModDataComponentTypes;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -26,64 +27,59 @@ public class MagnetRingItem extends Item {
         super(settings);
     }
 
+    private static MagnetMode modeOf(ItemStack stack) {
+        return stack.getOrDefault(ModDataComponentTypes.MAGNET_MODE, MagnetMode.OFF);
+    }
+
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        NbtComponent customData = user.getStackInHand(hand).getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
-        NbtCompound nbt = customData.copyNbt();
+        ItemStack stack = user.getStackInHand(hand);
+        MagnetMode next = modeOf(stack).next();
+        stack.set(ModDataComponentTypes.MAGNET_MODE, next);
 
-        if (nbt.getBoolean("attracting")){nbt.putBoolean("attracting", false);}
-        else {nbt.putBoolean("attracting", true);}
-
-        user.getStackInHand(hand).set(DataComponentTypes.CUSTOM_DATA, NbtComponent.of(nbt));
-
-        return TypedActionResult.success(user.getStackInHand(hand));
+        if (!world.isClient) {
+            world.playSound(null, user.getBlockPos(), SoundEvents.BLOCK_LODESTONE_PLACE, SoundCategory.PLAYERS,
+                    0.4f, next == MagnetMode.OFF ? 0.8f : 1.4f);
+        }
+        return TypedActionResult.success(stack, world.isClient());
     }
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (!world.isClient && entity instanceof PlayerEntity player) {
-            Box area = player.getBoundingBox().expand(RANGE);
-            List<ItemEntity> entities = world.getNonSpectatingEntities(ItemEntity.class, area);
-            NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
-            NbtCompound nbt = customData.copyNbt();
+        if (world.isClient || !(entity instanceof PlayerEntity player)) {
+            return;
+        }
 
-            for (ItemEntity itemEntity : entities) {
-                double distanceSq = itemEntity.squaredDistanceTo(player);
+        MagnetMode mode = modeOf(stack);
+        if (mode == MagnetMode.OFF) {
+            return;
+        }
 
-                if (distanceSq > 0.5 && nbt.getBoolean("attracting")) {
-                    Vec3d direction = player.getPos().add(0, 0.75, 0).subtract(itemEntity.getPos()).normalize();
+        Box area = player.getBoundingBox().expand(RANGE);
+        List<ItemEntity> entities = world.getNonSpectatingEntities(ItemEntity.class, area);
 
-                    double pullStrength = 0.05 + (RANGE / (distanceSq + 1)) * SPEED;
-
-                    Vec3d newVelocity = itemEntity.getVelocity().multiply(0.95).add(direction.multiply(pullStrength));
-                    itemEntity.setVelocity(newVelocity);
-
-                    itemEntity.velocityDirty = true;
-                    itemEntity.velocityModified = true;
-                } else {
-                    Vec3d direction = player.getPos().add(0, 0.75, 0).subtract(itemEntity.getPos()).normalize();
-
-                    double pullStrength = - 0.05 - (RANGE / (distanceSq + 1)) * SPEED;
-
-                    Vec3d newVelocity = itemEntity.getVelocity().multiply(0.95).add(direction.multiply(pullStrength));
-                    itemEntity.setVelocity(newVelocity);
-
-                    itemEntity.velocityDirty = true;
-                    itemEntity.velocityModified = true;
-                }
+        for (ItemEntity itemEntity : entities) {
+            double distanceSq = itemEntity.squaredDistanceTo(player);
+            if (distanceSq <= 0.5) {
+                continue;
             }
+
+            Vec3d direction = player.getPos().add(0, 0.75, 0).subtract(itemEntity.getPos()).normalize();
+            double pullStrength = 0.05 + (RANGE / (distanceSq + 1)) * SPEED;
+            if (mode == MagnetMode.REPULSING) {
+                pullStrength = -pullStrength;
+            }
+
+            itemEntity.setVelocity(itemEntity.getVelocity().multiply(0.95).add(direction.multiply(pullStrength)));
+            itemEntity.velocityDirty = true;
+            itemEntity.velocityModified = true;
         }
     }
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-        NbtComponent customData = stack.getOrDefault(DataComponentTypes.CUSTOM_DATA, NbtComponent.DEFAULT);
-        NbtCompound nbt = customData.copyNbt();
-
-        boolean attracting = nbt.getBoolean("attracting");
-
-        if (attracting) {tooltip.add((Text.translatable("tooltip.echoesofantiquity.magnetic_ring").append(Text.translatable("tooltip.echoesofantiquity.magnetic_ring.attracting"))));}
-        else {tooltip.add((Text.translatable("tooltip.echoesofantiquity.magnetic_ring").append(Text.translatable("tooltip.echoesofantiquity.magnetic_ring.repulsing"))));}
+        tooltip.add(Text.translatable("tooltip.echoesofantiquity.magnetic_ring")
+                .append(Text.translatable(modeOf(stack).translationKey())));
         super.appendTooltip(stack, context, tooltip, type);
     }
 }
