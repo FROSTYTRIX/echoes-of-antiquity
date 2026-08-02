@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity.item;
 import net.frostytrix.echoesofantiquity.EchoesOfAntiquity;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -19,7 +20,8 @@ public class ModArmorMaterials {
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.BOOTS, 2);
                 map.put(ArmorItem.Type.HELMET, 2);
-            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, null,
+            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER,
+                    () -> Ingredient.ofItems(ModItems.VOID_TREATED_LEATHER),
                     List.of(new ArmorMaterial.Layer(Identifier.of(EchoesOfAntiquity.MOD_ID, "ender"))), 0,0));
 
     public static final RegistryEntry<ArmorMaterial> VOID_CHAINMAIL_ARMOR_MATERIAL = registerArmorMaterial("void_chainmail_armor_material",
@@ -29,7 +31,8 @@ public class ModArmorMaterials {
                 map.put(ArmorItem.Type.CHESTPLATE, 6);
                 map.put(ArmorItem.Type.HELMET, 2);
                 map.put(ArmorItem.Type.BODY, 7);
-            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, null,
+            }), 20, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN,
+                    () -> Ingredient.ofItems(ModItems.END_STEEL_INGOT),
                     List.of(new ArmorMaterial.Layer(Identifier.of(EchoesOfAntiquity.MOD_ID, "void_chainmail"))), 0,0));
 
 
