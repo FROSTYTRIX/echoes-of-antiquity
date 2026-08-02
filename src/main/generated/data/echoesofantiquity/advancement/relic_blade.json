@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:root",
+  "criteria": {
+    "has_relic_blade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:relic_blade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.relic_blade.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:relic_blade"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.relic_blade.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_relic_blade"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

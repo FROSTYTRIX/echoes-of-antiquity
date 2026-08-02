@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:measuring_tape",
+  "criteria": {
+    "has_level": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:level"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.level.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:level"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.level.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_level"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

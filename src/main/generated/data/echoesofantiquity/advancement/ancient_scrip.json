@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:sieve",
+  "criteria": {
+    "has_ancient_scrip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:ancient_scrip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.ancient_scrip.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:ancient_scrip"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.ancient_scrip.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_ancient_scrip"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

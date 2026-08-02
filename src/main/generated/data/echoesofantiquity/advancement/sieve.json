@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:soul_fragment",
+  "criteria": {
+    "has_sieve": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:sieve"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.sieve.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:sieve"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.sieve.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_sieve"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

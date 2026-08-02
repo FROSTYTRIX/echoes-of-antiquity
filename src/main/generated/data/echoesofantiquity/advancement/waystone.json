@@ -1,0 +1,34 @@
+{
+  "parent": "echoesofantiquity:soul_fragment",
+  "criteria": {
+    "has_waystone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:waystone"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.waystone.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:waystone"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.waystone.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_waystone"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

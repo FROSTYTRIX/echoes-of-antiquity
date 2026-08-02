@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:void_pedestal",
+  "criteria": {
+    "has_void_anchor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:void_anchor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.void_anchor.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:void_anchor"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.void_anchor.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_void_anchor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "echoesofantiquity:sieve",
+  "criteria": {
+    "has_foundation_sherd": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:foundation_pottery_sherd"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.foundation_sherd.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:foundation_pottery_sherd"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.foundation_sherd.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_foundation_sherd"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

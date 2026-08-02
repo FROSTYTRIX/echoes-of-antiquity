@@ -1,0 +1,34 @@
+{
+  "parent": "echoesofantiquity:root",
+  "criteria": {
+    "has_climbing_spider_leg": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:climbing_spider_leg"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.climbing_spider_leg.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:climbing_spider_leg"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.climbing_spider_leg.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_climbing_spider_leg"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

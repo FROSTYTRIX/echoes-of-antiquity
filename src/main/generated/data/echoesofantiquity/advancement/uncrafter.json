@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:measuring_tape",
+  "criteria": {
+    "has_uncrafter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:uncrafter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.uncrafter.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:uncrafter"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.uncrafter.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_uncrafter"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

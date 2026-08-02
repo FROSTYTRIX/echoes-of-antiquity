@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:root",
+  "criteria": {
+    "has_void_pedestal": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:void_pedestal"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.void_pedestal.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:void_pedestal"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.void_pedestal.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_void_pedestal"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

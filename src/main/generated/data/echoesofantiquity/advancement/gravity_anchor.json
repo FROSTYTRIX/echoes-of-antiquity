@@ -1,0 +1,34 @@
+{
+  "parent": "echoesofantiquity:measuring_tape",
+  "criteria": {
+    "has_gravity_anchor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:gravity_anchor"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.gravity_anchor.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:gravity_anchor"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.gravity_anchor.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_gravity_anchor"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

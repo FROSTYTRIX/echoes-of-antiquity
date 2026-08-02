@@ -1,0 +1,33 @@
+{
+  "criteria": {
+    "has_end_steel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:end_steel_ingot"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/block/end_stone.png",
+    "description": {
+      "translate": "advancements.echoesofantiquity.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:end_steel_ingot"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_end_steel"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:void_treated_leather",
+  "criteria": {
+    "has_obsidian_goggles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:obsidian_goggles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.obsidian_goggles.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:obsidian_goggles"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.obsidian_goggles.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_obsidian_goggles"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

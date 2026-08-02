@@ -3,6 +3,7 @@ package net.frostytrix.echoesofantiquity;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.frostytrix.echoesofantiquity.datagen.*;
+import net.frostytrix.echoesofantiquity.item.ModTrimMaterials;
 import net.frostytrix.echoesofantiquity.world.ModConfiguredFeatures;
 import net.frostytrix.echoesofantiquity.world.ModPlacedFeatures;
 import net.minecraft.registry.RegistryBuilder;
@@ -22,13 +23,12 @@ public class EchoesOfAntiquityDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModRegistryDataGenerator::new);
 		pack.addProvider(ModWorldGenerator::new);
 		pack.addProvider(ModEntityLootTableProvider::new);
+		pack.addProvider(ModAdvancementProvider::new);
 	}
 
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
-		//registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
-		//registryBuilder.addRegistry(RegistryKeys.TRIM_PATTERN, ModTrimPatterns::bootstrap);
-
+		registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 	}

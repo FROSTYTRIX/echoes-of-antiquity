@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:root",
+  "criteria": {
+    "has_void_treated_leather": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:void_treated_leather"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.void_treated_leather.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:void_treated_leather"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.void_treated_leather.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_void_treated_leather"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

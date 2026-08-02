@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:measuring_tape",
+  "criteria": {
+    "has_magnet_ring": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:magnet_ring"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.magnet_ring.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:magnet_ring"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.magnet_ring.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_magnet_ring"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

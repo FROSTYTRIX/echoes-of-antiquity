@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:void_treated_leather",
+  "criteria": {
+    "has_ender_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:ender_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.ender_boots.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:ender_boots"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.ender_boots.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_ender_boots"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "echoesofantiquity:relic_blade",
+  "criteria": {
+    "has_relic_greatsword": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:relic_greatsword"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.relic_greatsword.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:relic_greatsword"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.relic_greatsword.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_relic_greatsword"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

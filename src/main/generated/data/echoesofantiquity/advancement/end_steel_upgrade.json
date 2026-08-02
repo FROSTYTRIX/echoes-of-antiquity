@@ -1,0 +1,33 @@
+{
+  "parent": "echoesofantiquity:root",
+  "criteria": {
+    "has_end_steel_upgrade": {
+      "conditions": {
+        "items": [
+          {
+            "items": "echoesofantiquity:end_steel_upgrade"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.echoesofantiquity.end_steel_upgrade.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:end_steel_upgrade"
+    },
+    "title": {
+      "translate": "advancements.echoesofantiquity.end_steel_upgrade.title"
+    }
+  },
+  "requirements": [
+    [
+      "has_end_steel_upgrade"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
