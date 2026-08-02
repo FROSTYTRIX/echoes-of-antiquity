@@ -24,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(1, ItemStack.EMPTY);
     private float rotation = 0;
+    private boolean registered = false;
     public static final int noTPRadius = 20;
 
     public VoidPedestalBlockEntity(BlockPos pos, BlockState state) {
@@ -92,17 +93,22 @@ public class VoidPedestalBlockEntity extends BlockEntity implements ImplementedI
         }
 
         // 3. Keep the suppression registry up to date; teleports query it themselves.
-        if (hasItem) {
-            VoidPedestalManager.addPedestal(world, pos);
-        } else {
-            VoidPedestalManager.removePedestal(world, pos);
+        // A fresh block entity starts unregistered, so this heals itself after a restart or chunk reload.
+        if (hasItem != be.registered) {
+            if (hasItem) {
+                VoidPedestalManager.addPedestal(world, pos);
+            } else {
+                VoidPedestalManager.removePedestal(world, pos);
+            }
+            be.registered = hasItem;
         }
     }
 
     @Override
     public void markRemoved() {
-        if (this.world != null && !this.world.isClient) {
+        if (this.registered && this.world != null && !this.world.isClient) {
             VoidPedestalManager.removePedestal(this.world, this.pos);
+            this.registered = false;
         }
         super.markRemoved();
     }

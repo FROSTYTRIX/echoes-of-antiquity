@@ -1,20 +1,17 @@
 package net.frostytrix.echoesofantiquity.block.entity.custom;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.frostytrix.echoesofantiquity.block.custom.GravityAnchorBlock;
 import net.frostytrix.echoesofantiquity.block.entity.ModBlockEntities;
-import net.frostytrix.echoesofantiquity.sound.GravityAnchorSoundInstance;
-import net.frostytrix.echoesofantiquity.sound.ModSounds;
+import net.frostytrix.echoesofantiquity.sound.client.GravityAnchorSounds;
 import net.frostytrix.echoesofantiquity.util.GravityAnchorManager;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class GravityAnchorBlockEntity extends BlockEntity {
     private boolean isPlayingSound = false;
+    private boolean registered = false;
 
     public GravityAnchorBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.GRAVITY_ANCHOR_BE, pos, state);
@@ -33,38 +30,33 @@ public class GravityAnchorBlockEntity extends BlockEntity {
 
         if (world.isClient) {
             if (active) {
-                playAmbientSound(world, pos);
+                if (!isPlayingSound) {
+                    GravityAnchorSounds.startHum(world, pos);
+                    isPlayingSound = true;
+                }
             } else {
-                // Si le bloc s'éteint, on réinitialise la variable
                 isPlayingSound = false;
             }
             return;
         }
 
-        // Self-registers every tick, so anchors survive restarts and chunk reloads.
-        if (active) {
-            GravityAnchorManager.addAnchor(world, pos);
-        } else {
-            GravityAnchorManager.removeAnchor(world, pos);
+        // A fresh block entity starts unregistered, so this heals itself after a restart or chunk reload.
+        if (active != registered) {
+            if (active) {
+                GravityAnchorManager.addAnchor(world, pos);
+            } else {
+                GravityAnchorManager.removeAnchor(world, pos);
+            }
+            registered = active;
         }
     }
 
     @Override
     public void markRemoved() {
-        if (this.world != null && !this.world.isClient) {
+        if (this.registered && this.world != null && !this.world.isClient) {
             GravityAnchorManager.removeAnchor(this.world, this.pos);
+            this.registered = false;
         }
         super.markRemoved();
-    }
-
-    @Environment(EnvType.CLIENT)
-    private void playAmbientSound(World world, BlockPos pos) {
-        if (!isPlayingSound) {
-            // On lance notre boucle sonore infinie
-            MinecraftClient.getInstance().getSoundManager().play(
-                    new GravityAnchorSoundInstance(ModSounds.GRAVITY_ANCHOR_ACTIVE, world, pos)
-            );
-            isPlayingSound = true;
-        }
     }
 }

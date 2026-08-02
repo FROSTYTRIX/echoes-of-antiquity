@@ -1,46 +1,24 @@
 package net.frostytrix.echoesofantiquity.util;
 
 import net.frostytrix.echoesofantiquity.block.entity.custom.VoidPedestalBlockEntity;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
-/** Tracks active Void Pedestals (holding an Ender Eye) per dimension. Each one registers from its own tick. */
+/** Tracks active Void Pedestals (holding an Ender Eye). Each one registers from its own tick. */
 public class VoidPedestalManager {
-    private static final Map<RegistryKey<World>, Set<BlockPos>> PEDESTALS = new HashMap<>();
+    private static final BlockPosIndex PEDESTALS = new BlockPosIndex();
 
     public static void addPedestal(World world, BlockPos pos) {
-        PEDESTALS.computeIfAbsent(world.getRegistryKey(), k -> new HashSet<>()).add(pos.toImmutable());
+        PEDESTALS.add(world, pos);
     }
 
     public static void removePedestal(World world, BlockPos pos) {
-        Set<BlockPos> set = PEDESTALS.get(world.getRegistryKey());
-        if (set != null) {
-            set.remove(pos);
-        }
+        PEDESTALS.remove(world, pos);
     }
 
     /** @return the nearest active pedestal in range, or null. */
     public static BlockPos findNearestActivePedestal(World world, BlockPos targetPos) {
-        Set<BlockPos> set = PEDESTALS.get(world.getRegistryKey());
-        if (set == null || set.isEmpty()) return null;
-
-        BlockPos nearest = null;
-        double nearestDistance = Double.MAX_VALUE;
-
-        for (BlockPos pedestalPos : set) {
-            double distance = pedestalPos.getSquaredDistance(targetPos);
-            if (distance < nearestDistance && pedestalPos.isWithinDistance(targetPos, VoidPedestalBlockEntity.noTPRadius)) {
-                nearest = pedestalPos;
-                nearestDistance = distance;
-            }
-        }
-        return nearest;
+        return PEDESTALS.findNearest(world, targetPos, VoidPedestalBlockEntity.noTPRadius);
     }
 
     public static boolean isSuppressed(World world, BlockPos targetPos) {
