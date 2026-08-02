@@ -60,8 +60,8 @@ public record SieveRecipe(Ingredient inputItem, List<SieveResult> results, List<
     public static class Serializer implements RecipeSerializer<SieveRecipe> {
         public static final MapCodec<SieveRecipe> CODEC = RecordCodecBuilder.mapCodec(inst -> inst.group(
                 Ingredient.DISALLOW_EMPTY_CODEC.fieldOf("ingredient").forGetter(SieveRecipe::inputItem),
-                SieveResult.CODEC.listOf().fieldOf("results").forGetter(SieveRecipe::results),
-                // Optional, so older recipes keep working.
+                // Both optional: a recipe can use independent rolls, weighted pools, or both.
+                SieveResult.CODEC.listOf().optionalFieldOf("results", List.of()).forGetter(SieveRecipe::results),
                 SievePool.CODEC.listOf().optionalFieldOf("pools", List.of()).forGetter(SieveRecipe::pools)
         ).apply(inst, SieveRecipe::new));
 

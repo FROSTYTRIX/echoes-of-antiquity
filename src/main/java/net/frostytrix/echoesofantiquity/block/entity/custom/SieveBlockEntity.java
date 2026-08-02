@@ -258,11 +258,16 @@ public class SieveBlockEntity extends BlockEntity implements ImplementedInventor
             }
         }
 
-        // One item per pool
+        // Weighted pools, drawn `rolls` times when they fire
         for (SievePool pool : recipe.pools()) {
-            if (!pool.items().isEmpty() && this.world.random.nextFloat() <= pool.chance()) {
-                int randomIndex = this.world.random.nextInt(pool.items().size());
-                insertOutput(pool.items().get(randomIndex).copy());
+            if (this.world.random.nextFloat() > pool.chance()) {
+                continue;
+            }
+            for (int roll = 0; roll < pool.rolls(); roll++) {
+                ItemStack drawn = pool.draw(this.world.random);
+                if (!drawn.isEmpty()) {
+                    insertOutput(drawn);
+                }
             }
         }
     }
