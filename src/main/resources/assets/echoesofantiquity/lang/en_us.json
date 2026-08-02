@@ -7,78 +7,103 @@
   "item.echoesofantiquity.relic_blade": "Relic Blade",
   "item.echoesofantiquity.relic_greatsword": "Relic Greatsword",
   "item.echoesofantiquity.dragon_bow": "Dragon Bow",
-
   "block.echoesofantiquity.void_pedestal": "Void Pedestal",
   "block.echoesofantiquity.void_anchor": "Void Anchor",
   "item.echoesofantiquity.static_pearl": "Static Pearl",
   "item.echoesofantiquity.end_steel_upgrade": "End Steel Upgrade",
-
   "item.echoesofantiquity.void_chainmail_helmet": "Void Chainmail Helmet",
   "item.echoesofantiquity.void_chainmail_chestplate": "Void Chainmail Chestplate",
   "item.echoesofantiquity.void_chainmail_leggings": "Void Chainmail Leggings",
   "item.echoesofantiquity.void_chainmail_boots": "Void Chainmail Boots",
-
   "biome.echoesofantiquity.void_infection": "Void Infection",
   "entity.echoesofantiquity.chorus_husk": "Chorus Husk",
   "item.echoesofantiquity.chorus_husk_spawn_egg": "Chorus Husk Spawn Egg",
-
-
   "itemgroup.echoesofantiquity.the_fallen_humans": "The Fallen Humans",
-
   "item.minecraft.potion.effect.phasing_potion": "Phasing Potion",
   "item.minecraft.splash_potion.effect.phasing_potion": "Phasing Splash Potion",
   "item.minecraft.lingering_potion.effect.phasing_potion": "Phasing Lingering Potion",
   "item.minecraft.tipped_arrow.effect.phasing_potion": "Arrow of Phasing",
   "effect.echoesofantiquity.phasing": "Phasing",
-
   "item.minecraft.potion.effect.reach_potion": "Long Arms Potion",
   "item.minecraft.splash_potion.effect.reach_potion": "Long Arms Splash Potion",
   "item.minecraft.lingering_potion.effect.reach_potion": "Long Arms Lingering Potion",
   "item.minecraft.tipped_arrow.effect.reach_potion": "Arrow of Long Arms",
   "effect.echoesofantiquity.reach": "Long Arms",
-
-
-
-
   "itemgroup.echoesofantiquity.the_failed_clones": "The Failed Clones",
-
   "item.echoesofantiquity.soul_siphon": "Soul Siphon",
   "item.echoesofantiquity.soul_fragment": "Soul Fragment",
-
-
-
-
   "itemgroup.echoesofantiquity.the_architects_tools": "The Architect's Tools",
-
   "item.echoesofantiquity.climbing_spider_leg": "Climbing Spider Leg",
   "item.echoesofantiquity.measuring_tape": "Measuring Tape",
   "item.echoesofantiquity.foundation_pottery_sherd": "Foundation Pottery Sherd",
-
   "tooltip.echoesofantiquity.measuring_tape.first_pos": "§7The first block position is : §f",
   "tooltip.echoesofantiquity.measuring_tape.second_pos": "§7The second block position is : §f",
   "tooltip.echoesofantiquity.measuring_tape.vector_distance": "§7The §avector distance §7between both blocks is : §f",
   "tooltip.echoesofantiquity.measuring_tape.manhattan_distance": "§7The §aManhattan distance §7between both blocks is : §f",
-
   "block.echoesofantiquity.sieve": "Sieve",
   "block.echoesofantiquity.uncrafter": "Uncrafter",
   "block.echoesofantiquity.waystone": "Waystone",
-
   "block.echoesofantiquity.gravity_anchor": "Gravity Anchor",
   "sounds.echoesofantiquity.gravity_anchor_active": "Gravity Anchor Hum",
   "sounds.echoesofantiquity.sifting": "Sieve sifting",
-
   "item.echoesofantiquity.infinite_water_bucket": "Infinite Water Bucket",
   "item.echoesofantiquity.level": "Level",
-
   "item.echoesofantiquity.magnet_ring": "Magnet Ring",
   "tooltip.echoesofantiquity.magnetic_ring": "§7The Magnet Ring is : ",
   "tooltip.echoesofantiquity.magnetic_ring.off": "§8Off",
   "tooltip.echoesofantiquity.magnetic_ring.attracting": "§9Attracting",
   "tooltip.echoesofantiquity.magnetic_ring.repulsing": "§cRepulsing",
-
-
-
-
-  "tag.item.echoesofantiquity.glass_panes" : "Glass Panes",
-  "tag.item.echoesofantiquity.all_stones" : "All Stones"
+  "tag.item.echoesofantiquity.glass_panes": "Glass Panes",
+  "tag.item.echoesofantiquity.all_stones": "All Stones",
+  "advancements.echoesofantiquity.root.title": "Echoes of Antiquity",
+  "advancements.echoesofantiquity.root.description": "Forge an End Steel Ingot and start pulling on the thread",
+  "advancements.echoesofantiquity.void_treated_leather.title": "Soaked in the Void",
+  "advancements.echoesofantiquity.void_treated_leather.description": "Steep leather in chorus fruit until it forgets what it was",
+  "advancements.echoesofantiquity.ender_boots.title": "Silent Steps",
+  "advancements.echoesofantiquity.ender_boots.description": "Walk where the sculk cannot hear you",
+  "advancements.echoesofantiquity.obsidian_goggles.title": "Eye to Eye",
+  "advancements.echoesofantiquity.obsidian_goggles.description": "Stare at an Enderman and live to tell it",
+  "advancements.echoesofantiquity.dragon_bow.title": "Twice as Fast",
+  "advancements.echoesofantiquity.dragon_bow.description": "Shoot an arrow the way the Fallen Humans did",
+  "advancements.echoesofantiquity.relic_blade.title": "An Old Edge",
+  "advancements.echoesofantiquity.relic_blade.description": "Three ingots, one blade, no handle yet",
+  "advancements.echoesofantiquity.relic_greatsword.title": "Too Heavy to Swing",
+  "advancements.echoesofantiquity.relic_greatsword.description": "Trade every ounce of speed for raw damage",
+  "advancements.echoesofantiquity.end_steel_upgrade.title": "The Template",
+  "advancements.echoesofantiquity.end_steel_upgrade.description": "Find the smithing template the Fallen Humans left behind",
+  "advancements.echoesofantiquity.void_chainmail.title": "Nothing Below",
+  "advancements.echoesofantiquity.void_chainmail.description": "Wear the full Void Chainmail set. The void will let you go, once",
+  "advancements.echoesofantiquity.void_pedestal.title": "Anchored Reality",
+  "advancements.echoesofantiquity.void_pedestal.description": "Place a pedestal that refuses to let anything teleport",
+  "advancements.echoesofantiquity.void_anchor.title": "A Fixed Point",
+  "advancements.echoesofantiquity.void_anchor.description": "Set down something the void cannot move",
+  "advancements.echoesofantiquity.static_pearl.title": "Twenty Ways Home",
+  "advancements.echoesofantiquity.static_pearl.description": "Bind a pearl to an anchor and fold the distance",
+  "advancements.echoesofantiquity.soul_fragment.title": "A Piece of Someone",
+  "advancements.echoesofantiquity.soul_fragment.description": "Hold what is left of a failed clone",
+  "advancements.echoesofantiquity.soul_siphon.title": "Fast and Hungry",
+  "advancements.echoesofantiquity.soul_siphon.description": "Forge a blade that takes more than life",
+  "advancements.echoesofantiquity.waystone.title": "Second Chance",
+  "advancements.echoesofantiquity.waystone.description": "Raise a waystone that pulls you back from the edge",
+  "advancements.echoesofantiquity.sieve.title": "Patient Hands",
+  "advancements.echoesofantiquity.sieve.description": "Build a sieve and sift the ground for what it hides",
+  "advancements.echoesofantiquity.foundation_sherd.title": "Foundation",
+  "advancements.echoesofantiquity.foundation_sherd.description": "Sift out the sherd that started it all",
+  "advancements.echoesofantiquity.ancient_scrip.title": "Unreadable",
+  "advancements.echoesofantiquity.ancient_scrip.description": "Recover a page nobody alive can read",
+  "advancements.echoesofantiquity.measuring_tape.title": "Measure Twice",
+  "advancements.echoesofantiquity.measuring_tape.description": "Two blocks, one distance, no guessing",
+  "advancements.echoesofantiquity.level.title": "Flat Enough",
+  "advancements.echoesofantiquity.level.description": "Flatten the world three blocks at a time",
+  "advancements.echoesofantiquity.magnet_ring.title": "Pull",
+  "advancements.echoesofantiquity.magnet_ring.description": "Bend the ground's grip on dropped items",
+  "advancements.echoesofantiquity.infinite_water_bucket.title": "It Never Runs Out",
+  "advancements.echoesofantiquity.infinite_water_bucket.description": "Carry a bucket that laughs at hydration",
+  "advancements.echoesofantiquity.uncrafter.title": "Undo",
+  "advancements.echoesofantiquity.uncrafter.description": "Take something apart and get a piece of it back",
+  "advancements.echoesofantiquity.gravity_anchor.title": "Hold Still",
+  "advancements.echoesofantiquity.gravity_anchor.description": "Freeze falling sand in mid air, because you can",
+  "advancements.echoesofantiquity.climbing_spider_leg.title": "Eight Legs, One Hand",
+  "advancements.echoesofantiquity.climbing_spider_leg.description": "Climb a wall holding nothing but a leg",
+  "trim_material.echoesofantiquity.end_steel": "End Steel"
 }

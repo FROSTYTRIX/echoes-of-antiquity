@@ -55,6 +55,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 ;
 
         getOrCreateTagBuilder(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.END_STEEL_INGOT)
                 ;
 
         getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)

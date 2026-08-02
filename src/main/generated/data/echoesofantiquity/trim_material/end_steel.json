@@ -1,0 +1,9 @@
+{
+  "asset_name": "end_steel",
+  "description": {
+    "color": "aqua",
+    "translate": "trim_material.echoesofantiquity.end_steel"
+  },
+  "ingredient": "echoesofantiquity:end_steel_ingot",
+  "item_model_index": 1.0
+}
