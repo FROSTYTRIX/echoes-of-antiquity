@@ -16,8 +16,11 @@ import java.util.Map;
 public class ModTrimMaterials {
     public static final RegistryKey<ArmorTrimMaterial> END_STEEL = of("end_steel");
 
+    /** Vanilla uses 0.1 to 1.0 in steps of 0.1; anything reused there makes the item show that trim instead. */
+    public static final float END_STEEL_MODEL_INDEX = 1.1F;
+
     public static void bootstrap(Registerable<ArmorTrimMaterial> context) {
-        register(context, END_STEEL, ModItems.END_STEEL_INGOT, Formatting.AQUA, 1.0F);
+        register(context, END_STEEL, ModItems.END_STEEL_INGOT, Formatting.AQUA, END_STEEL_MODEL_INDEX);
     }
 
     private static RegistryKey<ArmorTrimMaterial> of(String name) {

@@ -60,6 +60,12 @@
       "predicate": {
         "trim_type": 1.0
       }
+    },
+    {
+      "model": "echoesofantiquity:item/obsidian_goggles_end_steel_trim",
+      "predicate": {
+        "trim_type": 1.1
+      }
     }
   ],
   "textures": {
