@@ -3,6 +3,7 @@
 	"package": "net.frostytrix.echoesofantiquity.mixin.client",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
+      "ArmorTrimOverrideMixin",
       "BipedEntityModelMixin",
       "FovDragonBowMixin"
     ],
