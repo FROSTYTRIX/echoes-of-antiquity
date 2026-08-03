@@ -130,6 +130,24 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
                 .offerTo(recipeExporter, Identifier.of(EchoesOfAntiquity.MOD_ID, "void_chainmail_boots_smithing"));
 
+        // Placed once and kept; the pearl is the part you spend.
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.VOID_ANCHOR)
+                .input('O', Blocks.OBSIDIAN)
+                .input('S', ModItems.END_STEEL_INGOT)
+                .input('E', Items.ENDER_EYE)
+                .pattern("OSO")
+                .pattern("SES")
+                .pattern("OSO")
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.TRANSPORTATION, ModItems.STATIC_PEARL)
+                .input(Ingredient.ofItems(Items.ENDER_PEARL))
+                .input(Ingredient.ofItems(ModItems.END_STEEL_INGOT))
+                .input(Ingredient.ofItems(Items.POPPED_CHORUS_FRUIT))
+                .criterion(hasItem(ModItems.END_STEEL_INGOT), conditionsFromItem(ModItems.END_STEEL_INGOT))
+                .offerTo(recipeExporter);
+
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.END_STEEL_UPGRADE)
                 .input('E', Blocks.END_STONE)
                 .input('D', Items.DIAMOND)

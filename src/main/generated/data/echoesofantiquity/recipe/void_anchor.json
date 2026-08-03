@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "S": {
+      "item": "echoesofantiquity:end_steel_ingot"
+    }
+  },
+  "pattern": [
+    "OSO",
+    "SES",
+    "OSO"
+  ],
+  "result": {
+    "count": 1,
+    "id": "echoesofantiquity:void_anchor"
+  }
+}

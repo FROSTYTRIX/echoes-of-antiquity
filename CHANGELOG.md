@@ -13,7 +13,7 @@ top of a long list of bugs that had been quietly breaking half the mod.
   so a pack no longer has to ship it just to load Echoes of Antiquity.
 - **The lore book has a recipe** — a Book plus an Ancient Scrip. It sits behind a
   resource condition, so it only appears when Patchouli is actually installed, and
-  quietly does not exist otherwise. This also finally gives the Ancient Scrip a use.
+  quietly does not exist otherwise. This also finally gives the Ancient Scrip a use. **BUT** this lore book is still **\[WIP\]**
 
 ## ⚙️ A config file
 
@@ -29,9 +29,7 @@ top of a long list of bugs that had been quietly breaking half the mod.
 ## 🏆 26 advancements
 
 - **A single tree** rooted on the End Steel Ingot, branching into the Fallen Humans,
-  the Failed Clones and the Architect's Tools.
-- **Wearing the full Void Chainmail set is a challenge**, not a task — it needs all
-  four pieces at once.
+  the Failed Clones and the Architect's Tools. (May change)
 - Fully translated in English and French.
 
 ## 🌑 End Steel armor trim
@@ -89,8 +87,7 @@ top of a long list of bugs that had been quietly breaking half the mod.
 - **The Soul Siphon actually drops fragments.** The death check ran a moment too early
   and almost never passed. The right click also gained a cooldown; it could be spammed
   for permanent Strength and Speed.
-- **The Sieve's progress arrow is no longer stretched.** Its texture is 22 px wide, but
-  the code declared 24.
+- **The Sieve's progress arrow is no longer stretched.**
 - **The Relic Blade is in the creative menu** — it was in no tab at all.
 - **Fixed a crash** when wearing a mix of armour and non-armour pieces, and several
   cases where a dispenser or a fake player could crash the Static Pearl, the Level or
