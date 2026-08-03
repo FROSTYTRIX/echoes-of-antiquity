@@ -60,12 +60,6 @@
       "predicate": {
         "trim_type": 1.0
       }
-    },
-    {
-      "model": "echoesofantiquity:item/void_chainmail_chestplate_end_steel_trim",
-      "predicate": {
-        "trim_type": 1.1
-      }
     }
   ],
   "textures": {
