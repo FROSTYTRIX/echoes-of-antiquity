@@ -73,31 +73,36 @@ public class SieveEmiRecipe implements EmiRecipe {
         return outputs;
     }
 
+    private static final int COLUMNS = 4;
+    private static final int SLOT = 18;
+    private static final int OUTPUT_X = 62;
+
     @Override
     public int getDisplayWidth() {
-        return 144;
+        return OUTPUT_X + COLUMNS * SLOT;
     }
 
     @Override
     public int getDisplayHeight() {
-        return 18 + 20 * rows();
+        // The input column is two slots tall, so never go below that.
+        return Math.max(2 * SLOT, rows() * SLOT);
     }
 
     private int rows() {
-        return Math.max(1, (outputs.size() + 5) / 6);
+        return Math.max(1, (outputs.size() + COLUMNS - 1) / COLUMNS);
     }
 
     @Override
     public void addWidgets(WidgetHolder widgets) {
         widgets.addSlot(input, 0, 0);
-        widgets.addSlot(EmiStack.of(ModItems.SOUL_FRAGMENT), 0, 20)
+        widgets.addSlot(EmiStack.of(ModItems.SOUL_FRAGMENT), 0, SLOT)
                 .appendTooltip(Text.translatable("emi.echoesofantiquity.sieve.fuel"));
 
         widgets.addTexture(EmiTexture.EMPTY_ARROW, 28, 2);
 
         for (int i = 0; i < outputs.size(); i++) {
-            int x = 62 + (i % 6) * 18;
-            int y = (i / 6) * 20;
+            int x = OUTPUT_X + (i % COLUMNS) * SLOT;
+            int y = (i / COLUMNS) * SLOT;
             widgets.addSlot(outputs.get(i), x, y)
                     .recipeContext(this)
                     .appendTooltip(Text.translatable("emi.echoesofantiquity.sieve.chance",
