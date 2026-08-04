@@ -6,7 +6,8 @@ import net.minecraft.util.Identifier;
 
 public class VillageAdditions {
 
-    private static final String[] VILLAGE_TYPES = {"plains", "desert", "savanna", "snowy", "taiga"};
+    // Plains only until there is a waystone variant that suits each village style.
+    private static final String[] VILLAGE_TYPES = {"plains"};
 
     // Using https://github.com/fzzyhmstrs/structurized-reborn/blob/master/src/main/resources/structurized.mixins.json
     public static void registerNewVillageStructures() {
