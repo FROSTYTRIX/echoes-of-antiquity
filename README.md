@@ -25,7 +25,8 @@
 * **Recipe:** 1 Leather and 4 Chorus Fruits in a cross pattern.
 
 ### 📜 Ancient Scrip ⚪
-* An ancient material used in crafting.
+* A fragment of an unreadable document. **Right-click to decipher** one sealed page
+  of the guide book. Found by sifting sand or gravel, and in the abandoned house basement.
 </details>
 
 ---
@@ -74,6 +75,7 @@
 
 ### ⚓ Void Anchor 🟣
 * Used as an "anchor" for the **Static Pearl**.
+* **Recipe:** 4 Obsidian, 4 End Steel Ingots and an Ender Eye.
 * Can be dyed with **magenta dye** and washed with a water bucket.
 
 ### 🪚 Uncrafter ⚪
@@ -95,10 +97,11 @@
 
 ### 🧲 Magnet Ring ⚪
 * **Range:** 4 blocks.
-* **Modes:** Toggle between **Attracting** and **Repulsing** items by right-clicking.
+* **Modes:** Right-click cycles **Off → Attracting → Repulsing**. Does nothing while off.
 
 ### 🔘 Static Pearl 🟣
 * Links to a Void Anchor to allow instant teleportation. Can be used **20 times**.
+* **Recipe:** Shapeless — Ender Pearl, End Steel Ingot, Popped Chorus Fruit.
 
 ### 🏺 Foundation Pottery Sherd ⚪
 * A unique sherd used for decorating pots with a custom pattern.
@@ -128,8 +131,41 @@
 ---
 
 ## 📖 Guide Book
-Patchouli is **optional**. Install it and you can craft the lore book with a Book and an Ancient Scrip.
-Without it the mod runs exactly the same, minus that recipe.
+Patchouli is **optional**. Install it and you can craft the lore book with a Book and an
+Ancient Scrip. Without it the mod runs exactly the same, minus that recipe.
+
+The book is written as an excavation notebook: a **Field Manual** with the recipes, and
+three narrative chapters — the Architects, the Fallen Humans, the Failed Clones.
+Some pages start sealed. **Reading an Ancient Scrip** deciphers one you have not seen
+yet. Scrips turn up when sifting sand or gravel, and in the abandoned house basement.
+
+---
+
+## 🏆 Advancements
+A tree of 26, rooted on the End Steel Ingot and branching into the three factions.
+Wearing the **full Void Chainmail set** is a challenge, not a task.
+
+---
+
+## 🌑 End Steel Armor Trim
+End Steel is a **trim material**. Trim any vanilla armour with it at the smithing table,
+in a turquoise palette taken from the ingot's own colours.
+
+---
+
+## 🔍 Recipe Viewer
+**EMI** is supported and optional. The Sieve gets its own Sifting category showing the
+input, the Soul Fragment fuel, and every output with its real odds.
+
+The Uncrafter is deliberately absent: it has no fixed recipes, it rolls against the
+recipe manager at runtime.
+
+---
+
+## ⚙️ Configuration
+`config/echoesofantiquity.json`, plain JSON, written on first launch. Radiuses, the
+Waystone cost and heal, the void rescue durability cost, the Static Pearl uses, machine
+speeds, and the Soul Siphon cooldown. Values are clamped on load.
 
 ---
 

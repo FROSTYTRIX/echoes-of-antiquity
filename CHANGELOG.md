@@ -1,3 +1,56 @@
+# Echoes of Antiquity — 1.1.0
+
+Field Notes. The guide book stops being a placeholder: four chapters written as an
+**excavation notebook**, and pages you unlock by **deciphering Ancient Scrips** dug out
+of the ground. The Void Anchor and Static Pearl finally have recipes, and EMI was lying
+about the Sieve's odds.
+
+---
+
+## 📖 The guide book
+
+- **Four categories.** A Field Manual for the recipes, and three narrative chapters —
+  the Architects, the Fallen Humans, the Failed Clones. The lore follows Game Theory's
+  reading of Minecraft's ancient builders, bent to fit this mod's factions.
+- **Written as a dig journal.** The narrator is wrong about things early on and corrects
+  himself later. A sherd he takes for a mason's signature turns out to be a datum mark;
+  tools he admires as a builder's kit turn out to be evacuation gear.
+- **Pages you have to earn.** Each narrative entry ends on a sealed page. Sealed pages
+  do not show at all until unlocked — no teasing placeholder.
+- **The Ancient Scrip does something.** Right-click one and it deciphers a page you have
+  not seen yet, picked at random. Six pages to find. Scrips come from sifting sand or
+  gravel (2%), and from the abandoned house basement (60% for 1–2).
+- **The Sieve entry is a hub** — flavour, the craft, then links through to sand, gravel
+  and red sand.
+
+## 🔘 Anchors and pearls are craftable
+
+- The **Void Anchor** and **Static Pearl** were creative-only, so that whole waypoint
+  system, and three advancements pointing at it, were unreachable in survival.
+- The anchor is a one-off build — 4 Obsidian, 4 End Steel Ingots, an Ender Eye. The
+  pearl is the renewable part you spend: Ender Pearl, End Steel Ingot, Popped Chorus
+  Fruit.
+
+## 🎯 Bug fixes
+
+- **EMI was overstating the Sieve's odds.** It multiplied an entry's weight share by the
+  roll count, which double counts the rolls where the same item comes up twice. Bone
+  meal read 80% when it is really 61.8%; gravel flint 70% instead of 52.7%. It now works
+  out the odds of seeing the item at all.
+- **Guide book text no longer runs off the page.** Patchouli does not clip text, it just
+  draws past the frame. Bold and italic add a pixel per character, which is what pushed
+  a few entries over.
+- The sifting pages in the book are **generated from the actual recipes**, so their
+  numbers cannot drift from what the block does.
+
+## 📚 Documentation
+
+- The README covers the **config file, the advancements, the End Steel trim and EMI**,
+  none of which were mentioned at 1.0.0. Stale entries fixed too — the Magnet Ring's Off
+  mode, and the new recipes.
+
+---
+
 # Echoes of Antiquity — 1.0.0
 
 The Foundation. The first stable release. **Patchouli is no longer required**, a

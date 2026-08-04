@@ -25,7 +25,9 @@
 * **Recette :** 1 Cuir et 4 Fruits de chorus en croix.
 
 ### 📜 Écrit Ancien ⚪
-* Matériau ancien utilisé pour l'artisanat.
+* Un fragment de document illisible. **Clic droit pour déchiffrer** une page scellée du
+  livre guide. Se trouve en tamisant le sable ou le gravier, et dans le sous-sol de la
+  maison abandonnée.
 </details>
 
 ---
@@ -74,6 +76,7 @@
 
 ### ⚓ Ancre du Vide 🟣
 * Point d'ancrage pour la **Perle Statique**. Teignable en magenta.
+* **Recette :** 4 Obsidiennes, 4 Lingots d'Acier de l'End et un Œil de l'Ender.
 
 ### 🪚 Décrafteur ⚪
 * Donne un ingrédient **aléatoire** d'une recette de fabrication ou de cuisson.
@@ -93,12 +96,13 @@
 
 ### 🧲 Anneau Magnétique ⚪
 * **Portée :** 4 blocs.
-* **Modes :** Alternez entre **Attractif** et **Répulsif** par un clic droit.
+* **Modes :** Le clic droit fait défiler **Éteint → Attractif → Répulsif**. Inactif à l'arrêt.
 * Attire ou repousse les objets au sol selon le mode.
 
 ### 🔘 Perle Statique 🟣
 * Se lie à une Ancre du Vide pour une téléportation instantanée.
 * Utilisable **20 fois**.
+* **Recette :** Sans forme — Perle de l'Ender, Lingot d'Acier de l'End, Fruit de chorus éclaté.
 
 ### 🏺 Tesson de Poterie de Fondation ⚪
 * Un tesson unique utilisé pour décorer les pots avec un motif "Fondation".
@@ -122,8 +126,43 @@
 ---
 
 ## 📖 Livre Guide
-Patchouli est **optionnel**. Si vous l'installez, le livre de lore se fabrique avec un Livre et un Écrit
-Ancien. Sans lui, le mod fonctionne à l'identique, seule cette recette disparaît.
+Patchouli est **optionnel**. Si vous l'installez, le livre de lore se fabrique avec un
+Livre et un Écrit Ancien. Sans lui, le mod fonctionne à l'identique.
+
+Le livre est écrit comme un carnet de fouille : un **Manuel de terrain** avec les
+recettes, et trois chapitres narratifs — les Architectes, les Humains Déchus, les Clones
+Ratés. Certaines pages sont scellées au départ. **Lire un Écrit Ancien** en déchiffre une
+que vous n'avez pas encore vue. On en trouve en tamisant le sable ou le gravier, et dans
+le sous-sol de la maison abandonnée.
+
+---
+
+## 🏆 Advancements
+Un arbre de 26, enraciné sur le Lingot d'Acier de l'End et ramifié en trois factions.
+Porter **l'ensemble complet en Mailles du Néant** est un défi, pas une simple tâche.
+
+---
+
+## 🌑 Trim en Acier de l'End
+L'Acier de l'End est un **matériau de trim**. Ornez n'importe quelle armure vanilla à la
+table de forgeron, dans une palette turquoise tirée des couleurs du lingot.
+
+---
+
+## 🔍 Navigateur de recettes
+**EMI** est pris en charge, en option. Le Tamis dispose de sa catégorie « Tamisage » :
+l'entrée, le Fragment d'Âme en carburant, et chaque sortie avec sa probabilité réelle.
+
+Le Décrafteur en est volontairement absent : il n'a aucune recette fixe, il tire au sort
+dans le gestionnaire de recettes à l'exécution.
+
+---
+
+## ⚙️ Configuration
+`config/echoesofantiquity.json`, du JSON simple, écrit au premier lancement. Les rayons,
+le coût et le soin du Waystone, la durabilité consommée par le sauvetage, les usages de
+la Perle Statique, la vitesse des machines et le cooldown du Siphon. Les valeurs sont
+bornées au chargement.
 
 ---
 
