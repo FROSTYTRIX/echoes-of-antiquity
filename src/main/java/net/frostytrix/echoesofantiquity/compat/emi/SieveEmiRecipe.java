@@ -34,8 +34,6 @@ public class SieveEmiRecipe implements EmiRecipe {
             chances.add(result.chance());
         });
 
-        // A pool draws `rolls` times, so each entry's odds are its weight share times the pool chance,
-        // counted once per roll.
         for (SievePool pool : recipe.pools()) {
             int total = pool.totalWeight();
             if (total <= 0) {
@@ -45,12 +43,19 @@ public class SieveEmiRecipe implements EmiRecipe {
                 if (poolEntry.effectiveWeight() <= 0) {
                     continue;
                 }
-                ItemStack stack = poolEntry.stack();
-                float perRoll = pool.chance() * poolEntry.effectiveWeight() / total;
-                outputs.add(EmiStack.of(stack));
-                chances.add(Math.min(1.0F, perRoll * pool.rolls()));
+                outputs.add(EmiStack.of(poolEntry.stack()));
+                chances.add(atLeastOnce(pool, poolEntry, total));
             }
         }
+    }
+
+    /**
+     * Odds of seeing an entry at all: the pool has to fire, then miss it on every roll.
+     * Multiplying the share by the roll count instead overstates common entries badly.
+     */
+    private static float atLeastOnce(SievePool pool, SievePoolEntry entry, int totalWeight) {
+        double share = (double) entry.effectiveWeight() / totalWeight;
+        return (float) (pool.chance() * (1.0 - Math.pow(1.0 - share, pool.rolls())));
     }
 
     @Override
