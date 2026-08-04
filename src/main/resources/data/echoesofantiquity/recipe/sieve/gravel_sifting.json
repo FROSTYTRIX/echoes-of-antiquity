@@ -1,24 +1,74 @@
 {
   "type": "echoesofantiquity:sieve",
-  "ingredient": {"item": "minecraft:gravel"},
+  "ingredient": {
+    "item": "minecraft:gravel"
+  },
   "pools": [
     {
       "chance": 0.71,
       "rolls": 2,
       "entries": [
-        { "item": { "id": "minecraft:flint" }, "weight": 70 },
-        { "item": { "id": "minecraft:coal" }, "weight": 30 },
-        { "item": { "id": "minecraft:raw_iron" }, "weight": 15 },
-        { "item": { "id": "minecraft:raw_copper" }, "weight": 15 },
-        { "item": { "id": "minecraft:lapis_lazuli" }, "weight": 7 },
-        { "item": { "id": "minecraft:raw_gold" }, "weight": 5 }
+        {
+          "item": {
+            "id": "minecraft:flint"
+          },
+          "weight": 70
+        },
+        {
+          "item": {
+            "id": "minecraft:coal"
+          },
+          "weight": 30
+        },
+        {
+          "item": {
+            "id": "minecraft:raw_iron"
+          },
+          "weight": 15
+        },
+        {
+          "item": {
+            "id": "minecraft:raw_copper"
+          },
+          "weight": 15
+        },
+        {
+          "item": {
+            "id": "minecraft:lapis_lazuli"
+          },
+          "weight": 7
+        },
+        {
+          "item": {
+            "id": "minecraft:raw_gold"
+          },
+          "weight": 5
+        }
       ]
     },
     {
       "chance": 0.01,
       "entries": [
-        { "item": { "id": "minecraft:diamond" } },
-        { "item": { "id": "minecraft:emerald" } }
+        {
+          "item": {
+            "id": "minecraft:diamond"
+          }
+        },
+        {
+          "item": {
+            "id": "minecraft:emerald"
+          }
+        }
+      ]
+    },
+    {
+      "chance": 0.02,
+      "entries": [
+        {
+          "item": {
+            "id": "echoesofantiquity:ancient_scrip"
+          }
+        }
       ]
     }
   ]

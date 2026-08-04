@@ -25,7 +25,7 @@ public class ModItems{
 
     // Fallen Humans
 
-    public static final Item ANCIENT_SCRIP = registerItem("ancient_scrip", new Item(new Item.Settings()));
+    public static final Item ANCIENT_SCRIP = registerItem("ancient_scrip", new AncientScripItem(new Item.Settings()));
     public static final Item END_STEEL_INGOT = registerItem("end_steel_ingot", new Item(new Item.Settings()));
     public static final Item VOID_TREATED_LEATHER = registerItem("void_treated_leather", new Item(new Item.Settings()));
 

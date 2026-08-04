@@ -1,0 +1,18 @@
+{
+  "name": "entry.echoesofantiquity.the_copies",
+  "icon": "echoesofantiquity:waystone",
+  "category": "echoesofantiquity:failed_clones",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.the_copies.1",
+      "title": "entry.echoesofantiquity.the_copies"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:villager",
+      "text": "entry.echoesofantiquity.the_copies.2",
+      "advancement": "echoesofantiquity:lore/the_copies"
+    }
+  ]
+}

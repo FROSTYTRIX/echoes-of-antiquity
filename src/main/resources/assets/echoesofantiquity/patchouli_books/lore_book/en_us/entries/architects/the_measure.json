@@ -1,0 +1,17 @@
+{
+  "name": "entry.echoesofantiquity.the_measure",
+  "icon": "echoesofantiquity:level",
+  "category": "echoesofantiquity:architects",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.the_measure.1",
+      "title": "entry.echoesofantiquity.the_measure"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.the_measure.2",
+      "advancement": "echoesofantiquity:lore/the_measure"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "entry.echoesofantiquity.foundations",
+  "icon": "echoesofantiquity:foundation_pottery_sherd",
+  "category": "echoesofantiquity:architects",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.foundations.1",
+      "title": "entry.echoesofantiquity.foundations"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "echoesofantiquity:foundation_pottery_sherd",
+      "text": "entry.echoesofantiquity.foundations.2"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.foundations.3",
+      "advancement": "echoesofantiquity:lore/foundations"
+    }
+  ]
+}

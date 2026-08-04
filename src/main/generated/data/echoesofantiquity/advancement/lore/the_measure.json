@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "unlocked": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "description": {
+      "translate": "advancements.echoesofantiquity.the_measure.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "echoesofantiquity:ancient_scrip"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.echoesofantiquity.the_measure.title"
+    }
+  },
+  "requirements": [
+    [
+      "unlocked"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

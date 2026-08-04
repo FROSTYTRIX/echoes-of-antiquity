@@ -1,0 +1,20 @@
+{
+  "name": "entry.echoesofantiquity.waypoints",
+  "icon": "echoesofantiquity:static_pearl",
+  "category": "echoesofantiquity:manual",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.waypoints.1",
+      "title": "entry.echoesofantiquity.waypoints"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "echoesofantiquity:void_anchor"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "echoesofantiquity:static_pearl"
+    }
+  ]
+}

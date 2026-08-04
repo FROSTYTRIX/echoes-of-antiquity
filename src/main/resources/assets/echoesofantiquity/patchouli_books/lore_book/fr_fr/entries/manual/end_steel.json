@@ -1,0 +1,20 @@
+{
+  "name": "entry.echoesofantiquity.end_steel",
+  "icon": "echoesofantiquity:end_steel_ingot",
+  "category": "echoesofantiquity:manual",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.end_steel.1",
+      "title": "entry.echoesofantiquity.end_steel"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "echoesofantiquity:end_steel_ingot"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "echoesofantiquity:void_treated_leather"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "entry.echoesofantiquity.what_came_back",
+  "icon": "echoesofantiquity:obsidian_goggles",
+  "category": "echoesofantiquity:fallen_humans",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.what_came_back.1",
+      "title": "entry.echoesofantiquity.what_came_back"
+    },
+    {
+      "type": "patchouli:entity",
+      "entity": "minecraft:enderman",
+      "text": "entry.echoesofantiquity.what_came_back.2",
+      "advancement": "echoesofantiquity:lore/what_came_back"
+    }
+  ]
+}

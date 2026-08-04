@@ -1,0 +1,17 @@
+{
+  "name": "entry.echoesofantiquity.the_archive",
+  "icon": "echoesofantiquity:soul_fragment",
+  "category": "echoesofantiquity:failed_clones",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.the_archive.1",
+      "title": "entry.echoesofantiquity.the_archive"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.the_archive.2",
+      "advancement": "echoesofantiquity:lore/the_archive"
+    }
+  ]
+}

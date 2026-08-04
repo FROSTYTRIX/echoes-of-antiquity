@@ -1,27 +1,89 @@
 {
   "type": "echoesofantiquity:sieve",
-  "ingredient": {"item": "minecraft:sand"},
+  "ingredient": {
+    "item": "minecraft:sand"
+  },
   "pools": [
     {
       "chance": 0.88,
       "rolls": 2,
       "entries": [
-        { "item": { "id": "minecraft:bone_meal" }, "weight": 80 },
-        { "item": { "id": "minecraft:flint" }, "weight": 40 },
-        { "item": { "id": "minecraft:cactus" }, "weight": 30 },
-        { "item": { "id": "minecraft:sugar_cane" }, "weight": 15 },
-        { "item": { "id": "minecraft:cocoa_beans" }, "weight": 7 },
-        { "item": { "id": "minecraft:gold_nugget" }, "weight": 4 }
+        {
+          "item": {
+            "id": "minecraft:bone_meal"
+          },
+          "weight": 80
+        },
+        {
+          "item": {
+            "id": "minecraft:flint"
+          },
+          "weight": 40
+        },
+        {
+          "item": {
+            "id": "minecraft:cactus"
+          },
+          "weight": 30
+        },
+        {
+          "item": {
+            "id": "minecraft:sugar_cane"
+          },
+          "weight": 15
+        },
+        {
+          "item": {
+            "id": "minecraft:cocoa_beans"
+          },
+          "weight": 7
+        },
+        {
+          "item": {
+            "id": "minecraft:gold_nugget"
+          },
+          "weight": 4
+        }
       ]
     },
     {
       "chance": 0.01,
       "entries": [
-        { "item": { "id": "minecraft:angler_pottery_sherd" } },
-        { "item": { "id": "minecraft:archer_pottery_sherd" } },
-        { "item": { "id": "minecraft:arms_up_pottery_sherd" } },
-        { "item": { "id": "minecraft:blade_pottery_sherd" } },
-        { "item": { "id": "echoesofantiquity:foundation_pottery_sherd" } }
+        {
+          "item": {
+            "id": "minecraft:angler_pottery_sherd"
+          }
+        },
+        {
+          "item": {
+            "id": "minecraft:archer_pottery_sherd"
+          }
+        },
+        {
+          "item": {
+            "id": "minecraft:arms_up_pottery_sherd"
+          }
+        },
+        {
+          "item": {
+            "id": "minecraft:blade_pottery_sherd"
+          }
+        },
+        {
+          "item": {
+            "id": "echoesofantiquity:foundation_pottery_sherd"
+          }
+        }
+      ]
+    },
+    {
+      "chance": 0.02,
+      "entries": [
+        {
+          "item": {
+            "id": "echoesofantiquity:ancient_scrip"
+          }
+        }
       ]
     }
   ]

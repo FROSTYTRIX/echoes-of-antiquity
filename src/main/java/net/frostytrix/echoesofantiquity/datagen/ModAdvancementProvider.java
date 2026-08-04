@@ -9,6 +9,9 @@ import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementEntry;
 import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.advancement.AdvancementFrame;
+import net.frostytrix.echoesofantiquity.lore.LorePage;
+import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.advancement.criterion.ImpossibleCriterion;
 import net.minecraft.advancement.criterion.InventoryChangedCriterion;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.registry.RegistryWrapper;
@@ -78,6 +81,15 @@ public class ModAdvancementProvider extends FabricAdvancementProvider {
         child(consumer, tools, ModBlocks.GRAVITY_ANCHOR, "gravity_anchor", AdvancementFrame.GOAL);
 
         child(consumer, root, ModItems.CLIMBING_SPIDER_LEG, "climbing_spider_leg", AdvancementFrame.GOAL);
+
+        // Hidden keys for the guide book. Granted by reading an Ancient Scrip, never earned in play.
+        for (LorePage page : LorePage.values()) {
+            Advancement.Builder.create()
+                    .display(ModItems.ANCIENT_SCRIP, title(page.pageName()), description(page.pageName()),
+                            null, AdvancementFrame.TASK, false, false, true)
+                    .criterion("unlocked", Criteria.IMPOSSIBLE.create(new ImpossibleCriterion.Conditions()))
+                    .build(consumer, EchoesOfAntiquity.MOD_ID + ":lore/" + page.pageName());
+        }
     }
 
     private AdvancementEntry child(Consumer<AdvancementEntry> consumer, AdvancementEntry parent,

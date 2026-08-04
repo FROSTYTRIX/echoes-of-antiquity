@@ -1,0 +1,17 @@
+{
+  "name": "entry.echoesofantiquity.the_crossing",
+  "icon": "echoesofantiquity:end_steel_ingot",
+  "category": "echoesofantiquity:fallen_humans",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.the_crossing.1",
+      "title": "entry.echoesofantiquity.the_crossing"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.the_crossing.2",
+      "advancement": "echoesofantiquity:lore/the_crossing"
+    }
+  ]
+}
