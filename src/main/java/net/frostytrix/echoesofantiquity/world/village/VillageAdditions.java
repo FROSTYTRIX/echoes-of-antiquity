@@ -6,12 +6,16 @@ import net.minecraft.util.Identifier;
 
 public class VillageAdditions {
 
+    private static final String[] VILLAGE_TYPES = {"plains", "desert", "savanna", "snowy", "taiga"};
+
     // Using https://github.com/fzzyhmstrs/structurized-reborn/blob/master/src/main/resources/structurized.mixins.json
     public static void registerNewVillageStructures() {
-        FabricStructurePoolRegistry.registerSimple(
-                Identifier.of("minecraft:village/plains/terminators"),
-                Identifier.of(EchoesOfAntiquity.MOD_ID, "waystone"),
-                1
-        );
+        for (String type : VILLAGE_TYPES) {
+            FabricStructurePoolRegistry.registerSimple(
+                    Identifier.of("minecraft:village/" + type + "/terminators"),
+                    Identifier.of(EchoesOfAntiquity.MOD_ID, "waystone"),
+                    1
+            );
+        }
     }
 }
