@@ -1,0 +1,37 @@
+{
+  "name": "entry.echoesofantiquity.sifting.gravel",
+  "icon": "minecraft:gravel",
+  "category": "echoesofantiquity:manual",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.sifting.gravel.intro",
+      "title": "entry.echoesofantiquity.sifting.gravel"
+    },
+    {
+      "type": "echoesofantiquity:sieving",
+      "title": "entry.echoesofantiquity.sifting.common",
+      "input": "minecraft:gravel",
+      "out1": "minecraft:flint[minecraft:lore=['{\"text\":\"52.7%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out2": "minecraft:coal[minecraft:lore=['{\"text\":\"26.8%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out3": "minecraft:raw_iron[minecraft:lore=['{\"text\":\"14.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out4": "minecraft:raw_copper[minecraft:lore=['{\"text\":\"14.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out5": "minecraft:lapis_lazuli[minecraft:lore=['{\"text\":\"6.8%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out6": "minecraft:raw_gold[minecraft:lore=['{\"text\":\"4.9%\",\"color\":\"gold\",\"italic\":false}']]",
+      "description": "entry.echoesofantiquity.sifting.common.desc"
+    },
+    {
+      "type": "echoesofantiquity:sieving",
+      "title": "entry.echoesofantiquity.sifting.rare",
+      "input": "minecraft:gravel",
+      "out1": "minecraft:diamond[minecraft:lore=['{\"text\":\"0.5%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out2": "minecraft:emerald[minecraft:lore=['{\"text\":\"0.5%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out3": "echoesofantiquity:ancient_scrip[minecraft:lore=['{\"text\":\"2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out4": "minecraft:air",
+      "out5": "minecraft:air",
+      "out6": "minecraft:air",
+      "description": "entry.echoesofantiquity.sifting.rare.desc"
+    }
+  ],
+  "sortnum": 1
+}

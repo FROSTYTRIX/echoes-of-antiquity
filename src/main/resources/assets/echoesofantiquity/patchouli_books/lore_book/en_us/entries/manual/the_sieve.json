@@ -2,15 +2,22 @@
   "name": "entry.echoesofantiquity.the_sieve",
   "icon": "echoesofantiquity:sieve",
   "category": "echoesofantiquity:manual",
+  "sortnum": 0,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "entry.echoesofantiquity.the_sieve.1",
-      "title": "entry.echoesofantiquity.the_sieve"
+      "title": "entry.echoesofantiquity.the_sieve",
+      "text": "entry.echoesofantiquity.the_sieve.1"
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "echoesofantiquity:sieve"
+      "recipe": "echoesofantiquity:sieve",
+      "text": "entry.echoesofantiquity.the_sieve.2"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "entry.echoesofantiquity.the_sieve.spoil",
+      "text": "entry.echoesofantiquity.the_sieve.3"
     }
   ]
 }

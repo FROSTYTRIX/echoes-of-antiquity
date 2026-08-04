@@ -1,0 +1,37 @@
+{
+  "name": "entry.echoesofantiquity.sifting.red_sand",
+  "icon": "minecraft:red_sand",
+  "category": "echoesofantiquity:manual",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.sifting.red_sand.intro",
+      "title": "entry.echoesofantiquity.sifting.red_sand"
+    },
+    {
+      "type": "echoesofantiquity:sieving",
+      "title": "entry.echoesofantiquity.sifting.common",
+      "input": "minecraft:red_sand",
+      "out1": "minecraft:redstone[minecraft:lore=['{\"text\":\"40%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out2": "minecraft:dead_bush[minecraft:lore=['{\"text\":\"15%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out3": "minecraft:raw_gold[minecraft:lore=['{\"text\":\"5%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out4": "minecraft:nether_wart[minecraft:lore=['{\"text\":\"2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out5": "minecraft:air",
+      "out6": "minecraft:air",
+      "description": "entry.echoesofantiquity.sifting.common.desc"
+    },
+    {
+      "type": "echoesofantiquity:sieving",
+      "title": "entry.echoesofantiquity.sifting.rare",
+      "input": "minecraft:red_sand",
+      "out1": "minecraft:miner_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out2": "minecraft:prize_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out3": "minecraft:brewer_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out4": "minecraft:plenty_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out5": "minecraft:air",
+      "out6": "minecraft:air",
+      "description": "entry.echoesofantiquity.sifting.rare.desc"
+    }
+  ],
+  "sortnum": 1
+}

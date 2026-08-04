@@ -1,0 +1,37 @@
+{
+  "name": "entry.echoesofantiquity.sifting.sand",
+  "icon": "minecraft:sand",
+  "category": "echoesofantiquity:manual",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "entry.echoesofantiquity.sifting.sand.intro",
+      "title": "entry.echoesofantiquity.sifting.sand"
+    },
+    {
+      "type": "echoesofantiquity:sieving",
+      "title": "entry.echoesofantiquity.sifting.common",
+      "input": "minecraft:sand",
+      "out1": "minecraft:bone_meal[minecraft:lore=['{\"text\":\"61.8%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out2": "minecraft:flint[minecraft:lore=['{\"text\":\"35.5%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out3": "minecraft:cactus[minecraft:lore=['{\"text\":\"27.4%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out4": "minecraft:sugar_cane[minecraft:lore=['{\"text\":\"14.4%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out5": "minecraft:cocoa_beans[minecraft:lore=['{\"text\":\"6.9%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out6": "minecraft:gold_nugget[minecraft:lore=['{\"text\":\"4%\",\"color\":\"gold\",\"italic\":false}']]",
+      "description": "entry.echoesofantiquity.sifting.common.desc"
+    },
+    {
+      "type": "echoesofantiquity:sieving",
+      "title": "entry.echoesofantiquity.sifting.rare",
+      "input": "minecraft:sand",
+      "out1": "minecraft:angler_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out2": "minecraft:archer_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out3": "minecraft:arms_up_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out4": "minecraft:blade_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out5": "echoesofantiquity:foundation_pottery_sherd[minecraft:lore=['{\"text\":\"0.2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "out6": "echoesofantiquity:ancient_scrip[minecraft:lore=['{\"text\":\"2%\",\"color\":\"gold\",\"italic\":false}']]",
+      "description": "entry.echoesofantiquity.sifting.rare.desc"
+    }
+  ],
+  "sortnum": 1
+}
